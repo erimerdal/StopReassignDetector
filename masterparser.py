@@ -34,7 +34,7 @@ class MasterFile:
     #   ...
     # ;     G-nad5 ==> end
 
-    def __init__(self, infile, kmer_length = 20, extension_length = 1, threshold = 0, gap_open_penalty = -2, match_score = 6, mismatch_penalty = -4, allow = 1):
+    def __init__(self, infile, kmer_length = 20, extension_length = 1, threshold = 15, gap_open_penalty = -2, match_score = 6, mismatch_penalty = -4, allow = 1):
         # Parameters:
             # Infile parameter should be a list of Master Files obtained from MFannot results.
                 # TODO: Maybe we can include in our code MFannot command line tools so a person can input as fasta.
@@ -60,9 +60,6 @@ class MasterFile:
         common_genes, reference_species, list_of_extended_dictionaries = self._internal_extendedparser(infile,list_of_dictionaries)
         # Constructor sends all collected information to align and give a meaning to the results.
         self._alignments(list_of_dictionaries,list_of_extended_dictionaries, kmer_length, extension_length, threshold, gap_open_penalty, match_score, mismatch_penalty, allow, reference_species, common_genes)
-
-
-
 
 
     def _alignments(self, list_of_dictionaries,list_of_extended_dictionaries, kmer_length, extension_length, threshold, gap_open_penalty, match_score, mismatch_penalty, allow, reference_species, common_genes):
@@ -267,9 +264,9 @@ class MasterFile:
                     newString = []
                     if not length_of_extension == 0:
                         extensions = split_len(divisible_extensions, amount,0)
+                        found = False
                         for k in range(len(extensions)):
-                            newString.append(str(extensions[k]))
-                            newStringProtein = Protein(str(''.join(newString)))
+                            newStringProtein = Protein(str(extensions[k]))
                             try:
                                 refseq = Protein(str(reference_sequence_right))
                                 try:
@@ -279,29 +276,35 @@ class MasterFile:
                                     substitution_matrix = submat,
                                     )
                                     if score > threshold:
-                                        # First remove the last extension which passed the threshold:
-                                        newString.remove(str(extensions[k]))
-                                        for i in range(len(str(extensions[k]))):
-                                            # Now add proteins one by one and try to find the scores that are passing threshold:
-                                            newString.append(str(extensions[k][i:i+1]))
-                                            newStringProtein = Protein(str(''.join(newString)))
-                                            alignment, score, start_end_positions = local_pairwise_align_ssw(
-                                            newStringProtein,
-                                            refseq,
-                                            substitution_matrix = submat,
-                                            )
-                                            if score > threshold:
-                                                # f.write("newStringProtein = %s\n" % str(newStringProtein))
-                                                # f.write("LastAA = %s\n" % str(extensions[k][i:i+1]))
-                                                # f.write("RefSeq = %s\n" % refseq)
-                                                # f.write("Alignment = %s\n" % alignment)
-                                                # f.write("Score = %s\n" % score)
+                                        # TODO: Threshold might be a dynamic scoring function
+                                        # Depending on the distances. Now: static
+                                        f.write("High similarity detected after initial local alignment. Stop codon determined "+
+                                        "for this specie is maybe not the correct stop codon.\n")
+                                        # Determine stop codon assigned to the specie:
+                                        # TODO: !! Possible problem with this written on notebook.
+                                        f.write("Wrong stop codon: %s\n" % scores_dictionary[i]['original_sequences'][j][-3:])
+                                        f.write("Alignment = %s\n" % alignment)
+                                        # Calculate start end positions.
+                                        # start_location = start of the extension + other extensions before * their length + end of local alignment
+                                        start_location = start_end_positions[0][0] + len(extensions[0])*k + scores_dictionary[i]['start_end'][j][0][1]
+                                        # end_location = end of the extension + other extensions before * their length + end of local alignment
+                                        end_location = start_end_positions[0][1] + len(extensions[0])*k + scores_dictionary[i]['start_end'][j][0][1]
+                                        f.write("Start/End = (%s,%s)\n" % (start_location,end_location))
+                                        f.write("Score = %s\n" % score)
+                                        found = True
                                 except IndexError:
                                     pass
                             except ValueError:
                                 pass
                     else:
-                        pass
+                        f.write("No possible extension detected.\n")
+                        f.write("Last stop codon: %s\n" % scores_dictionary[i]['original_sequences'][j][-3:])
+                    if not found:
+                        f.write("No high similarity detected after initial local alignment. Probably last stop codon detected is correct.\n")
+                        lastPositionInitialAlign = scores_dictionary[i]['start_end'][j][0][1]
+                        initial_holder = scores_dictionary[i]['original_sequences'][j][lastPositionInitialAlign*3:]
+                        # If no similarity found last stop codon is the end of initial local alignment
+                        f.write("Last stop codon: %s\n" % initial_holder[-3:])
 
                     # divide_nmer = 5
                     # starts_lists = []
