@@ -1,0 +1,6937 @@
+Reference Specie: Bracteacoccus_minor gc=22
+
+----- INITIAL LOCAL ALIGNMENT -----
+
+Specie: Mychonastes_homosphaera gc=1
+Protein Length Original: 146
+Protein Length (Original + Extension): 584
+Protein Length Reference: 148
+Start/End L.A= [(10, 130), (10, 130)]
+---
+
+newStringProtein = H
+LastAA = H
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+H
+H
+Score = 4
+newStringProtein = HV
+LastAA = V
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+H
+H
+Score = 4
+newStringProtein = HVQ
+LastAA = Q
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+H
+H
+Score = 4
+newStringProtein = HVQL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+H
+H
+Score = 4
+newStringProtein = HVQLS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+LS
+LS
+Score = 8
+newStringProtein = HVQLSL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+LS
+LS
+Score = 8
+newStringProtein = HVQLSLI
+LastAA = I
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+LS
+LS
+Score = 8
+newStringProtein = HVQLSLIN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+LS
+LS
+Score = 8
+newStringProtein = HVQLSLINP
+LastAA = P
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+LS
+LS
+Score = 8
+newStringProtein = HVQLSLINPD
+LastAA = D
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+LS
+LS
+Score = 8
+newStringProtein = HVQLSLINPDH
+LastAA = H
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+LS
+LS
+Score = 8
+newStringProtein = HVQLSLINPDHL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+LS
+LS
+Score = 8
+newStringProtein = HVQLSLINPDHLL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+LL
+LL
+Score = 8
+newStringProtein = HVQLSLINPDHLLT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+LL
+LL
+Score = 8
+newStringProtein = HVQLSLINPDHLLTL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = HVQLSLINPDHLLTLS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSF
+LastAA = F
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFH
+LastAA = H
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLR
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRI
+LastAA = I
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIE
+LastAA = E
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIER
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*S
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV
+LastAA = V
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*T
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TP
+LastAA = P
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPY
+LastAA = Y
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYF
+LastAA = F
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFI
+LastAA = I
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIY
+LastAA = Y
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYP
+LastAA = P
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPP
+LastAA = P
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPF
+LastAA = F
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFF
+LastAA = F
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLW
+LastAA = W
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWC
+LastAA = C
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*Q
+LastAA = Q
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSY
+LastAA = Y
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYD
+LastAA = D
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSY
+LastAA = Y
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM
+LastAA = M
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM*
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**Y
+LastAA = Y
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI
+LastAA = I
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*L
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC
+LastAA = C
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F
+LastAA = F
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*V
+LastAA = V
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VG
+LastAA = G
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLV
+LastAA = V
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTR
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNF
+LastAA = F
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFC
+LastAA = C
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKH
+LastAA = H
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNI
+LastAA = I
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIG
+LastAA = G
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGE
+LastAA = E
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGEN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENY
+LastAA = Y
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYV
+LastAA = V
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVM
+LastAA = M
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMR
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSP
+LastAA = P
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSC
+LastAA = C
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSV
+LastAA = V
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*M
+LastAA = M
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLA
+LastAA = A
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKD
+LastAA = D
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDA
+LastAA = A
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTR
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRD
+LastAA = D
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTR
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRR
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTC
+LastAA = C
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTI
+LastAA = I
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTIC
+LastAA = C
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICP
+LastAA = P
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTR
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKT
+LastAA = T
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTF
+LastAA = F
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLL
+LastAA = L
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLF
+LastAA = F
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFH
+LastAA = H
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHD
+LastAA = D
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDR
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRF
+LastAA = F
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFI
+LastAA = I
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIM
+LastAA = M
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMN
+LastAA = N
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMND
+LastAA = D
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMNDP
+LastAA = P
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMNDPK
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMNDPKH
+LastAA = H
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMNDPKHV
+LastAA = V
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMNDPKHV*
+LastAA = *
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMNDPKHV*K
+LastAA = K
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMNDPKHV*KR
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMNDPKHV*KRV
+LastAA = V
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMNDPKHV*KRVR
+LastAA = R
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+newStringProtein = HVQLSLINPDHLLTLSFHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTNLVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRDTRRNTCTICPLLTRNKTFLLFHDRFIMNDPKHV*KRVRS
+LastAA = S
+RefSeq = HARYSWIDPNTLLDLSK*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+LLTLS
+LLDLS
+Score = 10
+Specie: Pseudomuriella_schumacherensis gc=1
+Protein Length Original: 129
+Protein Length (Original + Extension): 393
+Protein Length Reference: 655
+Start/End L.A= [(52, 55), (149, 152)]
+---
+
+newStringProtein = F
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQ
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQTS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQTSF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQTSFE
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQTSFER
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQTSFERD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQTSFERDS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQTSFERDS*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQTSFERDS*P
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+F
+F
+Score = 4
+newStringProtein = FQTSFERDS*PC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+C
+C
+Score = 4
+newStringProtein = FQTSFERDS*PCY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+C
+C
+Score = 4
+newStringProtein = FQTSFERDS*PCYP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+C
+C
+Score = 4
+newStringProtein = FQTSFERDS*PCYPF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+C
+C
+Score = 4
+newStringProtein = FQTSFERDS*PCYPFL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+C
+C
+Score = 4
+newStringProtein = FQTSFERDS*PCYPFLY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+C
+C
+Score = 4
+newStringProtein = FQTSFERDS*PCYPFLYS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+C
+C
+Score = 4
+newStringProtein = FQTSFERDS*PCYPFLYSK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+K
+K
+Score = 4
+newStringProtein = FQTSFERDS*PCYPFLYSKI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+K
+K
+Score = 4
+newStringProtein = FQTSFERDS*PCYPFLYSKIK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+K
+K
+Score = 4
+newStringProtein = FQTSFERDS*PCYPFLYSKIKL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+K
+K
+Score = 4
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+K
+K
+Score = 4
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+RL
+RL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+RL
+RL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+RL
+RL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+RL
+RL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQ
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+RL
+RL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+RL
+RL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFE
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFER
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*L
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*P
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+TL
+TL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*F
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+WL
+WL
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+FG
+FG
+Score = 8
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*L
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSH
+LastAA = H
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQ
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSN
+LastAA = N
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPN
+LastAA = N
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*T
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*S
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQ
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*F
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQ
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQIL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQ
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*E
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ET
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTIV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTIVQ
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTIVQV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTIVQVF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTIVQVF*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTIVQVF*Q
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTIVQVF*QI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTIVQVF*QIK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTIVQVF*QIKR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+newStringProtein = FQTSFERDS*PCYPFLYSKIKLRLIGFQTLFERDS*LC*PFLYLRLLWLLDRLL*FWLSPTFGLLWLL*LLLSHFFPLLKPRWGLQIFLKLSNPNGV*TSY*SKLKQF*FTQILKSLKLPWSLTKLQGSFKPPVVV*V*ETKTIAKSLPLTIVQVF*QIKRI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+FGL
+FGL
+Score = 12
+Specie: Bracteacoccus_aerius gc=1
+Protein Length Original: 674
+Protein Length (Original + Extension): 1272
+Protein Length Reference: 655
+Start/End L.A= [(0, 621), (0, 621)]
+---
+
+newStringProtein = A
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 1
+---------------------
+A
+A
+Score = 4
+newStringProtein = AL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQ
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLH
+LastAA = H
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHN
+LastAA = N
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNE
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGAS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 2
+---------------------
+AL
+AL
+Score = 8
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDAR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 3
+---------------------
+DAR
+DAR
+Score = 12
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 4
+---------------------
+DARA
+DARA
+Score = 16
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARAL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+DARAL
+DARAL
+Score = 20
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+DARAL
+DARAL
+Score = 20
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 5
+---------------------
+DARAL
+DARAL
+Score = 20
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 8
+---------------------
+DARALAVA
+DARALCVA
+Score = 22
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+---------------------
+Stats:
+    sequence count: 2
+    position count: 9
+---------------------
+DARALAVAA
+DARALCVAA
+Score = 26
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAAL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 10
+----------------------
+DARALAVAAL
+DARALCVAAL
+Score = 30
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 11
+----------------------
+DARALAVAALL
+DARALCVAALL
+Score = 34
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFM
+LastAA = M
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*I
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*IS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTE
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRE
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLREL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTN
+LastAA = N
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLK
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**H
+LastAA = H
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYAN
+LastAA = N
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSAR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*H
+LastAA = H
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH
+LastAA = H
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*K
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCH
+LastAA = H
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLH
+LastAA = H
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDE
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDER
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*H
+LastAA = H
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCH
+LastAA = H
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTH
+LastAA = H
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGE
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGEL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*K
+LastAA = K
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*
+LastAA = *
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*S
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLY
+LastAA = Y
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQ
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCT
+LastAA = T
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWN
+LastAA = N
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCC
+LastAA = C
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSE
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSES
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRI
+LastAA = I
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSL
+LastAA = L
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLV
+LastAA = V
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDAS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSP
+LastAA = P
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRAS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSAS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAE
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFF
+LastAA = F
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFGD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFGDG
+LastAA = G
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFGDGW
+LastAA = W
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFGDGWA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFGDGWAE
+LastAA = E
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFGDGWAEA
+LastAA = A
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFGDGWAEAQ
+LastAA = Q
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFGDGWAEAQR
+LastAA = R
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFGDGWAEAQRD
+LastAA = D
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
+newStringProtein = ALPSLWVDVDAQGFAVRRTLHNEGCAGASGVDARALAVAALLVVLVPSIFMP*ISYSKVGDTEGVTKSVTLVTLLGSRLRELCTTNVVLVTPRVSLKVSL**HFWVRVYANSARRTSCW*HRGCH*KCHFSDTFGFAFTRTLHDERR*HRGCHYCVTLVTHCAGELRTLFVLTY*I*KIV*SFYDYVFYWLGPRSVLYQCTFGAFVVWNRCCSESRIRSLVDASSPRASRGSASFRAEAFFGDGWAEAQRDS
+LastAA = S
+RefSeq = KVCVVFGLMALAFPNWWLDVGTLGGARLDARALCVAALLVILTP*
+Alignment = TabularMSA[Protein]
+----------------------
+Stats:
+    sequence count: 2
+    position count: 12
+----------------------
+DARALAVAALLV
+DARALCVAALLV
+Score = 38
