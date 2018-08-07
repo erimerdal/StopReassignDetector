@@ -34,7 +34,7 @@ class MasterFile:
     #   ...
     # ;     G-nad5 ==> end
 
-    def __init__(self, infile, kmer_length = 20, extension_length = 1, threshold = 15, gap_open_penalty = -2, match_score = 6, mismatch_penalty = -4, allow = 1):
+    def __init__(self, infile, kmer_length = 50, extension_length = 1, threshold = 100, gap_open_penalty = -2, match_score = 6, mismatch_penalty = -4, allow = 1):
         # Parameters:
             # Infile parameter should be a list of Master Files obtained from MFannot results.
                 # TODO: Maybe we can include in our code MFannot command line tools so a person can input as fasta.
@@ -133,7 +133,7 @@ class MasterFile:
             Blosum62Matrix = returnBlosumMatrix()
             # Traverses non-reference_sequences and do local alignment with reference, stores their scores.
             for j in range(len(original_sequences_protein)):
-                submat = make_identity_substitution_matrix(4, -2, alphabet='ARNDCQEGHILKMFPSTWYVBZX*')
+                submat = make_identity_substitution_matrix(5, -2, alphabet='ARNDCQEGHILKMFPSTWYVBZX*')
                     # TODO: Try to add scores for match/mismatch etc.
                 original_string = Protein(str(original_sequences_protein[j]))
                 reference_string = Protein(str(reference_sequence_protein))
@@ -146,6 +146,8 @@ class MasterFile:
                 start_end.append(start_end_positions)
                 alignments.append(alignment)
 
+            # Transform extensions of reference to protein too.
+            reference_extension = []
             # Finds extensions
             for j in range(len(non_reference_species)):
                 for k in range(len(list_of_extended_dictionaries)):
@@ -156,6 +158,13 @@ class MasterFile:
                                 if count == 1:
                                     break
                                 extensions.append(list_of_extended_dictionaries[k]['sequences'][l])
+                                count = count + 1
+                    else:
+                        for l in range(len(list_of_extended_dictionaries[k]['genes_list'])):
+                            if genes[j] == list_of_extended_dictionaries[k]['genes_list'][l]:
+                                if count == 1:
+                                    break
+                                reference_extension.append(list_of_extended_dictionaries[k]['sequences'][l])
                                 count = count + 1
 
             # Depending on parameter extension_length, trims extensions if necessary
@@ -201,9 +210,23 @@ class MasterFile:
                 table_id = non_reference_species_id[j]
                 gene = Seq(allowed_extensions[j],generic_dna)
                 protein = gene.translate(table = table_id)
+
                 allowed_extensions_protein.append(protein)
 
-            score = {'gene_name': common_genes[i], 'original_species': non_reference_species, 'original_sequences': original_sequences, 'original_sequences_protein': original_sequences_protein, 'reference_specie': reference_species[i], 'reference_sequences': reference_sequence, 'reference_sequence_protein': reference_sequence_protein, 'scores': scores, 'start_end': start_end, 'alignments': alignments, 'extensions': allowed_extensions,
+            # reference_extension_protein is created.
+            # reference_extensions cleared from ! signs.
+            reference_extension_holder = []
+            reference_extension_protein = []
+            for j in range(len(reference_extension)):
+                reference_extension_holder.append(reference_extension[j].replace("!",""))
+            for j in range(len(reference_extension)):
+                gene = Seq(reference_extension_holder[j],generic_dna)
+                protein = gene.translate(table = 22)
+                reference_extension_protein.append(protein)
+
+            score = {'gene_name': common_genes[i], 'original_species': non_reference_species, 'original_sequences': original_sequences, 'original_sequences_protein': original_sequences_protein, 'reference_specie': reference_species[i],
+            'reference_sequences': reference_sequence, 'reference_sequence_protein': reference_sequence_protein, 'reference_extension': reference_extension_holder, 'reference_extension_protein':reference_extension_protein, 'scores': scores,
+             'start_end': start_end, 'alignments': alignments, 'extensions': allowed_extensions,
              'extensions_protein': allowed_extensions_protein}
             scores_dictionary.append(score)
 
@@ -231,9 +254,10 @@ class MasterFile:
                     f.write("Specie: %s\n" % scores_dictionary[i]['original_species'][j])
                     species.append(scores_dictionary[i]['original_species'][j])
                     length_of_extension = len(scores_dictionary[i]['extensions'][j])
-                    f.write("Protein Length Original: %s\n" % len(scores_dictionary[i]['original_sequences_protein'][j]))
-                    f.write("Protein Length (Original + Extension): %s\n" % (length_of_extension + len(scores_dictionary[i]['original_sequences_protein'][j])))
-                    f.write("Protein Length Reference: %s\n" % len(scores_dictionary[i]['reference_sequence_protein']))
+                    f.write("Protein Length Original: %d\n" % len(scores_dictionary[i]['original_sequences_protein'][j]))
+                    f.write("Protein Length (Original + Extension): %d\n" % (length_of_extension + len(scores_dictionary[i]['original_sequences_protein'][j])))
+                    f.write("Protein Length Reference: %d\n" % len(scores_dictionary[i]['reference_sequence_protein']))
+                    f.write("Protein Length (Reference + Extension): %d\n" % (len(scores_dictionary[i]['reference_sequence_protein']) + len(str(scores_dictionary[i]['reference_extension_protein']))))
                     f.write('Start/End L.A= %s\n' % scores_dictionary[i]['start_end'][j])
                     # their extended sequence should be divided into k-mers
                     # If it has extensions, divide them and concatenate each of them with
@@ -255,7 +279,13 @@ class MasterFile:
                     end_position_original = scores_dictionary[i]['start_end'][j][0][1]
                     concatenate_original = scores_dictionary[i]['original_sequences_protein'][j][end_position_original:]
 
-                    reference_sequence_right = scores_dictionary[i]['reference_sequence_protein'][end_position_reference:]
+
+                    reference_sequence_right_initial = scores_dictionary[i]['reference_sequence_protein'][end_position_reference:]
+                    reference_sequence_right_arr = []
+                    reference_sequence_right_arr.append(str(reference_sequence_right_initial))
+                    reference_sequence_right_arr.append(str(scores_dictionary[i]['reference_extension_protein'][j]))
+                    reference_sequence_right = ''.join(reference_sequence_right_arr)
+
                     divisible_extensions = concatenate_original + scores_dictionary[i]['extensions_protein'][j]
                     extensions = []
                     amount = int(length_of_extension/division_amount)
@@ -280,14 +310,20 @@ class MasterFile:
                                         "for this specie is maybe not the correct stop codon.\n")
                                         # Determine stop codon assigned to the specie:
                                         # TODO: !! Possible problem with this written on notebook.
-                                        f.write("Wrong stop codon: %s\n" % scores_dictionary[i]['original_sequences'][j][-3:])
-                                        f.write("Alignment = %s\n" % alignment)
+                                        f.write("Possibly wrong stop codon: %s\n" % scores_dictionary[i]['original_sequences'][j][-3:])
+                                        totalSeq = scores_dictionary[i]['original_sequences'][j] + scores_dictionary[i]['extensions'][j]
                                         # Calculate start end positions.
                                         # start_location = start of the extension + other extensions before * their length + end of local alignment
                                         start_location = start_end_positions[0][0] + len(extensions[0])*k + scores_dictionary[i]['start_end'][j][0][1]
+                                        # start_location_r = end location of initial alignment + start position
+                                        start_location_r = start_end_positions[1][0] + scores_dictionary[i]['start_end'][j][1][1]
                                         # end_location = end of the extension + other extensions before * their length + end of local alignment
                                         end_location = start_end_positions[0][1] + len(extensions[0])*k + scores_dictionary[i]['start_end'][j][0][1]
-                                        f.write("Start/End = (%s,%s)\n" % (start_location,end_location))
+                                        end_location_r = start_end_positions[1][1] + scores_dictionary[i]['start_end'][j][1][1]
+                                        f.write("Possible stop codon after position: %s\n" % end_location)
+                                        # totalSeq[end_location*3:end_location*3+3]
+                                        f.write("Alignment = %s\n" % alignment)
+                                        f.write("Start/End = Original/Reference (%s,%s),(%s,%s)\n" % (start_location,end_location,start_location_r,end_location_r))
                                         f.write("Score = %s\n" % score)
                                         f.write('---\n\n')
                                         found = True
@@ -406,110 +442,118 @@ class MasterFile:
             genes = []
             # For all common genes that these species have:
             for y in range(len(common_genes)):
-                if not reference_species[y] == list_of_dictionaries[x]['species_name']:
-                    currentWD = os.getcwd()
-                    handle = open(currentWD + "/" + infile[x], 'r')
-                    line = handle.readline()
-                    start_end_count = 0
-                    extension = []
-                    reverse_extension = []
-                    while True:
-                        if not line:
-                            break
-                        if line.startswith(';') and not line.startswith(';;'):
-                            geneName = line[1:].rstrip()
-                            fullgenename = " ".join(geneName.split())
-                            iterate = fullgenename.split(" ")
-                            # Necessary informations are parsed
-                            genename = iterate[0]
-                            updown = iterate[1]
-                            startend = iterate[2]
-                            # We have found our gene
-                            if genename == common_genes[y]:
-                                # For the reverse genes we have a different approach than non-reverse genes.
-                                if updown == "<==":
-                                    if startend == "end":
-                                        genes.append(genename)
-                                        currentWD = os.getcwd()
-                                        reverse_handle = open(currentWD + "/" + infile[x], 'r')
-                                        from_line = 0
-                                        to_line = 0
-                                        for i in range(len(reverse_gene_order[x])):
-                                            if reverse_gene_order[x][i] == genename:
-                                                to_line = line_numbers[x][i]
-                                                from_line = line_numbers[x][i-1]
-                                                break
+                #if not reference_species[y] == list_of_dictionaries[x]['species_name']:
+                # Decided to take extensions for reference too.
+                currentWD = os.getcwd()
+                handle = open(currentWD + "/" + infile[x], 'r')
+                line = handle.readline()
+                start_end_count = 0
+                extension = []
+                reverse_extension = []
+                while True:
+                    if not line:
+                        break
+                    if line.startswith(';') and not line.startswith(';;'):
+                        geneName = line[1:].rstrip()
+                        fullgenename = " ".join(geneName.split())
+                        iterate = fullgenename.split(" ")
+                        # Necessary informations are parsed
+                        genename = iterate[0]
+                        updown = iterate[1]
+                        startend = iterate[2]
+                        # We have found our gene
+                        if genename == common_genes[y]:
+                            # For the reverse genes we have a different approach than non-reverse genes.
+                            if updown == "<==":
+                                if startend == "end":
+                                    genes.append(genename)
+                                    currentWD = os.getcwd()
+                                    reverse_handle = open(currentWD + "/" + infile[x], 'r')
+                                    from_line = 0
+                                    to_line = 0
+                                    for i in range(len(reverse_gene_order[x])):
+                                        if reverse_gene_order[x][i] == genename:
+                                            to_line = line_numbers[x][i]
+                                            from_line = line_numbers[x][i-1]
+                                            break
 
-                                        for i in range(from_line):
-                                            reverse_line = reverse_handle.readline()
+                                    for i in range(from_line):
+                                        reverse_line = reverse_handle.readline()
 
-                                        for i in range(from_line,to_line):
-                                            string = genename + " "
-                                            if string in reverse_line:
-                                                break
-                                            reverse_extension.append(reverse_line.rstrip())
-                                            if reverse_line.startswith(';;') or reverse_line.startswith(';'):
-                                                reverse_extension.remove(reverse_line.rstrip())
-                                            reverse_line = reverse_handle.readline()
-                                        sequence = "".join(reverse_extension).replace(" ", "").replace("\r", "")
-                                        sequence = re.sub("\d","",sequence)
-                                        # Reversing extensions seem like a better option
-                                        sequence_reversed = reverse_sequence(sequence)
-                                        extended_sequences.append(sequence_reversed[::-1])
+                                    for i in range(from_line,to_line):
+                                        string = genename + " "
+                                        if string in reverse_line:
+                                            break
+                                        reverse_extension.append(reverse_line.rstrip())
+                                        if reverse_line.startswith(';;') or reverse_line.startswith(';'):
+                                            reverse_extension.remove(reverse_line.rstrip())
+                                        reverse_line = reverse_handle.readline()
+                                    sequence = "".join(reverse_extension).replace(" ", "").replace("\r", "")
+                                    sequence = re.sub("\d","",sequence)
+                                    # Reversing extensions seem like a better option
+                                    sequence_reversed = reverse_sequence(sequence)
+                                    extended_sequences.append(sequence_reversed[::-1])
 
-                                start_end_count = start_end_count + 1;
+                            start_end_count = start_end_count + 1;
 
-                                # This is for the non-reverse gene extensions
-                                if start_end_count == 2:
-                                    if startend == "end":
-                                        # Go until another gene starts
-                                        line = handle.readline()
-                                        genes.append(genename)
-                                        while True:
-                                            if line.startswith(';'):
-                                                geneName = line[1:].rstrip()
-                                                fullgenename = " ".join(geneName.split())
-                                                iterate = fullgenename.split(" ")
-                                                # Necessary informations are parsed
-                                                genename = iterate[0]
-                                                updown = iterate[1]
-                                                startend = iterate[2]
-                                                if startend == "start":
-                                                    if updown == "==>":
-                                                        break;
-                                                    else:
-                                                        line = handle.readline()
+                            # This is for the non-reverse gene extensions
+                            if start_end_count == 2:
+                                if startend == "end":
+                                    # Go until another gene starts
+                                    line = handle.readline()
+                                    genes.append(genename)
+                                    while True:
+                                        if line.startswith(';'):
+                                            geneName = line[1:].rstrip()
+                                            fullgenename = " ".join(geneName.split())
+                                            iterate = fullgenename.split(" ")
+                                            # Necessary informations are parsed
+                                            genename = iterate[0]
+                                            updown = iterate[1]
+                                            startend = iterate[2]
+                                            if startend == "start":
+                                                if updown == "==>":
+                                                    break;
                                                 else:
                                                     line = handle.readline()
-
-                                            if not line:
-                                                break
                                             else:
-                                                extension.append(line.rstrip())
-                                                # Removes other genes starting or end.
-                                                if line.startswith(';;') or line.startswith(';'):
-                                                    extension.remove(line.rstrip())
                                                 line = handle.readline()
-                                        # Format the sequence in a better, readable format.
-                                        sequence = "".join(extension).replace(" ", "").replace("\r", "")
-                                        sequence = re.sub("\d","",sequence)
 
-                                        extended_sequences.append(sequence)
+                                        if not line:
+                                            break
+                                        else:
+                                            extension.append(line.rstrip())
+                                            # Removes other genes starting or end.
+                                            if line.startswith(';;') or line.startswith(';'):
+                                                extension.remove(line.rstrip())
+                                            line = handle.readline()
+                                    # Format the sequence in a better, readable format.
+                                    sequence = "".join(extension).replace(" ", "").replace("\r", "")
+                                    sequence = re.sub("\d","",sequence)
 
-                                    else:
-                                        line = handle.readline()
+                                    extended_sequences.append(sequence)
+
                                 else:
                                     line = handle.readline()
                             else:
                                 line = handle.readline()
                         else:
                             line = handle.readline()
+                    else:
+                        line = handle.readline()
 
             # Add all the necessary information to a dictionary to return.
             extended_dict = {'species_name': list_of_dictionaries[x]['species_name'] , 'genes_list': genes, 'sequences': extended_sequences}
+
             # Add each dictionary / per specie to a list of dictionaries.
             list_of_extended_dictionaries.append(extended_dict)
-
+        # for i in range(len(list_of_extended_dictionaries)):
+        #     if "minor" in list_of_extended_dictionaries[i]['species_name']:
+        #         print(list_of_extended_dictionaries[i]['species_name'])
+        #         print(len(list_of_extended_dictionaries[i]['genes_list']))
+        #         for j in range(len(list_of_extended_dictionaries[i]['genes_list'])):
+        #             print(list_of_extended_dictionaries[i]['genes_list'][j])
+        #             print(list_of_extended_dictionaries[i]['sequences'][j])
         return common_genes, reference_species, list_of_extended_dictionaries
 
 
