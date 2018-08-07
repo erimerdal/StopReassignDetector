@@ -133,7 +133,7 @@ class MasterFile:
             Blosum62Matrix = returnBlosumMatrix()
             # Traverses non-reference_sequences and do local alignment with reference, stores their scores.
             for j in range(len(original_sequences_protein)):
-                submat = make_identity_substitution_matrix(4, -6, alphabet='ARNDCQEGHILKMFPSTWYVBZX*')
+                submat = make_identity_substitution_matrix(4, -2, alphabet='ARNDCQEGHILKMFPSTWYVBZX*')
                     # TODO: Try to add scores for match/mismatch etc.
                 original_string = Protein(str(original_sequences_protein[j]))
                 reference_string = Protein(str(reference_sequence_protein))
@@ -235,8 +235,6 @@ class MasterFile:
                     f.write("Protein Length (Original + Extension): %s\n" % (length_of_extension + len(scores_dictionary[i]['original_sequences_protein'][j])))
                     f.write("Protein Length Reference: %s\n" % len(scores_dictionary[i]['reference_sequence_protein']))
                     f.write('Start/End L.A= %s\n' % scores_dictionary[i]['start_end'][j])
-                    #f.write('Original Detected Stop Codon: %s' % detectedStop)
-                    f.write('---\n\n')
                     # their extended sequence should be divided into k-mers
                     # If it has extensions, divide them and concatenate each of them with
                     # original sequence and then do local alignment, then store their scores.
@@ -291,6 +289,7 @@ class MasterFile:
                                         end_location = start_end_positions[0][1] + len(extensions[0])*k + scores_dictionary[i]['start_end'][j][0][1]
                                         f.write("Start/End = (%s,%s)\n" % (start_location,end_location))
                                         f.write("Score = %s\n" % score)
+                                        f.write('---\n\n')
                                         found = True
                                 except IndexError:
                                     pass
@@ -298,273 +297,15 @@ class MasterFile:
                                 pass
                     else:
                         f.write("No possible extension detected.\n")
-                        f.write("Last stop codon: %s\n" % scores_dictionary[i]['original_sequences'][j][-3:])
+                        f.write('---\n\n')
                     if not found:
-                        f.write("No high similarity detected after initial local alignment. Probably last stop codon detected is correct.\n")
+                        f.write("No high similarity detected after initial local alignment.\n")
+                        f.write("Stop codon detected by MFannot: %s in position: %s\n" % (scores_dictionary[i]['original_sequences'][j][-3:],len(scores_dictionary[i]['original_sequences'][j])-3))
                         lastPositionInitialAlign = scores_dictionary[i]['start_end'][j][0][1]
                         initial_holder = scores_dictionary[i]['original_sequences'][j][lastPositionInitialAlign*3:]
                         # If no similarity found last stop codon is the end of initial local alignment
-                        f.write("Last stop codon: %s\n" % initial_holder[-3:])
-
-                    # divide_nmer = 5
-                    # starts_lists = []
-                    # before_maximum_lists = []
-                    # if not maximum_score_index == -1:
-                    #     # Divide the maximum score in divide_nmers starting from 0,1,2,.. to include frameshifts.
-                    #     for i in range(divide_nmer):
-                    #         before_maximum = ""
-                    #         print(extensions[maximum_score_index])
-                    #         starts_i = split_len(str(extensions[maximum_score_index]),divide_nmer, i)
-                    #         print(starts_i)
-                    #         starts_lists.append(starts_i)
-                    #         for j in range(maximum_score_index):
-                    #             before_maximum = before_maximum + extensions[j]
-                    #         before_maximum = before_maximum + extensions[maximum_score_index][:i]
-                    #         print(before_maximum)
-                    #         before_maximum_lists.append(before_maximum)
-                    #         newString = []
-                    #         newString.append(str(before_maximum))
-                    #     # Now for each of these divisions we will gather scores until we find the maximum one.
-                    #     # For starts_0:
-                    #     # Concatenate maximum extension with before extensions:
-                    #     newString = []
-                    #     newString.append(str(before_maximum))
-                    #     scores_0, alignments_0, end_start_0 = [],[],[]
-                    #     for k in range(len(starts_0)-1):
-                    #         newString.append(str(starts_0[k]))
-                    #         newStringProtein = Protein(str(''.join(newString)))
-                    #         try:
-                    #             refseq = Protein(str(reference_sequence_right))
-                    #             try:
-                    #                 alignment, score, start_end_positions = local_pairwise_align_ssw(
-                    #                 newStringProtein,
-                    #                 refseq,
-                    #                 substitution_matrix = submat,
-                    #                 )
-                    #                 scores_0.append(score)
-                    #                 alignments_0.append(alignment)
-                    #                 end_start_0.append(start_end_positions)
-                    #             except IndexError:
-                    #                 scores_0.append(0)
-                    #                 alignments_0.append("Nothing")
-                    #                 end_start_0.append(0)
-                    #         except ValueError:
-                    #             scores_0.append(0)
-                    #             alignments_0.append("Nothing")
-                    #             end_start_0.append(0)
-                    #     # Find best for scores_0
-                    #     bestScore_0 = 0
-                    #     bestIndex_0 = 0
-                    #     for k in range(len(scores_0)):
-                    #         if scores_0[k] > bestScore_0:
-                    #             bestScore_0 = scores_0[k]
-                    #             bestIndex_0 = k
-                    #     # For starts_1:
-                    #     newString = []
-                    #     newString.append(str(before_maximum))
-                    #     scores_1, alignments_1, end_start_1 = [],[],[]
-                    #     for k in range(len(starts_1)-1):
-                    #         newString.append(str(starts_1[k]))
-                    #         newStringProtein = Protein(str(''.join(newString)))
-                    #         try:
-                    #             refseq = Protein(str(reference_sequence_right))
-                    #             try:
-                    #                 alignment, score, start_end_positions = local_pairwise_align_ssw(
-                    #                 newStringProtein,
-                    #                 refseq,
-                    #                 substitution_matrix = submat,
-                    #                 )
-                    #                 scores_1.append(score)
-                    #                 alignments_1.append(alignment)
-                    #                 end_start_1.append(start_end_positions)
-                    #             except IndexError:
-                    #                 scores_1.append(0)
-                    #                 alignments_1.append("Nothing")
-                    #                 end_start_1.append(0)
-                    #         except ValueError:
-                    #             scores_1.append(0)
-                    #             alignments_1.append("Nothing")
-                    #             end_start_1.append(0)
-                    #     # Find best for scores_0
-                    #     bestScore_1 = 0
-                    #     bestIndex_1 = 0
-                    #     for k in range(len(scores_1)):
-                    #         if scores_1[k] > bestScore_1:
-                    #             bestScore_1 = scores_1[k]
-                    #             bestIndex_1 = k
-                    #
-                    #     # For starts_2:
-                    #     newString = []
-                    #     newString.append(str(before_maximum))
-                    #     scores_2, alignments_2, end_start_2 = [],[],[]
-                    #     for k in range(len(starts_2)-1):
-                    #         newString.append(str(starts_2[k]))
-                    #         newStringProtein = Protein(str(''.join(newString)))
-                    #         try:
-                    #             refseq = Protein(str(reference_sequence_right))
-                    #             try:
-                    #                 alignment, score, start_end_positions = local_pairwise_align_ssw(
-                    #                 newStringProtein,
-                    #                 refseq,
-                    #                 substitution_matrix = submat,
-                    #                 )
-                    #                 scores_2.append(score)
-                    #                 alignments_2.append(alignment)
-                    #                 end_start_2.append(start_end_positions)
-                    #             except IndexError:
-                    #                 scores_2.append(0)
-                    #                 alignments_2.append("Nothing")
-                    #                 end_start_2.append(0)
-                    #         except ValueError:
-                    #             scores_2.append(0)
-                    #             alignments_2.append("Nothing")
-                    #             end_start_2.append(0)
-                    #     # Find best for scores_0
-                    #     bestScore_2 = 0
-                    #     bestIndex_2 = 0
-                    #     for k in range(len(scores_2)):
-                    #         if scores_2[k] > bestScore_2:
-                    #             bestScore_2 = scores_2[k]
-                    #             bestIndex_2 = k
-                    #     # Find best frameshift and best index of the alignment.
-                    #     best_total_shift = -1
-                    #     best_total_index = -1
-                    #     best_total_score = -1
-                    #     if bestScore_0 >= bestScore_1:
-                    #         if bestScore_0 >= bestScore_2:
-                    #             best_total_shift = 0
-                    #             best_total_index = bestIndex_0
-                    #             best_total_score = bestScore_0
-                    #         else:
-                    #             best_total_shift = 2
-                    #             best_total_index = bestIndex_2
-                    #             best_total_score = bestScore_2
-                    #     else:
-                    #         if bestScore_1 >= bestScore_2:
-                    #             best_total_shift = 1
-                    #             best_total_index = bestIndex_1
-                    #             best_total_score = bestScore_1
-                    #         else:
-                    #             best_total_shift = 2
-                    #             best_total_index = bestIndex_2
-                    #             best_total_score = bestScore_2
-                    #     # Determine possible stop codon. Possible stop codon is the best_total_index of the best_total_shift
-                    #     possibleStopCodon = ""
-                    #
-                    #     left_extension = end_start[maximum_score_index][0][0]
-                    #     right_extension = end_start[maximum_score_index][0][1]
-                    #     left_reference = end_start[maximum_score_index][1][0]
-                    #     right_reference = end_start[maximum_score_index][1][1]
-                    #     if best_total_shift == 0:
-                    #         possibleStopCodon = starts_0[best_total_index]
-                    #     elif best_total_shift == 1:
-                    #         possibleStopCodon = starts_1[best_total_index]
-                    #     else:
-                    #         possibleStopCodon = starts_2[best_total_index]
-                    #
-                    #     try1_original_left = (end_position_original + left_extension) * 3
-                    #     try1_original_right = (try1_original_left + 9)
-                    #     try2 = necessary_total[try1_original_left-12:try1_original_right+12]
-                    #     gene = Seq(try2,generic_dna)
-                    #     protein = gene.translate(table = 1)
-                    #     # Now search possible Stop Codon in protein and determine start-end locations correctly.
-                    #     # Maybe include 1 more aminoacid to the right while taking best 3-mer.
-                    #     # => 4 or 3 aminoacids for each gene, print them as possible stop codons.
-                    #     threeMer,threeMer1,threeMer2 = "a","b","c"
-                    #     for i in range(len(str(protein))-2):
-                    #         if str(protein)[i:i+3] == possibleStopCodon:
-                    #             startLoc = i
-                    #             threeMer = try2[startLoc+3*i-3:startLoc+3*i+6]
-                    #             threeMer1 = try2[startLoc+3*i-2:startLoc+3*i+7]
-                    #             threeMer2 = try2[startLoc+3*i-4:startLoc+3*i+5]
-                    #             break
-                    #     # Considering Frameshifts.
-                    #     gene = Seq(threeMer,generic_dna)
-                    #     protein = gene.translate(table = 1)
-                    #     gene1 = Seq(threeMer1,generic_dna)
-                    #     protein1 = gene1.translate(table = 1)
-                    #     gene2 = Seq(threeMer2,generic_dna)
-                    #     protein2 = gene2.translate(table = 1)
-                    #
-                    #     if str(protein) == possibleStopCodon:
-                    #         f.write("--List--\n")
-                    #         f.write("Protein: %s\n" % protein)
-                    #         possibleStopCodonList = [threeMer[i:i+3] for i in range(0, len(threeMer), 3)]
-                    #         for i in range(len(possibleStopCodonList)):
-                    #             f.write("%s\n" % possibleStopCodonList[i])
-                    #         f.write("\n")
-                    #     elif str(protein1) == possibleStopCodon:
-                    #         f.write("--List--\n")
-                    #         f.write("Protein: %s\n" % protein1)
-                    #         possibleStopCodonList = [threeMer1[i:i+3] for i in range(0, len(threeMer1), 3)]
-                    #         for i in range(len(possibleStopCodonList)):
-                    #             f.write("%s\n" % possibleStopCodonList[i])
-                    #         f.write("\n")
-                    #     else:
-                    #         f.write("--List--\n")
-                    #         f.write("Protein: %s\n" % protein2)
-                    #         possibleStopCodonList = [threeMer2[i:i+3] for i in range(0, len(threeMer2), 3)]
-                    #         for i in range(len(possibleStopCodonList)):
-                    #             f.write("%s\n" % possibleStopCodonList[i])
-                    #         f.write("\n")
-                        # else:
-                        #     f.write("None found. Probably the last codon in sequence is correct stop codon.\n")
-                        #     f.write("\n")
-
-
-
-                                # lastCodon = try2[-3:] # Now we have the last codon.
-                                # # Complete sequence to look for
-                                # checkBefore = try1[:3*(right_extension + end_position_original + x*amount + 1)]
-                                # # Complete sequence to look for in a reversed format
-                                # checkBeforeReverse = checkBefore[::-1]
-                                # # Divide to 3-mers from beginning.
-                                # mers3 = getSubStrings(checkBeforeReverse, 0)
-                                # # Search in the sequence if there is a same codon. Frameshifts are ignored.
-                                # found = False
-                                # for search in range(1,len(mers3)):
-                                #     if mers3[search] == lastCodon[::-1]:
-                                #         found = True
-                                #         break
-                                #
-                                # if not found:
-                                #     f.write("\n")
-                                #     f.write("LOCAL ALIGNMENTS WITH EXTENSIONS:\n")
-                                #     f.write("-------------------------------\n")
-                                #     f.write("Specie: %s\n" % scores_dictionary[i]['original_species'][j])
-                                #     f.write("Reference Distance From End: %s\n" % distanceReference)
-                                #     f.write("Original Distance From End: %s\n" % distanceOriginal)
-                                #     f.write("Score: %.2f\n" % newScore)
-                                #     f.write("Start/End E.: [(%s, %s), (%s, %s)]\n" % (left_extension + end_position_original + x*amount, right_extension + end_position_original + x*amount + 1, left_reference + end_position_reference, right_reference + end_position_reference))
-                                #     tempOriginal = scores_dictionary[i]['original_sequences_protein'][j] + scores_dictionary[i]['extensions_protein'][j]
-                                #     #Original S.P: %s" % tempOriginal[end_position_original + amount*x + left_extension: end_position_original + right_extension + amount*x + 1])
-                                #     #Reference S.P: %s" % scores_dictionary[i]['reference_sequence_protein'][left_reference + end_position_reference:right_reference + end_position_reference + 1])
-                                #     f.write("Alignment: %s\n" % alignments[x])
-                                #     f.write("POSSIBLE REASSIGNED STOP CODON: %s\n" % lastCodon)
-                                #     f.write("\n")
-                                #
-                                # found = False
-
-            # # For each possible gene and their reference sequences
-            # #print("REFERENCE SEQUENCE REASSIGNMENT RESULT:")
-            # #print("-------------------------------")
-            # for i in range(len(scores_dictionary)):
-            #     #print("Gene name: %s" % scores_dictionary[i]['gene_name'])
-            #     #print("Reference specie: %s" % scores_dictionary[i]['reference_specie'])
-            #     reference_sequence = scores_dictionary[i]['reference_sequences']
-            #     reference_sequence_protein = scores_dictionary[i]['reference_sequence_protein']
-            #     # Divide reference sequence protein into extensions.
-            #     divisions_protein = split_len(reference_sequence_protein, amount)
-            #     # For each non-reference species:
-            #     for j in range(len(scores_dictionary[i]['original_sequences_protein'])):
-            #         # Store score of the initial local alignment.
-            #         initial_score = scores_dictionary[i]['scores'][j]
-            #         initial_start_end = scores_dictionary[i]['start_end'][j]
-            #         # Now go backwards in divisions_protein and check if score is better than original.
-            #         count = 0
-            #         for k in range(len(divisions_protein),-1,-1):
-            #             new_reference_protein = new_reference_protein + divisions_protein[count]
-            #
+                        f.write("Possible stop codon detected by alignment with reference: %s in position: %s\n" % (initial_holder[-3:],lastPositionInitialAlign*3))
+                        f.write('---\n\n')
 
 
     def _internal_extendedparser(self, infile, list_of_dictionaries):
