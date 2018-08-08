@@ -241,7 +241,8 @@ class MasterFile:
                 filename = scores_dictionary[i]['gene_name'] + ".txt"
                 f= open(filename,"w+")
                 os.rename(currentWD + "/" + filename, currentWD + "/Output/" + filename)
-                f.write("Reference Specie: %s\n\n" % scores_dictionary[i]['reference_specie'])
+                f.write("Reference Specie: %s\n" % scores_dictionary[i]['reference_specie'])
+                f.write("Stop Codon For Reference Specie: %s\n" % scores_dictionary[i]['reference_sequences'][-3:])
                 f.write("----- INITIAL LOCAL ALIGNMENT -----\n\n")
 
                 species = []
@@ -320,7 +321,8 @@ class MasterFile:
                                         # end_location = end of the extension + other extensions before * their length + end of local alignment
                                         end_location = start_end_positions[0][1] + len(extensions[0])*k + scores_dictionary[i]['start_end'][j][0][1]
                                         end_location_r = start_end_positions[1][1] + scores_dictionary[i]['start_end'][j][1][1]
-                                        f.write("Possible stop codon after position: %s\n" % end_location)
+                                        f.write("Length Concatanate Original: %s\n" % len(concatenate_original))
+                                        f.write("Possible stop codon after position: %s\n" % start_location)
                                         # totalSeq[end_location*3:end_location*3+3]
                                         f.write("Alignment = %s\n" % alignment)
                                         f.write("Start/End = Original/Reference (%s,%s),(%s,%s)\n" % (start_location,end_location,start_location_r,end_location_r))
@@ -674,7 +676,10 @@ class MasterFile:
                    reversedsequences[x] = sequences[x]
 
              master_dict = {'species_name': speciesname , 'species_id': specie_id, 'genes_list': genes, 'sequences': reversedsequences}
-
+             # if "Pseudomuriella" in master_dict['species_name']:
+             #     for j in range(len(master_dict['species_name'])):
+             #         if "cox3" in master_dict['genes_list'][j]:
+             #             print(master_dict['sequences'][j][::-1])
              return master_dict
 
 
