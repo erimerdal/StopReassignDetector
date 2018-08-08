@@ -234,6 +234,8 @@ class MasterFile:
         # for each gene
         # (gene1, [specie1, specie2, ..], [max_score1,max_score2, ..], [extension1, extension2, ..])
         genes_already_printed = []
+        found_dictionary_list = []
+        #found_table_dictionary = {'genes': scores_dictionary[0]['gene_name'],'species':non_reference_species,'stopCodons':}
         for i in range(len(scores_dictionary)):
             if not scores_dictionary[i]['gene_name'] in genes_already_printed:
                 # Create a gene file and move it to Output File.
@@ -248,9 +250,12 @@ class MasterFile:
                 species = []
                 max_scores = []
                 extended_alignments = []
+                true_false = []
+                stopCodons = []
                 genes_already_printed.append(scores_dictionary[i]['gene_name'])
                 # for each specie that is not reference
                 for j in range(len(scores_dictionary[i]['original_species'])):
+
                     necessary_total = scores_dictionary[i]['original_sequences'][j] + scores_dictionary[i]['extensions'][j]
                     f.write("Specie: %s\n" % scores_dictionary[i]['original_species'][j])
                     species.append(scores_dictionary[i]['original_species'][j])
@@ -291,6 +296,7 @@ class MasterFile:
                     extensions = []
                     amount = int(length_of_extension/division_amount)
                     newString = []
+
                     if not length_of_extension == 0:
                         extensions = split_len(divisible_extensions, amount,0)
                         found = False
@@ -344,6 +350,18 @@ class MasterFile:
                         # If no similarity found last stop codon is the end of initial local alignment
                         f.write("Possible stop codon detected by alignment with reference: %s in position: %s\n" % (initial_holder[-3:],lastPositionInitialAlign*3))
                         f.write('---\n\n')
+                        true_false.append(True)
+                        stopCodons.append(scores_dictionary[i]['original_sequences'][j][-3:])
+                    else:
+                        true_false.append(False)
+                        stopCodons.append(scores_dictionary[i]['original_sequences'][j][-3:])
+                found_dictionary = {'gene':scores_dictionary[i]['gene_name'],'species':scores_dictionary[0]['original_species'],'truefalse':true_false,'stopCodon':stopCodons}
+                found_dictionary_list.append(found_dictionary)
+                print(found_dictionary)
+                print("")
+        #print(genes_already_printed) : LIST OF ALL GENES
+        #print(non_reference_species) : LIST OF NON-REFERENCE SPECIES
+
 
 
     def _internal_extendedparser(self, infile, list_of_dictionaries):
