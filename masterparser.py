@@ -34,7 +34,7 @@ class MasterFile:
     #   ...
     # ;     G-nad5 ==> end
 
-    def __init__(self, infile, kmer_length = 5, threshold = 5, gap_open_penalty = -2, match_score = 6, mismatch_penalty = -4):
+    def __init__(self, infile, kmer_length = 10, threshold = 5, gap_open_penalty = -2, match_score = 6, mismatch_penalty = -4):
         # Parameters:
             # Infile parameter should be a list of Master Files obtained from MFannot results.
                 # TODO: Maybe we can include in our code MFannot command line tools so a person can input as fasta.
@@ -137,7 +137,7 @@ class MasterFile:
             # start_end: stores start_end results
             start_end = []
             # Traverses non-reference_sequences and do local alignment with reference, stores their scores.
-            for j in range(len(original_sequences_protein)):
+            for j in range(len(non_reference_species)):
                 # results: a list that stores scores, start_end and alignments.
                 # results = []
                 # ! Put pairs in correct order with start-end order.
@@ -151,11 +151,13 @@ class MasterFile:
                 suppress_sequences = True
                 )
                 #results.append(start_end_positions)
+
                 pairs_results.append(start_end_positions)
                 start_end.append(start_end_positions)
+
             # Now do pairwise between all original sequences:
-            for j in range(len(original_sequences_protein)-1):
-                for k in range(j+1,len(original_sequences_protein)):
+            for j in range(len(non_reference_species)-1):
+                for k in range(j+1,len(non_reference_species)):
                     # results = []
                     pairs_name.append("%s/%s" % (non_reference_species[j],non_reference_species[k]))
                     j_sequence = Protein(str(original_sequences_protein[j]))
@@ -169,6 +171,8 @@ class MasterFile:
                     # results.append(start_end_positions)
                     pairs_results.append(start_end_positions)
                     start_end.append(start_end_positions)
+
+
 
             # Finds extensions
             for j in range(len(non_reference_species)):
@@ -204,6 +208,9 @@ class MasterFile:
                 protein = gene.translate(table = table_id)
 
                 allowed_extensions_protein.append(protein)
+            # TODO: TODO: Order is weird you can fix it
+            complete_gene_list.append(pairs_name)
+            complete_gene_list.append(pairs_results)
 
             # Scores_list will be used for doing necessary calculations with extensions.
             score_dictionary = {'gene_name': common_genes[i], 'original_species': non_reference_species, 'original_sequences': original_sequences, 'original_sequences_protein': original_sequences_protein, 'reference_specie': reference_species[i],
@@ -211,84 +218,82 @@ class MasterFile:
              'extensions_protein': allowed_extensions_protein, 'start_end': start_end}
             scores_list.append(score_dictionary)
 
-        # for each gene
-        # (gene1, [specie1, specie2, ..], [max_score1,max_score2, ..], [extension1, extension2, ..])
-        genes_already_printed = []
-        found_dictionary_list = []
-        # Same thing for pairs_result except for extensions. TODO: Maybe include more than one possibility.
-
         # Here we will start a new, final chapter everyone!
         # First compare all sequences with reference sequence.
         for i in range(len(scores_list)):
             pairs_results_extensions = []
-            if not scores_list[i]['gene_name'] in genes_already_printed:
-                # TODO: Store gene name in the data structure.
-                genes_already_printed.append(scores_list[i]['gene_name'])
-                # Pairwise reference with each non-reference specie.
-                for j in range(len(scores_list[i]['original_species'])):
-                    # Divide extensions to k-mers.
-                    division_amount = 0
-                    if length_of_extension < kmer_length:
-                        division_amount = 1
-                    else:
-                        division_amount = int(length_of_extension/kmer_length)
-                    # Find the place left in reference sequence.
-                    end_position_reference = scores_list[i]['start_end'][0][1][1]
-                    # Find end position of original sequence.
-                    end_position_original = scores_list[i]['start_end'][j][0][1]
-                    # Take whats left of reference from initial local alignment.
-                    reference_sequence_right = scores_list[i]['reference_sequence_protein'][end_position_reference:]
-                    # Concatenate the last part of original sequence and the extensions for them.
-                    concatenated_original_seq = scores_list[i]['original_sequences_protein'][j][end_position_original:]
-                    concatenated = concatenated_original_seq + scores_list[i]['extensions_protein'][j]
-                    # Length of each k-mer
-                    amount = int(length_of_extension/division_amount)
-                    # List for storing k-mers
-                    divided_extensions = []
-                    # Store scores to find maximum scored one, preferably closest to the end of
-                    # initial local alignment.
-                    scores_alignments = []
-                    start_end_position_alignments = []
-                    if not length_of_extension == 0:
-                        divided_extensions = split_len(concatenated, amount,0)
-                        for k in range(len(divided_extensions)-1):
-                            newStringProtein = Protein(str(divided_extensions[k]))
+            # Pairwise reference with each non-reference specie.
+            for j in range(len(scores_list[i]['original_species'])):
+                # Divide extensions to k-mers.
+                division_amount = 0
+                if length_of_extension < kmer_length:
+                    division_amount = 1
+                else:
+                    division_amount = int(length_of_extension/kmer_length)
+                # Find the place left in reference sequence.
+                end_position_reference = scores_list[i]['start_end'][0][1][1]
+                # Find end position of original sequence.
+                end_position_original = scores_list[i]['start_end'][j][0][1]
+                # Take whats left of reference from initial local alignment.
+                reference_sequence_right = scores_list[i]['reference_sequence_protein'][end_position_reference:]
+                # Concatenate the last part of original sequence and the extensions for them.
+                concatenated_original_seq = scores_list[i]['original_sequences_protein'][j][end_position_original:]
+                concatenated = concatenated_original_seq + scores_list[i]['extensions_protein'][j]
+                # Length of each k-mer
+                amount = int(length_of_extension/division_amount)
+                # List for storing k-mers
+                divided_extensions = []
+                # Store scores to find maximum scored one, preferably closest to the end of
+                # initial local alignment.
+                scores_alignments = []
+                start_end_position_alignments = []
+                if not length_of_extension == 0:
+                    divided_extensions = split_len(concatenated, amount,0)
+                    for k in range(len(divided_extensions)):
+                        newStringProtein = Protein(str(divided_extensions[k]))
+                        try:
+                            refseq = Protein(str(reference_sequence_right))
                             try:
-                                refseq = Protein(str(reference_sequence_right))
-                                try:
-                                    alignment, score, start_end_positions = local_pairwise_align_ssw(
-                                    newStringProtein,
-                                    refseq,
-                                    substitution_matrix = submat,
-                                    )
-                                    # Check if score is significant enough.
-                                    if score > threshold:
-                                        scores_alignments.append(score)
-                                        # Calculate start end position with respect to beginning.
-                                        # start_location = start of the extension + other extensions before * their length + end of local alignment
-                                        start_location = start_end_positions[0][0] + len(divided_extensions[0])*k + scores_list[i]['start_end'][j][0][1]
-                                        # start_location_r = end location of initial alignment + start position
-                                        start_location_r = start_end_positions[1][0] + scores_list[i]['start_end'][j][1][1]
-                                        # end_location = end of the extension + other extensions before * their length + end of local alignment
-                                        end_location = start_end_positions[0][1] + len(divided_extensions[0])*k + scores_list[i]['start_end'][j][0][1]
-                                        end_location_r = start_end_positions[1][1] + scores_list[i]['start_end'][j][1][1]
-                                        start_end_position_alignments.append("(%s,%s),(%s,%s)" % (start_location,end_location,start_location_r,end_location_r))
-                                except IndexError:
-                                    pass
-                            except ValueError:
-                                pass
-                best_start_end = "None"
-                best_score = 0
-                for i in range(len(scores_alignments)):
-                    if scores_alignments[i]/((i+1)**(1/2)) > best_score:
-                        best_score = scores_alignments[i]
-                        best_start_end = start_end_position_alignments[i]
-                pairs_results_extensions.append(best_start_end)
-            print(pairs_name)
-            print("")
-            print(pairs_results)
-            print("")
-            print(pairs_results_extensions)
+                                alignment, score, start_end_positions = local_pairwise_align_ssw(
+                                newStringProtein,
+                                refseq,
+                                substitution_matrix = submat,
+                                )
+                                # Check if score is significant enough.
+                                if score > threshold:
+                                    scores_alignments.append(score)
+                                    # Calculate start end position with respect to beginning.
+                                    # start_location = start of the extension + other extensions before * their length + end of local alignment
+                                    start_location = start_end_positions[0][0] + len(divided_extensions[0])*k + scores_list[i]['start_end'][j][0][1]
+                                    # start_location_r = end location of initial alignment + start position
+                                    start_location_r = start_end_positions[1][0] + scores_list[i]['start_end'][j][1][1]
+                                    # end_location = end of the extension + other extensions before * their length + end of local alignment
+                                    end_location = start_end_positions[0][1] + len(divided_extensions[0])*k + scores_list[i]['start_end'][j][0][1]
+                                    end_location_r = start_end_positions[1][1] + scores_list[i]['start_end'][j][1][1]
+                                    start_end_position_alignments.append("(%s,%s),(%s,%s)" % (start_location,end_location,start_location_r,end_location_r))
+                                else:
+                                    scores_alignments.append(0)
+                                    start_end_position_alignments.append("None")
+                            except IndexError:
+                                scores_alignments.append(0)
+                                start_end_position_alignments.append("None")
+                        except ValueError:
+                            scores_alignments.append(0)
+                            start_end_position_alignments.append("None")
+                    else:
+                        scores_alignments.append(0)
+                        start_end_position_alignments.append("None")
+            best_start_end = "None"
+            best_score = 0
+
+            for i in range(len(scores_alignments)):
+                if scores_alignments[i]/((i+1)**(1/2)) > best_score:
+                    best_score = scores_alignments[i]
+                    best_start_end = start_end_position_alignments[i]
+            pairs_results_extensions.append(best_start_end)
+            complete_gene_list.append(pairs_results_extensions)
+        for i in range(len(complete_gene_list)):
+            print(complete_gene_list[i])
             print("")
 
 
@@ -361,18 +366,18 @@ class MasterFile:
          #     1- We need to find which genes are common in all species, and store them.
          #     2- Filter the interesting genes
          # List of interesting genes: nad / atp / cob / cox / sdh / tat can be extended. Other genes are omitted.
-        common_genes = []
+        common_genes_3x = []
         for x in range(len(list_of_dictionaries[0]['genes_list'])):
             for y in range(1,len(list_of_dictionaries)):
                 for z in range(len(list_of_dictionaries[y]['genes_list'])):
                     if list_of_dictionaries[0]['genes_list'][x] == list_of_dictionaries[y]['genes_list'][z]:
                         if "G-nad" in list_of_dictionaries[0]['genes_list'][x] or "G-atp" in list_of_dictionaries[0]['genes_list'][x]:
-                            common_genes.append(list_of_dictionaries[0]['genes_list'][x])
+                            common_genes_3x.append(list_of_dictionaries[0]['genes_list'][x])
                         if "G-cob" in list_of_dictionaries[0]['genes_list'][x] or "G-cox" in list_of_dictionaries[0]['genes_list'][x]:
-                            common_genes.append(list_of_dictionaries[0]['genes_list'][x])
+                            common_genes_3x.append(list_of_dictionaries[0]['genes_list'][x])
                         if "G-sdh" in list_of_dictionaries[0]['genes_list'][x] or "G-tat" in list_of_dictionaries[0]['genes_list'][x]:
-                            common_genes.append(list_of_dictionaries[0]['genes_list'][x])
-
+                            common_genes_3x.append(list_of_dictionaries[0]['genes_list'][x])
+        common_genes = unique(common_genes_3x)
         # 3- Now that we have genes that are common and interesting, among all files we need to find
         #      the longest sequenced ones for that specific gene, to use it as a reference gene to compare
         #      with others later on.
@@ -807,6 +812,18 @@ def returnBlosumMatrix():
       }
     return Blosum62Matrix
 
+# function to get unique values
+def unique(list1):
+
+    # intilize a null list
+    unique_list = []
+
+    # traverse for all elements
+    for x in list1:
+        # check if exists in unique_list or not
+        if x not in unique_list:
+            unique_list.append(x)
+    return unique_list
 currentWD = os.getcwd()
 try:
     os.mkdir(os.path.expanduser(currentWD + "/Output"))
