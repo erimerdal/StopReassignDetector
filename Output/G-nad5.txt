@@ -1,41 +1,37 @@
 Reference Specie: Bracteacoccus_minor gc=22
-
+Stop Codon For Reference Specie: TCA
 ----- INITIAL LOCAL ALIGNMENT -----
+
+Specie: Bracteacoccus_aerius gc=1
+Protein Length Original: 674
+Protein Length (Original + Extension): 1272
+Protein Length Reference: 655
+Protein Length (Reference + Extension): 1509
+Start/End L.A= [(0, 667), (0, 653)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TAA in position: 2019
+Possible stop codon detected by alignment with reference: TAA in position: 2001
+---
+
+Specie: Pseudomuriella_schumacherensis gc=1
+Protein Length Original: 129
+Protein Length (Original + Extension): 393
+Protein Length Reference: 655
+Protein Length (Reference + Extension): 1509
+Start/End L.A= [(52, 63), (149, 158)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: CAT in position: 384
+Possible stop codon detected by alignment with reference: CAT in position: 189
+---
 
 Specie: Mychonastes_homosphaera gc=1
 Protein Length Original: 645
 Protein Length (Original + Extension): 652
 Protein Length Reference: 655
-Start/End L.A= [(3, 610), (3, 610)]
+Protein Length (Reference + Extension): 1509
+Start/End L.A= [(0, 622), (0, 620)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 1932
+Possible stop codon detected by alignment with reference: TCA in position: 1866
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Pseudomuriella_schumacherensis gc=1
-Protein Length Original: 129
-Protein Length (Original + Extension): 393
-Protein Length Reference: 655
-Start/End L.A= [(52, 55), (149, 152)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: CAT
-Specie: Bracteacoccus_aerius gc=1
-Protein Length Original: 674
-Protein Length (Original + Extension): 1272
-Protein Length Reference: 655
-Start/End L.A= [(0, 621), (0, 621)]
----
-
-High similarity detected after initial local alignment. Stop codon determined for this specie is maybe not the correct stop codon.
-Wrong stop codon: TAA
-Alignment = TabularMSA[Protein]
----------------------
-Stats:
-    sequence count: 2
-    position count: 9
----------------------
-DARALAVAA
-DARALCVAA
-Start/End = (652,660)
-Score = 26

@@ -1,41 +1,80 @@
 Reference Specie: Bracteacoccus_minor gc=22
-
+Stop Codon For Reference Specie: TCA
 ----- INITIAL LOCAL ALIGNMENT -----
+
+Specie: Bracteacoccus_aerius gc=1
+Protein Length Original: 148
+Protein Length (Original + Extension): 589
+Protein Length Reference: 148
+Protein Length (Reference + Extension): 1156
+Start/End L.A= [(0, 147), (0, 147)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TAA in position: 441
+Possible stop codon detected by alignment with reference: TAA in position: 441
+---
+
+Specie: Pseudomuriella_schumacherensis gc=1
+Protein Length Original: 24
+Protein Length (Original + Extension): 96
+Protein Length Reference: 148
+Protein Length (Reference + Extension): 1156
+Start/End L.A= [(17, 22), (6, 9)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: CCT in position: 69
+Possible stop codon detected by alignment with reference: CCT in position: 66
+---
 
 Specie: Mychonastes_homosphaera gc=1
 Protein Length Original: 146
 Protein Length (Original + Extension): 584
 Protein Length Reference: 148
-Start/End L.A= [(10, 130), (10, 130)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Pseudomuriella_schumacherensis gc=1
-Protein Length Original: 24
-Protein Length (Original + Extension): 96
-Protein Length Reference: 148
-Start/End L.A= [(17, 22), (6, 9)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: CCT
-Specie: Bracteacoccus_aerius gc=1
-Protein Length Original: 148
-Protein Length (Original + Extension): 589
-Protein Length Reference: 148
-Start/End L.A= [(0, 147), (0, 147)]
+Protein Length (Reference + Extension): 1156
+Start/End L.A= [(4, 145), (4, 145)]
+High similarity detected after initial local alignment. Stop codon determined for this specie is maybe not the correct stop codon.
+Possibly wrong stop codon: TCA
+Length Concatanate Original: 1
+Possible stop codon after position: 146
+Alignment = TabularMSA[Protein]
+-----------------------------------------------------
+Stats:
+    sequence count: 2
+    position count: 53
+-----------------------------------------------------
+FHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSYSM**YI*LC*F*VGTN
+FHLRIERL*SV*TPYFIYPPFFLLWCT*L*QSYDSSY*M**YI*LCLF*VGTN
+Start/End = Original/Reference (146,198),(146,198)
+Score = 251
 ---
 
 High similarity detected after initial local alignment. Stop codon determined for this specie is maybe not the correct stop codon.
-Wrong stop codon: TAA
+Possibly wrong stop codon: TCA
+Length Concatanate Original: 1
+Possible stop codon after position: 199
 Alignment = TabularMSA[Protein]
----------------------
+------------------------------------------------------
 Stats:
     sequence count: 2
-    position count: 4
----------------------
-IDPN
-IDPN
-Start/End = (252,255)
-Score = 16
+    position count: 54
+------------------------------------------------------
+LVSLTRLKKNFCKHKNIGENYVMRSPNSCKKSVTKTNL*MKLAKNLLKDAKTRD
+LVSLTRLKKNFCKHKNIGENYVMR*PN*CKKSVTKTNL*MKLAKNLLKDAKTRD
+Start/End = Original/Reference (199,252),(199,252)
+Score = 256
+---
+
+High similarity detected after initial local alignment. Stop codon determined for this specie is maybe not the correct stop codon.
+Possibly wrong stop codon: TCA
+Length Concatanate Original: 1
+Possible stop codon after position: 253
+Alignment = TabularMSA[Protein]
+---------------------------------------
+Stats:
+    sequence count: 2
+    position count: 39
+---------------------------------------
+TRRNTCTICPLLTRNKTFLLFHDRFIMNDPKHV*KRVRS
+TRRNTCTICPLLTRNKTFLLFHDRFIMNDPKHV*KRVRS
+Start/End = Original/Reference (253,291),(253,291)
+Score = 195
+---
+

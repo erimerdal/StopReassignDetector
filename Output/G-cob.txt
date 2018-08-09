@@ -1,33 +1,40 @@
 Reference Specie: Bracteacoccus_minor gc=22
-
+Stop Codon For Reference Specie: TCA
 ----- INITIAL LOCAL ALIGNMENT -----
+
+Specie: Bracteacoccus_aerius gc=1
+Protein Length Original: 410
+Protein Length (Original + Extension): 410
+Protein Length Reference: 400
+Protein Length (Reference + Extension): 1152
+Start/End L.A= [(7, 409), (1, 399)]
+No possible extension detected.
+---
+
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TAA in position: 1227
+Possible stop codon detected by alignment with reference: TAA in position: 1227
+---
+
+Specie: Pseudomuriella_schumacherensis gc=1
+Protein Length Original: 24
+Protein Length (Original + Extension): 96
+Protein Length Reference: 400
+Protein Length (Reference + Extension): 1152
+Start/End L.A= [(7, 9), (378, 380)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: CAG in position: 69
+Possible stop codon detected by alignment with reference: CAG in position: 27
+---
 
 Specie: Mychonastes_homosphaera gc=1
 Protein Length Original: 383
 Protein Length (Original + Extension): 416
 Protein Length Reference: 400
-Start/End L.A= [(3, 360), (7, 364)]
+Protein Length (Reference + Extension): 1152
+Start/End L.A= [(1, 366), (5, 370)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 1146
+Possible stop codon detected by alignment with reference: TCA in position: 1098
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Pseudomuriella_schumacherensis gc=1
-Protein Length Original: 24
-Protein Length (Original + Extension): 96
-Protein Length Reference: 400
-Start/End L.A= [(7, 9), (378, 380)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: CAG
-Specie: Bracteacoccus_aerius gc=1
-Protein Length Original: 410
-Protein Length (Original + Extension): 410
-Protein Length Reference: 400
-Start/End L.A= [(10, 386), (4, 380)]
----
-
-No possible extension detected.
-Last stop codon: TAA
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TAA

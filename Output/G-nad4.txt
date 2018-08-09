@@ -1,31 +1,48 @@
 Reference Specie: Bracteacoccus_minor gc=22
-
+Stop Codon For Reference Specie: TCA
 ----- INITIAL LOCAL ALIGNMENT -----
+
+Specie: Bracteacoccus_aerius gc=1
+Protein Length Original: 531
+Protein Length (Original + Extension): 2122
+Protein Length Reference: 505
+Protein Length (Reference + Extension): 1453
+Start/End L.A= [(0, 502), (0, 502)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TAG in position: 1590
+Possible stop codon detected by alignment with reference: TAG in position: 1506
+---
+
+Specie: Pseudomuriella_schumacherensis gc=1
+Protein Length Original: 508
+Protein Length (Original + Extension): 2030
+Protein Length Reference: 505
+Protein Length (Reference + Extension): 1453
+Start/End L.A= [(3, 491), (0, 488)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 1521
+Possible stop codon detected by alignment with reference: TCA in position: 1473
+---
 
 Specie: Mychonastes_homosphaera gc=1
 Protein Length Original: 508
 Protein Length (Original + Extension): 600
 Protein Length Reference: 505
-Start/End L.A= [(3, 481), (5, 483)]
+Protein Length (Reference + Extension): 1453
+Start/End L.A= [(3, 485), (5, 487)]
+High similarity detected after initial local alignment. Stop codon determined for this specie is maybe not the correct stop codon.
+Possibly wrong stop codon: TCA
+Length Concatanate Original: 23
+Possible stop codon after position: 505
+Alignment = TabularMSA[Protein]
+---------------------------------
+Stats:
+    sequence count: 2
+    position count: 33
+---------------------------------
+IQSYWSLTVSFLFCYY**MHLSAPDRGLNTAYL
+IV*YWSLTVSFLFCYY*LMHLSAPDRGLNTAYL
+Start/End = Original/Reference (505,537),(487,519)
+Score = 144
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Pseudomuriella_schumacherensis gc=1
-Protein Length Original: 508
-Protein Length (Original + Extension): 2030
-Protein Length Reference: 505
-Start/End L.A= [(63, 491), (60, 488)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Bracteacoccus_aerius gc=1
-Protein Length Original: 531
-Protein Length (Original + Extension): 2122
-Protein Length Reference: 505
-Start/End L.A= [(2, 489), (2, 489)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TAG

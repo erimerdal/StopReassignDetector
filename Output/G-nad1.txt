@@ -1,31 +1,37 @@
 Reference Specie: Bracteacoccus_minor gc=22
-
+Stop Codon For Reference Specie: TCA
 ----- INITIAL LOCAL ALIGNMENT -----
+
+Specie: Bracteacoccus_aerius gc=1
+Protein Length Original: 342
+Protein Length (Original + Extension): 598
+Protein Length Reference: 325
+Protein Length (Reference + Extension): 1177
+Start/End L.A= [(0, 321), (2, 323)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TAA in position: 1023
+Possible stop codon detected by alignment with reference: TAA in position: 963
+---
+
+Specie: Pseudomuriella_schumacherensis gc=1
+Protein Length Original: 323
+Protein Length (Original + Extension): 563
+Protein Length Reference: 325
+Protein Length (Reference + Extension): 1177
+Start/End L.A= [(0, 319), (2, 321)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 966
+Possible stop codon detected by alignment with reference: TCA in position: 957
+---
 
 Specie: Mychonastes_homosphaera gc=1
 Protein Length Original: 323
 Protein Length (Original + Extension): 335
 Protein Length Reference: 325
-Start/End L.A= [(4, 315), (7, 317)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Pseudomuriella_schumacherensis gc=1
-Protein Length Original: 323
-Protein Length (Original + Extension): 563
-Protein Length Reference: 325
-Start/End L.A= [(7, 314), (9, 316)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Bracteacoccus_aerius gc=1
-Protein Length Original: 342
-Protein Length (Original + Extension): 598
-Protein Length Reference: 325
+Protein Length (Reference + Extension): 1177
 Start/End L.A= [(0, 319), (2, 321)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 966
+Possible stop codon detected by alignment with reference: TCA in position: 957
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TAA

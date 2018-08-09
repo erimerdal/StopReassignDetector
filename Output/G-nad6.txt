@@ -1,31 +1,37 @@
 Reference Specie: Bracteacoccus_minor gc=22
-
+Stop Codon For Reference Specie: TCA
 ----- INITIAL LOCAL ALIGNMENT -----
+
+Specie: Bracteacoccus_aerius gc=1
+Protein Length Original: 217
+Protein Length (Original + Extension): 466
+Protein Length Reference: 210
+Protein Length (Reference + Extension): 1007
+Start/End L.A= [(0, 206), (3, 208)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TAG in position: 648
+Possible stop codon detected by alignment with reference: TAG in position: 618
+---
+
+Specie: Pseudomuriella_schumacherensis gc=1
+Protein Length Original: 210
+Protein Length (Original + Extension): 736
+Protein Length Reference: 210
+Protein Length (Reference + Extension): 1007
+Start/End L.A= [(0, 203), (0, 203)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 627
+Possible stop codon detected by alignment with reference: TCA in position: 609
+---
 
 Specie: Mychonastes_homosphaera gc=1
 Protein Length Original: 203
 Protein Length (Original + Extension): 228
 Protein Length Reference: 210
-Start/End L.A= [(15, 196), (18, 203)]
+Protein Length (Reference + Extension): 1007
+Start/End L.A= [(0, 196), (3, 203)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 606
+Possible stop codon detected by alignment with reference: TCA in position: 588
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Pseudomuriella_schumacherensis gc=1
-Protein Length Original: 210
-Protein Length (Original + Extension): 736
-Protein Length Reference: 210
-Start/End L.A= [(3, 203), (3, 203)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Bracteacoccus_aerius gc=1
-Protein Length Original: 217
-Protein Length (Original + Extension): 466
-Protein Length Reference: 210
-Start/End L.A= [(0, 206), (3, 208)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TAG
