@@ -35,7 +35,7 @@ class MasterCollection:
 
 
 class MasterFile:
-
+    GENES_TO_EXTEND = ['nad', 'atp', 'cox', 'cob', 'shd']
     def __init__(self, infile):
         # Parameters:
             # kmer_length: An integer which decides how many nucleotides/extension block should be.
