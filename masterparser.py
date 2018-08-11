@@ -236,7 +236,7 @@ class MasterFile:
                 else:
                     division_amount = int(length_of_extension/kmer_length)
                 # Find the place left in reference sequence.
-                end_position_reference = scores_list[i]['start_end'][0][1][1]
+                end_position_reference = scores_list[i]['start_end'][j][1][1]
                 # Find end position of original sequence.
                 end_position_original = scores_list[i]['start_end'][j][0][1]
                 # Take whats left of reference from initial local alignment.
@@ -285,83 +285,139 @@ class MasterFile:
                         except ValueError:
                             scores_alignments.append(0)
                             start_end_position_alignments.append("None")
-                    else:
-                        scores_alignments.append(0)
-                        start_end_position_alignments.append("None")
+                else:
+                    scores_alignments.append(0)
+                    start_end_position_alignments.append("None")
                 best_start_end = "None"
                 best_score = 0
 
-                for i in range(len(scores_alignments)):
-                    if scores_alignments[i]/((i+1)**(1/2)) > best_score:
-                        best_score = scores_alignments[i]
-                        best_start_end = start_end_position_alignments[i]
+                for j in range(len(scores_alignments)):
+                    if scores_alignments[j]/((i+1)**(1/2)) > best_score:
+                        best_score = scores_alignments[j]
+                        best_start_end = start_end_position_alignments[j]
                 pairs_results_extensions.append(best_start_end)
                 data3_temporary.append(pairs_results_extensions)
         # pairwise.
+        for i in range(len(scores_list)):
             for j in range(len(scores_list[i]['original_species'])-1):
                 for k in range(1,len(scores_list[i]['original_species'])):
                     pairs_results_extensions = []
-                    length_of_extension_i = len(scores_list[i]['extensions_protein'][j])
+                    length_of_extension_j = len(scores_list[i]['extensions_protein'][j])
                     length_of_extension_k = len(scores_list[i]['extensions_protein'][k])
                     # Divide extensions to k-mers.
-                    # division_amount = 0
-                    # if length_of_extension < kmer_length:
-                    #     division_amount = 1
-                    # else:
-                    #     division_amount = int(length_of_extension/kmer_length)
-                    # # Find the place left in reference sequence.
-                    # end_position_reference = scores_list[i]['start_end'][0][1][1]
-                    # # Find end position of original sequence.
-                    # end_position_original = scores_list[i]['start_end'][j][0][1]
-                    # # Take whats left of reference from initial local alignment.
-                    # reference_sequence_right = scores_list[i]['reference_sequence_protein'][end_position_reference:]
-                    # # Concatenate the last part of original sequence and the extensions for them.
-                    # concatenated_original_seq = scores_list[i]['original_sequences_protein'][j][end_position_original:]
-                    # concatenated = concatenated_original_seq + scores_list[i]['extensions_protein'][j]
-                    # # Length of each k-mer
-                    # amount = int(length_of_extension/division_amount)
-                    # # List for storing k-mers
-                    # divided_extensions = []
-                    # # Store scores to find maximum scored one, preferably closest to the end of
-                    # # initial local alignment.
-                    # scores_alignments = []
-                    # start_end_position_alignments = []
-                    # if not length_of_extension == 0:
-                    #     divided_extensions = split_len(concatenated, amount,0)
-                    #     for k in range(len(divided_extensions)):
+                    division_amount_j = 1
+                    division_amount_k = 1
+                    if not length_of_extension_j < kmer_length:
+                        division_amount_j = int(length_of_extension_j/kmer_length)
+                    if not length_of_extension_k < kmer_length:
+                        division_amount_k = int(length_of_extension_k/kmer_length)
+
+                    # Find the place left in reference sequence
+                    orig_spec = len(scores_list[i]['original_species'])
+                    j_loc = j + orig_spec
+                    # TODO: Check this calculation, possibly wrong.
+                    end_position_j = scores_list[i]['start_end'][j_loc][0][1]
+                    end_position_k = scores_list[i]['start_end'][j_loc][1][1]
+                    # Take whats left of reference from initial local alignment.
+                    j_sequence_right = scores_list[i]['original_sequences_protein'][j][end_position_j:]
+                    k_sequence_right = scores_list[i]['original_sequences_protein'][k][end_position_k:]
+                    j_sequence_total = j_sequence_right + scores_list[i]['extensions_protein'][j]
+                    k_sequence_total = k_sequence_right + scores_list[i]['extensions_protein'][k]
+                    # Length of each k-mer
+                    amount_j = int(length_of_extension_j/division_amount_j)
+                    amount_k = int(length_of_extension_k/division_amount_k)
+
+                    # List for storing k-mers
+                    divided_extensions_j = []
+                    divided_extensions_k = []
+                    # Store scores to find maximum scored one, preferably closest to the end of
+                    # initial local alignment.
+                    scores_alignments = []
+                    start_end_position_alignments = []
+                    if not length_of_extension_k == 0 and not length_of_extension_j == 0:
+                        divided_extensions_j = split_len(j_sequence_total, amount_j,0)
+                        divided_extensions_k = split_len(k_sequence_total, amount_k,0)
+                        # First slide j
+                        for l in range(len(divided_extensions_j)):
+                            # Now we have to extend them both in the double for loop and collect scores.
+                            protein_j = Protein(str(divided_extensions_j[l]))
+                            # protein_k = Protein(str(divided_extensions_k))
+                            try:
+                                j_sequence = Protein(str(protein_j))
+                                k_sequence = Protein(str(k_sequence_total))
+                                try:
+                                    alignment, score, start_end_positions = local_pairwise_align_ssw(
+                                    j_sequence,
+                                    k_sequence,
+                                    substitution_matrix = submat,
+                                    )
+                                    if score > threshold:
+                                        scores_alignments.append(score)
+                                        # Calculate start end position with respect to beginning.
+                                        # start_location = start of the extension + other extensions before * their length + end of local alignment
+                                        start_location = start_end_positions[0][0] + len(divided_extensions_j[0])*l + scores_list[i]['start_end'][j][0][1]
+                                        # start_location_r = end location of initial alignment + start position
+                                        start_location_r = start_end_positions[1][0] + scores_list[i]['start_end'][j][1][1]
+                                        # end_location = end of the extension + other extensions before * their length + end of local alignment
+                                        end_location = start_end_positions[0][1] + len(divided_extensions_j[0])*l + scores_list[i]['start_end'][j][0][1]
+                                        end_location_r = start_end_positions[1][1] + scores_list[i]['start_end'][j][1][1]
+                                        start_end_position_alignments.append("(%s,%s),(%s,%s)" % (start_location,end_location,start_location_r,end_location_r))
+                                    else:
+                                        scores_alignments.append(0)
+                                        start_end_position_alignments.append("None")
+                                except IndexError:
+                                    scores_alignments.append(0)
+                                    start_end_position_alignments.append("None")
+                            except ValueError:
+                                scores_alignments.append(0)
+                                start_end_position_alignments.append("None")
+                    else:
+                        scores_alignments.append(0)
+                        start_end_position_alignments.append("None")
+                    best_start_end = "None"
+                    best_score = 0
+                    for k in range(len(scores_alignments)):
+                        if scores_alignments[k]/((k+1)**(1/2)) > best_score:
+                            best_score = scores_alignments[k]
+                            best_start_end = start_end_position_alignments[k]
+                    data4_temporary.append(best_start_end)
+
+
+                    # Find best score in sliding j, then we will slide k.
+
                     #         newStringProtein = Protein(str(divided_extensions[k]))
                     #         try:
                     #             refseq = Protein(str(reference_sequence_right))
-                    #             try:
-                    #                 alignment, score, start_end_positions = local_pairwise_align_ssw(
-                    #                 newStringProtein,
-                    #                 refseq,
-                    #                 substitution_matrix = submat,
-                    #                 )
+                                # try:
+                                #     alignment, score, start_end_positions = local_pairwise_align_ssw(
+                                #     newStringProtein,
+                                #     refseq,
+                                #     substitution_matrix = submat,
+                                #     )
                     #                 # Check if score is significant enough.
-                    #                 if score > threshold:
-                    #                     scores_alignments.append(score)
-                    #                     # Calculate start end position with respect to beginning.
-                    #                     # start_location = start of the extension + other extensions before * their length + end of local alignment
-                    #                     start_location = start_end_positions[0][0] + len(divided_extensions[0])*k + scores_list[i]['start_end'][j][0][1]
-                    #                     # start_location_r = end location of initial alignment + start position
-                    #                     start_location_r = start_end_positions[1][0] + scores_list[i]['start_end'][j][1][1]
-                    #                     # end_location = end of the extension + other extensions before * their length + end of local alignment
-                    #                     end_location = start_end_positions[0][1] + len(divided_extensions[0])*k + scores_list[i]['start_end'][j][0][1]
-                    #                     end_location_r = start_end_positions[1][1] + scores_list[i]['start_end'][j][1][1]
-                    #                     start_end_position_alignments.append("(%s,%s),(%s,%s)" % (start_location,end_location,start_location_r,end_location_r))
-                    #                 else:
-                    #                     scores_alignments.append(0)
-                    #                     start_end_position_alignments.append("None")
-                    #             except IndexError:
-                    #                 scores_alignments.append(0)
-                    #                 start_end_position_alignments.append("None")
-                    #         except ValueError:
-                    #             scores_alignments.append(0)
-                    #             start_end_position_alignments.append("None")
-                    #     else:
-                    #         scores_alignments.append(0)
-                    #         start_end_position_alignments.append("None")
+                        #             if score > threshold:
+                        #                 scores_alignments.append(score)
+                        #                 # Calculate start end position with respect to beginning.
+                        #                 # start_location = start of the extension + other extensions before * their length + end of local alignment
+                        #                 start_location = start_end_positions[0][0] + len(divided_extensions[0])*k + scores_list[i]['start_end'][j][0][1]
+                        #                 # start_location_r = end location of initial alignment + start position
+                        #                 start_location_r = start_end_positions[1][0] + scores_list[i]['start_end'][j][1][1]
+                        #                 # end_location = end of the extension + other extensions before * their length + end of local alignment
+                        #                 end_location = start_end_positions[0][1] + len(divided_extensions[0])*k + scores_list[i]['start_end'][j][0][1]
+                        #                 end_location_r = start_end_positions[1][1] + scores_list[i]['start_end'][j][1][1]
+                        #                 start_end_position_alignments.append("(%s,%s),(%s,%s)" % (start_location,end_location,start_location_r,end_location_r))
+                        #             else:
+                        #                 scores_alignments.append(0)
+                        #                 start_end_position_alignments.append("None")
+                        #         except IndexError:
+                        #             scores_alignments.append(0)
+                        #             start_end_position_alignments.append("None")
+                        #     except ValueError:
+                        #         scores_alignments.append(0)
+                        #         start_end_position_alignments.append("None")
+                        # else:
+                        #     scores_alignments.append(0)
+                        #     start_end_position_alignments.append("None")
                     # best_start_end = "None"
                     # best_score = 0
                     # for i in range(len(scores_alignments)):
