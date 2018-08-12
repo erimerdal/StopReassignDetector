@@ -34,7 +34,7 @@ class MasterFile:
     #   ...
     # ;     G-nad5 ==> end
 
-    def __init__(self, infile, kmer_length = 10, threshold = 5, gap_open_penalty = -2, match_score = 6, mismatch_penalty = -4):
+    def __init__(self, infile, kmer_length = 15, threshold = 0, gap_open_penalty = -2, match_score = 6, mismatch_penalty = -4):
         # Parameters:
             # Infile parameter should be a list of Master Files obtained from MFannot results.
                 # TODO: Maybe we can include in our code MFannot command line tools so a person can input as fasta.
@@ -58,7 +58,7 @@ class MasterFile:
         common_genes, reference_species, list_of_extended_dictionaries = self._internal_extendedparser(infile,list_of_dictionaries)
         # Constructor sends all collected information to align and give a meaning to the results.
         information_dictionary = self._alignments(list_of_dictionaries,list_of_extended_dictionaries, kmer_length, threshold, gap_open_penalty, match_score, mismatch_penalty, reference_species, common_genes)
-        self._give_meaning(information_dictionary)
+        self._give_meaning(information_dictionary,common_genes)
 
     def _alignments(self, list_of_dictionaries,list_of_extended_dictionaries, kmer_length, threshold, gap_open_penalty, match_score, mismatch_penalty, reference_species, common_genes):
         list_of_formatted_dictionaries = []
@@ -487,19 +487,35 @@ class MasterFile:
                 totalPoints6 += data6_temporary[i][j]
                 totalPoints7 += data7_temporary[i][j]
             if totalPoints6 >= totalPoints7:
-                data8_temporary.append(data4_temporary[i])
+                data3_temporary.append(data4_temporary[i])
             else:
-                data8_temporary.append(data5_temporary[i])
+                data3_temporary.append(data5_temporary[i])
 
-        # Information are stored in 1,2,3,8
+        # Information are stored in 1,2,3
+        data3_unique = []
         for i in range(len(data3_temporary)):
-            data3_temporary[i].append(data8_temporary[i])
-
-        information_dictionary = {'pairs': data1_temporary, 'initials': data2_temporary, 'extensions': data3_temporary}
+            for j in range(len(data3_temporary[i])):
+                if data3_temporary[i][j] not in data3_unique:
+                    data3_unique.append(data3_temporary[i][j])
+        information_dictionary = {'pairs': data1_temporary, 'initials': data2_temporary, 'extensions': data3_unique}
         return information_dictionary
 
-    def _give_meaning(self,information_dictionary):
-        print("Geldim ulan buraya kadar.")
+    def _give_meaning(self,information_dictionary,common_genes):
+        # print(len(information_dictionary['pairs'])) = 13
+        # print(len(information_dictionary['initials'])) = 13
+        # print(len(information_dictionary['extensions']))
+        for i in range(len(information_dictionary['pairs'])):
+            print("Gene: %s" % common_genes[i]) # For each gene.
+            print("")
+            for j in range(len(information_dictionary['pairs'][i])): # For each pair for that gene
+                print("Pair: %s" % information_dictionary['pairs'][i][j])
+                print("Initial Local Alignment: %s" % information_dictionary['initials'][i][j])
+                print("")
+
+        for i in range(len(information_dictionary['extensions'])):
+            print(information_dictionary['extensions'][i])
+                #Using only initial local alignment.
+
 
     def _internal_extendedparser(self, infile, list_of_dictionaries):
          # For each gene that is common, we need to find if the gene is extendable or not.
