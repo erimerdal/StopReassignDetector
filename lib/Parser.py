@@ -63,6 +63,7 @@ class MasterFile:
             # allow: An integer boolean that decides if we allow original sequence + extensions to be longer than reference sequence.
 
         self.infile = infile
+        self.full_genome = ""
         self.sequences = self._internal_mfileparser(self.infile)
 
     def format_genome(self, sformat='fasta'):
@@ -160,6 +161,7 @@ class MasterFile:
                         # If they are lowercase, this means they belong
                         # to an intron which should not be taken into the sequence.
                         pos, seq = line.split()
+                        self.full_genome += seq # saving whole genome
                         if not seq.islower():  # sequence is exon
                             for g in gene_tracker:  # if the gene is not removed already, it's its sequence
                                 sequences[g] += seq
@@ -198,8 +200,7 @@ class MasterFile:
         # 3- Now that we have genes that are common and interesting, among all files we need to find
         #      the longest sequenced ones for that specific gene, to use it as a reference gene to compare
         #      with others later on.
-        reference_species = find_reference_species(
-            common_genes, list_of_dictionaries)
+        reference_species = find_reference_species(common_genes, list_of_dictionaries)
 
         # 5- For each gene except the longest stored one, find extensions and store them
         list_of_extended_dictionaries = []
