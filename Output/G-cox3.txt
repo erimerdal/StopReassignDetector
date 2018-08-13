@@ -1,53 +1,34 @@
-Reference Specie: Bracteacoccus_minor gc=22
-
+Reference Specie: Bracteacoccus_aerius gc=1
+Stop Codon For Reference Specie: TAA
 ----- INITIAL LOCAL ALIGNMENT -----
+
+Specie: Bracteacoccus_minor gc=22
+Protein Length Original: 295
+Protein Length (Original + Extension): 1180
+Protein Length Reference: 378
+Start/End L.A= [(0, 293), (11, 304)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 882
+Possible stop codon detected by alignment with reference: TCA in position: 879
+---
 
 Specie: Mychonastes_homosphaera gc=1
 Protein Length Original: 312
 Protein Length (Original + Extension): 885
-Protein Length Reference: 295
-Start/End L.A= [(13, 269), (2, 261)]
+Protein Length Reference: 378
+Start/End L.A= [(3, 299), (1, 302)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TAA in position: 933
+Possible stop codon detected by alignment with reference: TAA in position: 897
 ---
 
-High similarity detected after initial local alignment. Stop codon determined for this specie is maybe not the correct stop codon.
-Wrong stop codon: TAA
-Alignment = TabularMSA[Protein]
----------------------
-Stats:
-    sequence count: 2
-    position count: 4
----------------------
-CVLQ
-CVLQ
-Start/End = (283,286)
-Score = 16
-High similarity detected after initial local alignment. Stop codon determined for this specie is maybe not the correct stop codon.
-Wrong stop codon: TAA
-Alignment = TabularMSA[Protein]
----------------------
-Stats:
-    sequence count: 2
-    position count: 5
----------------------
-RLDAF
-RLDAF
-Start/End = (293,297)
-Score = 20
-Specie: Pseudomuriella_schumacherensis gc=1
-Protein Length Original: 150
-Protein Length (Original + Extension): 600
-Protein Length Reference: 295
-Start/End L.A= [(30, 33), (284, 287)]
+Specie: Chromochloris_zofingiensis gc=1
+Protein Length Original: 294
+Protein Length (Original + Extension): 961
+Protein Length Reference: 378
+Start/End L.A= [(18, 283), (14, 272)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 879
+Possible stop codon detected by alignment with reference: TCA in position: 849
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TAA
-Specie: Bracteacoccus_aerius gc=1
-Protein Length Original: 378
-Protein Length (Original + Extension): 1447
-Protein Length Reference: 295
-Start/End L.A= [(11, 304), (0, 293)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TAA

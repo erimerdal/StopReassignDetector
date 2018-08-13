@@ -1,41 +1,34 @@
 Reference Specie: Bracteacoccus_minor gc=22
-
+Stop Codon For Reference Specie: TCA
 ----- INITIAL LOCAL ALIGNMENT -----
 
 Specie: Mychonastes_homosphaera gc=1
 Protein Length Original: 146
 Protein Length (Original + Extension): 584
 Protein Length Reference: 148
-Start/End L.A= [(10, 130), (10, 130)]
+Start/End L.A= [(4, 145), (4, 145)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 435
+Possible stop codon detected by alignment with reference: TCA in position: 435
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Pseudomuriella_schumacherensis gc=1
-Protein Length Original: 24
-Protein Length (Original + Extension): 96
+Specie: Chromochloris_zofingiensis gc=1
+Protein Length Original: 145
+Protein Length (Original + Extension): 348
 Protein Length Reference: 148
-Start/End L.A= [(17, 22), (6, 9)]
+Start/End L.A= [(9, 129), (10, 130)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 432
+Possible stop codon detected by alignment with reference: TCA in position: 387
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: CCT
 Specie: Bracteacoccus_aerius gc=1
 Protein Length Original: 148
 Protein Length (Original + Extension): 589
 Protein Length Reference: 148
 Start/End L.A= [(0, 147), (0, 147)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TAA in position: 441
+Possible stop codon detected by alignment with reference: TAA in position: 441
 ---
 
-High similarity detected after initial local alignment. Stop codon determined for this specie is maybe not the correct stop codon.
-Wrong stop codon: TAA
-Alignment = TabularMSA[Protein]
----------------------
-Stats:
-    sequence count: 2
-    position count: 4
----------------------
-IDPN
-IDPN
-Start/End = (252,255)
-Score = 16

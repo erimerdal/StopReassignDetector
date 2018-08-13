@@ -1,31 +1,34 @@
-Reference Specie: Bracteacoccus_minor gc=22
-
+Reference Specie: Bracteacoccus_aerius gc=1
+Stop Codon For Reference Specie: TAG
 ----- INITIAL LOCAL ALIGNMENT -----
+
+Specie: Bracteacoccus_minor gc=22
+Protein Length Original: 505
+Protein Length (Original + Extension): 1454
+Protein Length Reference: 531
+Start/End L.A= [(0, 502), (0, 502)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 1512
+Possible stop codon detected by alignment with reference: TCA in position: 1506
+---
 
 Specie: Mychonastes_homosphaera gc=1
 Protein Length Original: 508
 Protein Length (Original + Extension): 600
-Protein Length Reference: 505
-Start/End L.A= [(3, 481), (5, 483)]
+Protein Length Reference: 531
+Start/End L.A= [(3, 499), (5, 501)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 1521
+Possible stop codon detected by alignment with reference: TCA in position: 1497
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Pseudomuriella_schumacherensis gc=1
-Protein Length Original: 508
-Protein Length (Original + Extension): 2030
-Protein Length Reference: 505
-Start/End L.A= [(63, 491), (60, 488)]
+Specie: Chromochloris_zofingiensis gc=1
+Protein Length Original: 504
+Protein Length (Original + Extension): 704
+Protein Length Reference: 531
+Start/End L.A= [(5, 498), (5, 499)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 1509
+Possible stop codon detected by alignment with reference: TCA in position: 1494
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Bracteacoccus_aerius gc=1
-Protein Length Original: 531
-Protein Length (Original + Extension): 2122
-Protein Length Reference: 505
-Start/End L.A= [(2, 489), (2, 489)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TAG

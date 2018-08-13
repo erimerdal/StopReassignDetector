@@ -1,31 +1,34 @@
-Reference Specie: Bracteacoccus_minor gc=22
-
+Reference Specie: Bracteacoccus_aerius gc=1
+Stop Codon For Reference Specie: TGA
 ----- INITIAL LOCAL ALIGNMENT -----
+
+Specie: Bracteacoccus_minor gc=22
+Protein Length Original: 101
+Protein Length (Original + Extension): 329
+Protein Length Reference: 107
+Start/End L.A= [(0, 99), (0, 99)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 300
+Possible stop codon detected by alignment with reference: TCA in position: 297
+---
 
 Specie: Mychonastes_homosphaera gc=1
 Protein Length Original: 97
 Protein Length (Original + Extension): 106
-Protein Length Reference: 101
-Start/End L.A= [(3, 95), (7, 99)]
+Protein Length Reference: 107
+Start/End L.A= [(1, 96), (5, 100)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TCA in position: 288
+Possible stop codon detected by alignment with reference: TCA in position: 288
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TCA
-Specie: Pseudomuriella_schumacherensis gc=1
-Protein Length Original: 27
-Protein Length (Original + Extension): 109
-Protein Length Reference: 101
-Start/End L.A= [(0, 3), (48, 51)]
+Specie: Chromochloris_zofingiensis gc=1
+Protein Length Original: 99
+Protein Length (Original + Extension): 396
+Protein Length Reference: 107
+Start/End L.A= [(0, 97), (2, 99)]
+No high similarity detected after initial local alignment.
+Stop codon detected by MFannot: TAA in position: 294
+Possible stop codon detected by alignment with reference: TAA in position: 291
 ---
 
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: GCA
-Specie: Bracteacoccus_aerius gc=1
-Protein Length Original: 107
-Protein Length (Original + Extension): 428
-Protein Length Reference: 101
-Start/End L.A= [(0, 99), (0, 99)]
----
-
-No high similarity detected after initial local alignment. Probably last stop codon detected is correct.
-Last stop codon: TGA
