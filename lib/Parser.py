@@ -15,6 +15,8 @@ def find_reference_species(common_genes, mfilelist):
                 (seq['species_name'], len(seq['sequences'].get(g, ''))))
         # use second element
         spec_max_len = max(cand_per_spec, key=lambda x: x[1])
+        # print(g, spec_max_len)
+        # print(cand_per_spec)
         ref_spec.append(spec_max_len[0])
     return ref_spec
 
@@ -74,13 +76,13 @@ class MasterFile:
         if not sformat == 'fasta':
             raise NotImplementedError('Other format are not implemented')
 
-        for g in self.sequences['genes_list']:
+        for g in ['G-atp6']:#self.sequences['genes_list']:
             seq = self.sequences['sequences'].get(g, '')
             cur_header = '>{gname} {specname}'.format(
                 gname=g, specname=self.sequences['species_name'])
             pos = self.sequences['gpos'].get(g)
             if pos:
-                cur_header += "{size} ({start}:{end})".format(
+                cur_header += ", {size} ({start}:{end})".format(
                     size=len(seq), start=pos[0], end=pos[1])
             complete_genomes += cur_header + "\n" + seq + "\n"
 
