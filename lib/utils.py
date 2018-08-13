@@ -1,4 +1,5 @@
 import os
+import re
 
 REV_DICT = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}
 
@@ -16,3 +17,6 @@ def split_len(seq, length, position):
 # getSubStrings(): Divides the given sequence "RNA" into 3-mers i.e [0-3,1-4,2-5 etc.]. Position should be 0,1 or 2.
 def getSubStrings(RNA, position):
     return [RNA[i:i+3] for i in range(position, len(RNA), 3)]
+
+def list_filter(l1, reflist):
+    return [x for y in reflist for x in l1  if y in x]

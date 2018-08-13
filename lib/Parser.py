@@ -1,6 +1,22 @@
-from .utils import reverse_sequence
+from .utils import reverse_sequence, list_filter
 from collections import defaultdict as ddict
 import re
+import itertools
+
+
+def find_reference_species(common_genes, mfilelist):
+    """Return the species with the longuest sequence for each gene"""
+    ref_spec = []
+    for g in common_genes:
+        cand_per_spec = []
+        for seq in mfilelist:
+            # eventual case it's empty
+            cand_per_spec.append(
+                (seq['species_name'], len(seq['sequences'].get(g, ''))))
+        # use second element
+        spec_max_len = max(cand_per_spec, key=lambda x: x[1])
+        ref_spec.append(spec_max_len[0])
+    return ref_spec
 
 
 class MasterCollection:
@@ -36,6 +52,7 @@ class MasterCollection:
 
 class MasterFile:
     GENES_TO_EXTEND = ['nad', 'atp', 'cox', 'cob', 'shd']
+
     def __init__(self, infile):
         # Parameters:
             # kmer_length: An integer which decides how many nucleotides/extension block should be.
@@ -164,58 +181,25 @@ class MasterFile:
             return master_dict
 
     @classmethod
-    def extendedparser(cls, infile, list_of_dictionaries):
-         # For each gene that is common, we need to find if the gene is extendable or not.
-         #     1- We need to find which genes are common in all species, and store them.
-         #     2- Filter the interesting genes
-         # List of interesting genes: nad / atp / cob / cox / sdh / tat can be extended. Other genes are omitted.
-        common_genes_3x = []
-        for x in range(len(list_of_dictionaries[0]['genes_list'])):
-            for y in range(1, len(list_of_dictionaries)):
-                for z in range(len(list_of_dictionaries[y]['genes_list'])):
-                    if list_of_dictionaries[0]['genes_list'][x] == list_of_dictionaries[y]['genes_list'][z]:
-                        if "G-nad" in list_of_dictionaries[0]['genes_list'][x] or "G-atp" in list_of_dictionaries[0]['genes_list'][x]:
-                            common_genes_3x.append(
-                                list_of_dictionaries[0]['genes_list'][x])
-                        if "G-cob" in list_of_dictionaries[0]['genes_list'][x] or "G-cox" in list_of_dictionaries[0]['genes_list'][x]:
-                            common_genes_3x.append(
-                                list_of_dictionaries[0]['genes_list'][x])
-                        if "G-sdh" in list_of_dictionaries[0]['genes_list'][x] or "G-tat" in list_of_dictionaries[0]['genes_list'][x]:
-                            common_genes_3x.append(
-                                list_of_dictionaries[0]['genes_list'][x])
-        # no need of additional function
-        common_genes = list(set(common_genes_3x))
+    def extendedparser(cls, infiles, list_of_dictionaries, selected_genes=None):
+        """Extend the 3' sequence for each genes in the collection of genomes"""
+        # For each gene that is common, we need to find if the gene is extendable or not.
+        #     1- We need to find which genes are common in all species, and store them.
+        #     2- Filter the interesting genes
+        # List of interesting genes: nad / atp / cob / cox / sdh / tat can be extended. Other genes are omitted.
+
+        # Simplified logic for common_genes finder
+        if not selected_genes:
+            selected_genes = cls.GENES_TO_EXTEND
+        common_genes = [list_filter(l_of_d['genes_list'], selected_genes)
+                        for l_of_d in list_of_dictionaries]
+        # flatten list and select unique values
+        common_genes = list(set(itertools.chain.from_iterable(common_genes)))
         # 3- Now that we have genes that are common and interesting, among all files we need to find
         #      the longest sequenced ones for that specific gene, to use it as a reference gene to compare
         #      with others later on.
-        reference_species = []
-        sequence_lengths = []
-        for x in range(len(common_genes)):
-            for y in range(len(infile)):
-                for z in range(len(list_of_dictionaries[y]['genes_list'])):
-                    if list_of_dictionaries[y]['genes_list'][z] == common_genes[x]:
-                        sequence_lengths.append(
-                            len(list_of_dictionaries[y]['sequences'][z]))
-
-        # 4- Now find the longest of these for each gene and store which specie it is.
-        #      4.a- Divide in chunks of size species.
-        chunks = [sequence_lengths[x*len(infile):x*len(infile)+len(infile)]
-                  for x in range(0, int(len(sequence_lengths)/len(infile)))]
-        #      4.b- Find longest for each and store which specie has longest.
-        # TODO: Change this to dynamic finding later. Sorry for this..
-        # TODO: Reference_specie is automatically Bracteacoccus_minor now for every gene since its the only gc = 22.
-        for x in range(len(chunks)):
-            maximum = max(chunks[x])
-            for y in range(len(chunks[x])):
-                if maximum == chunks[x][y]:
-                    reference_species.append(
-                        list_of_dictionaries[y]['species_name'])
-                    break
-        # for y in range(len(common_genes)):
-        #     for x in range(len(list_of_dictionaries)):
-        #         if "minor" in list_of_dictionaries[x]['species_name']:
-        #             reference_species.append(list_of_dictionaries[x]['species_name'])
-        #             break
+        reference_species = find_reference_species(
+            common_genes, list_of_dictionaries)
 
         # 5- For each gene except the longest stored one, find extensions and store them
         list_of_extended_dictionaries = []
@@ -223,11 +207,11 @@ class MasterFile:
         line_numbers = []
         # First parse whole file to find which gene has <== start before our gene.
         # This for loop stores the reverse genes.
-        for x in range(len(infile)):
+        for x in range(len(infiles)):
             line_number = 0
             initial_run_reverse = []
             line_number_array = []
-            handle = open(infile[x], 'r')
+            handle = open(infiles[x], 'r')
             line = handle.readline()
             line_number = line_number + 1
             while True:
@@ -262,14 +246,14 @@ class MasterFile:
             line_numbers.append(line_number_array)
 
         # This is a big loop for reading extension sequences.
-        # For all species (infile):
-        for x in range(len(infile)):
+        # For all species (infiles):
+        for x in range(len(infiles)):
             extended_sequences = []
             genes = []
             # For all common genes that these species have:
             for y in range(len(common_genes)):
                 if not reference_species[y] == list_of_dictionaries[x]['species_name']:
-                    handle = open(infile[x], 'r')
+                    handle = open(infiles[x], 'r')
                     line = handle.readline()
                     start_end_count = 0
                     extension = []
@@ -291,7 +275,7 @@ class MasterFile:
                                 if updown == "<==":
                                     if startend == "end":
                                         genes.append(genename)
-                                        reverse_handle = open(infile[x], 'r')
+                                        reverse_handle = open(infiles[x], 'r')
                                         from_line = 0
                                         to_line = 0
                                         for i in range(len(reverse_gene_order[x])):
