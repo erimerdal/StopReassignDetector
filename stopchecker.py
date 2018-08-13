@@ -26,9 +26,9 @@ if __name__ == '__main__':
     parser.add_argument('--force', '-f', dest="force", action="store_true",
                         help="Erase files in Outdir")
     parser.add_argument('--kmer_length', type=int,
-                        default=5,  help="Kmer length for extension")
+                        default=15,  help="Kmer length for extension")
     parser.add_argument('--threshold', dest="threshold",
-                        type=int, default=5,  help="Alignment threshold (?)")
+                        type=int, default=0,  help="Alignment threshold (?)")
     parser.add_argument('--gap_open_penalty', type=int,
                         default=-2,  help="Gap open penalty for alignment")
     parser.add_argument('--match_score', type=int, default=6,
