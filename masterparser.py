@@ -34,14 +34,13 @@ class MasterFile:
     #   ...
     # ;     G-nad5 ==> end
 
-    def __init__(self, infile, kmer_length = 15, threshold = 0, gap_open_penalty = -2, match_score = 6, mismatch_penalty = -4):
+    def __init__(self, infile, kmer_length = 10, threshold = 10, match_score = 6, mismatch_penalty = -4):
         # Parameters:
             # Infile parameter should be a list of Master Files obtained from MFannot results.
                 # TODO: Maybe we can include in our code MFannot command line tools so a person can input as fasta.
             # kmer_length: An integer which decides how many nucleotides/extension block should be.
                 # Increasing kmer_length will make it harder to find a better extension.
             # threshold: An integer that decides the minimum score that local alignments of extensions can return.
-            # gap_open_penalty, match_score, mismatch_penalty: Not used currently because of Blosum62 Matrix scores.
 
         self.infile = infile
         list_of_dictionaries = []
@@ -57,10 +56,10 @@ class MasterFile:
         # Also collects the species to take reference, and genes that are in common.
         common_genes, reference_species, list_of_extended_dictionaries = self._internal_extendedparser(infile,list_of_dictionaries)
         # Constructor sends all collected information to align and give a meaning to the results.
-        information_dictionary = self._alignments(list_of_dictionaries,list_of_extended_dictionaries, kmer_length, threshold, gap_open_penalty, match_score, mismatch_penalty, reference_species, common_genes)
+        information_dictionary = self._alignments(list_of_dictionaries,list_of_extended_dictionaries, kmer_length, threshold, match_score, mismatch_penalty, reference_species, common_genes)
         self._give_meaning(information_dictionary,common_genes)
 
-    def _alignments(self, list_of_dictionaries,list_of_extended_dictionaries, kmer_length, threshold, gap_open_penalty, match_score, mismatch_penalty, reference_species, common_genes):
+    def _alignments(self, list_of_dictionaries,list_of_extended_dictionaries, kmer_length, threshold, match_score, mismatch_penalty, reference_species, common_genes):
         list_of_formatted_dictionaries = []
         # finds common genes between all species.
         # for each specie
@@ -88,7 +87,8 @@ class MasterFile:
         data7_temporary = [] # Scores for pairwise extension k-slide 39 elements
         data8_temporary = [] # Best alignments of j-k slides.
         scores_list = []
-        submat = make_identity_substitution_matrix(5, -2, alphabet='ARNDCQEGHILKMFPSTWYVBZX*')
+        # TODO: Why doesn't this work ? submat = _load_matrix("blosum62.txt")
+        submat = make_identity_substitution_matrix(5, -1, alphabet='ARNDCQEGHILKMFPSTWYVBZX*')
         # List includes a dictionary for each gene
         for i in range(len(common_genes)):
             reference_specie_name = ""
@@ -156,7 +156,6 @@ class MasterFile:
                 original_string,
                 reference_string,
                 substitution_matrix = submat,
-                suppress_sequences = True
                 )
                 #results.append(start_end_positions)
 
@@ -382,7 +381,7 @@ class MasterFile:
                     best_start_end = "None"
                     best_score = 0
                     for k in range(len(scores_alignments)):
-                        if scores_alignments[k]/((k+1)**(1/2)) > best_score:
+                        if scores_alignments[k]/((k+1)**(1/3)) > best_score:
                             best_score = scores_alignments[k]
                             best_start_end = start_end_position_alignments[k]
                     pairs_results_extensions_j_score.append(best_score)
@@ -470,7 +469,7 @@ class MasterFile:
                     best_start_end = "None"
                     best_score = 0
                     for k in range(len(scores_alignments)):
-                        if scores_alignments[k]/((k+1)**(1/2)) > best_score:
+                        if scores_alignments[k]/((k+1)**(1/3)) > best_score:
                             best_score = scores_alignments[k]
                             best_start_end = start_end_position_alignments[k]
                     pairs_results_extensions_k_score.append(best_score)
@@ -495,21 +494,15 @@ class MasterFile:
         return information_dictionary
 
     def _give_meaning(self,information_dictionary,common_genes):
-        pass
-        # print(len(information_dictionary['pairs'])) = 13
-        # print(len(information_dictionary['initials'])) = 13
-        # print(len(information_dictionary['extensions']))
-        # for i in range(len(information_dictionary['pairs'])):
-        #     print("Gene: %s" % common_genes[i]) # For each gene.
-        #     print("")
-        #     for j in range(len(information_dictionary['pairs'][i])): # For each pair for that gene
-        #         print("Pair: %s" % information_dictionary['pairs'][i][j])
-        #         print("Initial Local Alignment: %s" % information_dictionary['initials'][i][j])
-        #         print("")
-        #
-        # for i in range(len(information_dictionary['extensions'])):
-        #     print(information_dictionary['extensions'][i])
-        #         #Using only initial local alignment.
+
+        for i in range(len(information_dictionary['pairs'])):
+            print("Gene: %s" % common_genes[i]) # For each gene.
+            print("")
+            for j in range(len(information_dictionary['pairs'][i])): # For each pair for that gene
+                print("Pair: %s" % information_dictionary['pairs'][i][j])
+                print("Initial: %s" % information_dictionary['initials'][i][j])
+                print("Extensions: %s" % information_dictionary['extensions'][i][j])
+                print("")
 
 
     def _internal_extendedparser(self, infile, list_of_dictionaries):
@@ -864,104 +857,25 @@ def getSubStrings(RNA, position):
 
 
 # returnBlosumMatrix(): Returns a 2-dimensional dictionary of the Blosum62 Matrix.
-def returnBlosumMatrix():
-    Blosum62Matrix = {'A' : {'A':4, 'R':-1, 'N':-2, 'D': -2, 'C': 0, 'Q': -1, 'E': -1, 'G': 0, 'H': -2, 'I': -1,
-     'L': -1, 'K': -1, 'M': -1,'F': -2, 'P': -1, 'S': 1, 'T': 0, 'W': -3, 'Y': -2, 'V': 0, 'B': 2,
-     'Z': -1, 'X': 0, '*': -4},
+def _load_matrix(matrix_filename):
+  with open(matrix_filename) as matrix_file:
+    matrix = matrix_file.read()
+  lines = matrix.strip().split('\n')
 
-      'R' : {'A':-1, 'R':5, 'N':0, 'D': -2, 'C': -3, 'Q': 1, 'E': 0, 'G': -2, 'H': 0, 'I': -3,
-       'L': -2, 'K': 2, 'M': -1,'F': -3, 'P': -2, 'S': 1, 'T': -1, 'W': -3, 'Y': -2, 'V': -3, 'B': -1,
-       'Z': 0, 'X': -1, '*': -4},
+  header = lines.pop(0)
+  columns = header.split()
+  matrix = {}
 
-       'N' : {'A':-2, 'R':0, 'N':6, 'D': 1, 'C': -3, 'Q': 0, 'E': 0, 'G': 0, 'H': 1, 'I': -3,
-        'L': -3, 'K': 0, 'M': -2,'F': -3, 'P': -2, 'S': 1, 'T': 0, 'W': -4, 'Y': -2, 'V': -3, 'B': 3,
-        'Z': 0, 'X': -1, '*': -4},
+  for row in lines:
+    entries = row.split()
+    row_name = entries.pop(0)
+    matrix[row_name] = {}
 
-        'D' : {'A':-2, 'R':-2, 'N':1, 'D': 6, 'C': -3, 'Q': 0, 'E': 2, 'G': -1, 'H': -1, 'I': -3,
-         'L': -4, 'K': -1, 'M': -3,'F': -3, 'P': -1, 'S': 0, 'T': -1, 'W': -4, 'Y': -3, 'V': -3, 'B': 4,
-         'Z': 1, 'X': -1, '*': -4},
-
-         'C' : {'A':0, 'R':-3, 'N':-3, 'D': -3, 'C': 9, 'Q': -3, 'E': -3, 'G': -4, 'H': -3, 'I': -1,
-          'L': -1, 'K': -3, 'M': -1,'F': -2, 'P': -3, 'S': 1, 'T': -1, 'W': -2, 'Y': -2, 'V': -1, 'B': -3,
-          'Z': -3, 'X': -2, '*': -4},
-
-          'Q' : {'A':-1, 'R':1, 'N':0, 'D': 0, 'C': -3, 'Q': 5, 'E': 2, 'G': -2, 'H': 0, 'I': -3,
-           'L': -2, 'K': 1, 'M': 0, 'F': -3, 'P': -1, 'S': 0, 'T': -1, 'W': -2, 'Y': -1, 'V': -2, 'B': 0,
-           'Z': 3, 'X': -1, '*': -4},
-
-           'E' : {'A':1, 'R':0, 'N':0, 'D': 2, 'C': -4, 'Q': 2, 'E': 5, 'G': -2, 'H': 0, 'I': -3,
-            'L': -3, 'K': 1, 'M': -2,'F': -3, 'P': -1, 'S': 0, 'T': -1, 'W': -3, 'Y': -2, 'V': -2, 'B': 1,
-            'Z': 4, 'X': -1, '*': -4},
-
-            'G' : {'A':0, 'R':-2, 'N':-0, 'D': -1, 'C': -3, 'Q': -2, 'E': -2, 'G': 6, 'H': -2, 'I': -4,
-             'L': -4, 'K': -2, 'M': -3,'F': -3, 'P': -2, 'S': 0, 'T': -2, 'W': -2, 'Y': -3, 'V': -3, 'B': -1,
-             'Z': -2, 'X': -1, '*': -4},
-
-             'H' : {'A':-2, 'R':0, 'N':1, 'D': -1, 'C': -3, 'Q': 0, 'E': 0, 'G': -2, 'H': 8, 'I': -3,
-              'L': -3, 'K': -1, 'M': -2,'F': -1, 'P': -2, 'S': -1, 'T': -2, 'W': -2, 'Y': 2, 'V': -3, 'B': 0,
-              'Z': 0, 'X': -1, '*': -4},
-
-              'I' : {'A':-1, 'R':-3, 'N':-3, 'D': -3, 'C': -1, 'Q': -3, 'E': -3, 'G': -4, 'H': -3, 'I': 4,
-                'L': 2, 'K': -3, 'M': 1,'F': 0, 'P': -3, 'S': -2, 'T': -1, 'W': -3, 'Y': -1, 'V': 3, 'B': -3,
-                'Z': -3, 'X': -1, '*': -4},
-
-               'L' : {'A':-1, 'R':-2, 'N':-3, 'D': -4, 'C': -1, 'Q': -2, 'E': -3, 'G': -4, 'H': -3, 'I': 2,
-                'L': 4, 'K': -2, 'M': 2,'F': 0, 'P': -3, 'S': -2, 'T': -1, 'W': -2, 'Y': -1, 'V': 1, 'B': -4,
-                'Z': -3, 'X': -1, '*': -4},
-
-                'K' : {'A':-1, 'R':2, 'N':0, 'D': -1, 'C': -3, 'Q': 1, 'E': 1, 'G': -2, 'H': -1, 'I': -3,
-                 'L': -2, 'K': 5, 'M': -1,'F': -3, 'P': -1, 'S': 0, 'T': -1, 'W': -3, 'Y': -2, 'V': -2, 'B': 0,
-                 'Z': 1, 'X': -1, '*': -4},
-
-                 'M' : {'A':-1, 'R':-1, 'N':-2, 'D': -3, 'C': -1, 'Q': 0, 'E': -2, 'G': -3, 'H': -2, 'I': 1,
-                  'L': 2, 'K': -1, 'M': 5,'F': 0, 'P': -2, 'S': -1, 'T': -1, 'W': -1, 'Y': -1, 'V': 1, 'B': -3,
-                  'Z': -1, 'X': -1, '*': -4},
-
-                  'F' : {'A':-2, 'R':-3, 'N':-3, 'D': -3, 'C': -2, 'Q': -3, 'E': -3, 'G': -3, 'H': -1, 'I': 0,
-                   'L': 0, 'K': -3, 'M': 0,'F': 6, 'P': -4, 'S': -2, 'T': -2, 'W': 1, 'Y': 3, 'V': -1, 'B': -3,
-                   'Z': -3, 'X': -1, '*': -4},
-
-                   'P' : {'A':-1, 'R':-2, 'N':-2, 'D': -1, 'C': -3, 'Q': -1, 'E': -1, 'G': -2, 'H': -2, 'I': -3,
-                    'L': -3, 'K': -1, 'M': -2,'F': -4, 'P': 7, 'S': -1, 'T': -1, 'W': -4, 'Y': -3, 'V': -2, 'B': -2,
-                    'Z': -1, 'X': -2, '*': -4},
-
-                    'S' : {'A':1, 'R':-1, 'N':1, 'D': 0, 'C': -1, 'Q': 0, 'E': 0, 'G': 0, 'H': -1, 'I': -2,
-                     'L': -2, 'K': 0, 'M': -1,'F': -2, 'P': -1, 'S': 4, 'T': 1, 'W': -3, 'Y': -2, 'V': -2, 'B': 0,
-                     'Z': 0, 'X': 0, '*': -4},
-
-                     'T' : {'A':0, 'R':-1, 'N':0, 'D': -1, 'C': -1, 'Q': -1, 'E': -1, 'G': -2, 'H': -2, 'I': -1,
-                      'L': -1, 'K': -1, 'M': -1,'F': -2, 'P': -1, 'S': 1, 'T': 5, 'W': -2, 'Y': -2, 'V': 0, 'B': -1,
-                      'Z': -1, 'X': 0, '*': -4},
-
-                      'W' : {'A':-3, 'R':-3, 'N':-4, 'D': -4, 'C': -2, 'Q': -2, 'E': -3, 'G': -2, 'H': -2, 'I': -3,
-                       'L': -2, 'K': -3, 'M': -1,'F': 1, 'P': -4, 'S': -3, 'T': -2, 'W': -11, 'Y': 2, 'V': -3, 'B': -4,
-                       'Z': -3, 'X': -2, '*': -4},
-
-                       'Y' : {'A':-2, 'R':-2, 'N':-2, 'D': -3, 'C': -2, 'Q': -1, 'E': -2, 'G': -3, 'H': 2, 'I': -1,
-                        'L': -1, 'K': -2, 'M': -1,'F': 3, 'P': -3, 'S': -2, 'T': -2, 'W': 2, 'Y': 7, 'V': -1, 'B': -3,
-                        'Z': -2, 'X': -1, '*': -4},
-
-                        'V' : {'A':0, 'R':-3, 'N':-3, 'D': -3, 'C': -1, 'Q': -2, 'E': -2, 'G': -3, 'H': -3, 'I': -3,
-                         'L': 1, 'K': -2, 'M': 1,'F': -1, 'P': -2, 'S':-2, 'T': 0, 'W': -3, 'Y': -1, 'V': 4, 'B': -3,
-                         'Z': -2, 'X': -1, '*': -4},
-
-                         'B' : {'A':-2, 'R':-1, 'N':3, 'D': 4, 'C': -3, 'Q': 0, 'E': 1, 'G': -1, 'H': 0, 'I': -3,
-                          'L': -4, 'K': 0, 'M': -3,'F': -3, 'P': -2, 'S': 0, 'T': -1, 'W': -4, 'Y': -3, 'V': -3, 'B': 4,
-                          'Z': 1, 'X': -1, '*': -4},
-
-                          'Z' : {'A':-1, 'R':0, 'N':0, 'D': 1, 'C': -3, 'Q': 3, 'E': 4, 'G': -2, 'H': 0, 'I': -3,
-                           'L': -3, 'K': 1, 'M': -1,'F': -3, 'P': -1, 'S': 0, 'T': -1, 'W': -3, 'Y': -2, 'V': -2, 'B': 1,
-                           'Z': 4, 'X': -1, '*': -4},
-
-                           'X' : {'A':0, 'R':-1, 'N':-1, 'D': -1, 'C': -2, 'Q': -1, 'E': -1, 'G': -1, 'H': -1, 'I': -1,
-                            'L': -1, 'K': -1, 'M': -1,'F': -1, 'P': -2, 'S': 0, 'T': 0, 'W': -2, 'Y': -1, 'V': -1, 'B': -1,
-                            'Z': -1, 'X': -1, '*': -4},
-
-                            '*' : {'A':-4, 'R':-4, 'N':-4, 'D': -4, 'C': -4, 'Q': -4, 'E': -4, 'G': -4, 'H': -4, 'I': -4,
-                             'L': -4, 'K': -4, 'M': -4,'F': -4, 'P': -4, 'S': -4, 'T': -4, 'W': -4, 'Y': -4, 'V': -4, 'B': -4,
-                             'Z': -4, 'X': -4, '*': 1}
-      }
-    return Blosum62Matrix
+    if len(entries) != len(columns):
+      raise Exception('Improper entry number in row')
+    for column_name in columns:
+      matrix[row_name][column_name] = entries.pop(0)
+  return matrix
 
 # function to get unique values
 def unique(list1):
