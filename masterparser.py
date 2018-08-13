@@ -180,8 +180,6 @@ class MasterFile:
                     pairs_results.append(start_end_positions)
                     start_end.append(start_end_positions)
 
-
-
             # Finds extensions
             for j in range(len(non_reference_species)):
                 for k in range(len(list_of_extended_dictionaries)):
@@ -300,10 +298,10 @@ class MasterFile:
                         best_score = scores_alignments[j]
                         best_start_end = start_end_position_alignments[j]
                 pairs_results_extensions.append(best_start_end)
-                data3_temporary.append(pairs_results_extensions)
+            data3_temporary.append(pairs_results_extensions)
 
         # pairwise.
-
+        # TODO: Problem with extensions is probably here.
         for i in range(len(scores_list)):
             pairs_results_extensions_j = []
             pairs_results_extensions_j_score = []
@@ -389,8 +387,8 @@ class MasterFile:
                             best_start_end = start_end_position_alignments[k]
                     pairs_results_extensions_j_score.append(best_score)
                     pairs_results_extensions_j.append(best_start_end)
-                    data4_temporary.append(pairs_results_extensions_j)
-                    data6_temporary.append(pairs_results_extensions_j_score)
+            data4_temporary.append(pairs_results_extensions_j)
+            data6_temporary.append(pairs_results_extensions_j_score)
 
         for i in range(len(scores_list)):
             pairs_results_extensions_k = []
@@ -477,8 +475,8 @@ class MasterFile:
                             best_start_end = start_end_position_alignments[k]
                     pairs_results_extensions_k_score.append(best_score)
                     pairs_results_extensions_k.append(best_start_end)
-                    data5_temporary.append(pairs_results_extensions_k)
-                    data7_temporary.append(pairs_results_extensions_k_score)
+            data5_temporary.append(pairs_results_extensions_k)
+            data7_temporary.append(pairs_results_extensions_k_score)
 
         for i in range(len(data6_temporary)):
             totalPoints6 = 0
@@ -487,34 +485,31 @@ class MasterFile:
                 totalPoints6 += data6_temporary[i][j]
                 totalPoints7 += data7_temporary[i][j]
             if totalPoints6 >= totalPoints7:
-                data3_temporary.append(data4_temporary[i])
+                for k in range(len(data4_temporary[i])):
+                    data3_temporary[i].append(data4_temporary[i][k])
             else:
-                data3_temporary.append(data5_temporary[i])
+                for k in range(len(data5_temporary[i])):
+                    data3_temporary[i].append(data5_temporary[i][k])
 
-        # Information are stored in 1,2,3
-        data3_unique = []
-        for i in range(len(data3_temporary)):
-            for j in range(len(data3_temporary[i])):
-                if data3_temporary[i][j] not in data3_unique:
-                    data3_unique.append(data3_temporary[i][j])
-        information_dictionary = {'pairs': data1_temporary, 'initials': data2_temporary, 'extensions': data3_unique}
+        information_dictionary = {'pairs': data1_temporary, 'initials': data2_temporary, 'extensions': data3_temporary}
         return information_dictionary
 
     def _give_meaning(self,information_dictionary,common_genes):
+        pass
         # print(len(information_dictionary['pairs'])) = 13
         # print(len(information_dictionary['initials'])) = 13
         # print(len(information_dictionary['extensions']))
-        for i in range(len(information_dictionary['pairs'])):
-            print("Gene: %s" % common_genes[i]) # For each gene.
-            print("")
-            for j in range(len(information_dictionary['pairs'][i])): # For each pair for that gene
-                print("Pair: %s" % information_dictionary['pairs'][i][j])
-                print("Initial Local Alignment: %s" % information_dictionary['initials'][i][j])
-                print("")
-
-        for i in range(len(information_dictionary['extensions'])):
-            print(information_dictionary['extensions'][i])
-                #Using only initial local alignment.
+        # for i in range(len(information_dictionary['pairs'])):
+        #     print("Gene: %s" % common_genes[i]) # For each gene.
+        #     print("")
+        #     for j in range(len(information_dictionary['pairs'][i])): # For each pair for that gene
+        #         print("Pair: %s" % information_dictionary['pairs'][i][j])
+        #         print("Initial Local Alignment: %s" % information_dictionary['initials'][i][j])
+        #         print("")
+        #
+        # for i in range(len(information_dictionary['extensions'])):
+        #     print(information_dictionary['extensions'][i])
+        #         #Using only initial local alignment.
 
 
     def _internal_extendedparser(self, infile, list_of_dictionaries):
