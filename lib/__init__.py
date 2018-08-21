@@ -231,6 +231,7 @@ class StopChecker:
                 frequency_of_stop_codon.append(countStopCodons/len(substrings))
         # Frequency of the stop codon in all evolutionary close stop codons
         frequency_evolutionary = []
+        mean_similarity_extension = []
         for i in range(len(scores_list)):
             rev = scores_list[i]['reference_sequences'][::-1]
             stop_rev = rev[:3]
@@ -250,11 +251,44 @@ class StopChecker:
                         stopCodonCount += 1
                 frequency_evolutionary.append(stopCodonCount/len(stop_codons_evolutionary))
         # Mean similarity of the extension to other genomes
-        mean_similarity_extension = []
-        
+        # How to determine mean similarity of extensions with other genomes?
+            # TODO: Store all scores of a non-original specie with others in local alignment. After that sum all of those scores and
+            # divide by total number of species to get mean similarity.
+            mean_similarity_extension.append(0) # Reference species do not have any extensions.
+
+            for j in range(len(scores_list[i]['original_species'])):
+                total_score_for_specie = 0
+                for k in range(len(scores_list[i]['original_species'])):
+                    if not j == k:
+                        j_sequence = Protein(str(scores_list[i]['extensions_protein'][j]))
+                        k_sequence = Protein(str(scores_list[i]['extensions_protein'][k]))
+                        try:
+                            try:
+                                alignment, score, start_end_positions = local_pairwise_align_ssw(
+                                j_sequence,
+                                k_sequence,
+                                substitution_matrix = submat,
+                                )
+                                total_score_for_specie += score
+                            except IndexError:
+                                total_score_for_specie += 0
+                        except TypeError:
+                            total_score_for_specie += 0
+                mean_similarity_extension.append(total_score_for_specie / len(scores_list[i]['original_species']))
+
+        # 1- length_of_extensions -> Stores length of extensions
+        # 2- length_of_genes -> Stores length of genes
+        # 3- frequency_of_stop_codon -> Stores frequency of stop codon in all coding region
+        # 4- mean_similarity_extension -> Stores mean similarity of extension among all other genes.
+        # TODO: 5- frequency_stop_codon_cdr -> Stores frequency of stop codon for each specie among all genes.
+        # TODO: 6- mean_evolutionary_closeness -> Stores how close to other species depending on an evolutionary tree. TODO: Help me Emmanuel
         # Mean evolutionary closeness to other species depending on evolutionary tree fed?
-
-
+        # For mean evolutionary closeness we need an evolutionary tree as an input.
+        # Try to take a evolutionary tree as an input? Smh.
+        # https://en.wikipedia.org/wiki/Newick_format -> Maybe we can use Newick tree formats?
+        # TODO: Try to find more variables? TODO: Help me Emmanuel
+        # mean_similarity_extension === extensions in information dictionary.
+        # 7- mean_similarity_initials = initials in information dictionary.
 
         # Here we will start a new, final chapter everyone!
         # First compare all sequences with reference sequence.
@@ -527,8 +561,9 @@ class StopChecker:
                 # CoreTracker uses -> Fisher's p value? Telford score of C coding for X?
 
 
-        # Calculate their Gini impurities. (?)
-        # Gather information with research to find some True Positive dataset.
+        # Calculate their Gini impurities. (?) TODO: Help me Emmanuel
+        # Manipulate data in a format such that training/test will be split easily.
+        # Gather information with research to find some True Positive dataset. TODO: Help me Emmanuel
         # Create a Decision Tree Model for visualization.
         # Create a RF Model for meaning.
         pass
