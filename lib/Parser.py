@@ -2,6 +2,7 @@ from .utils import reverse_sequence, list_filter
 from collections import defaultdict as ddict
 import re
 import itertools
+# import time # For testing if we have made program speedier. # TODO: Remove after tests
 
 
 def find_reference_species(common_genes, mfilelist):
@@ -23,6 +24,7 @@ def find_reference_species(common_genes, mfilelist):
 
 class MasterCollection:
     def __init__(self, infiles):
+        # start_time = time.time() # TODO: Remove after tests
         """Parse a list of masterfiles and store their informations"""
         # Infile parameter should be a list of Master Files obtained from MFannot results.
         # TODO: Maybe we can include in our code MFannot command line tools so a person can input as fasta.
@@ -43,7 +45,7 @@ class MasterCollection:
         self.common_genes, self.reference_species, self.extended_sequences = MasterFile.extendedparser(
             self.infiles, self.get_list_of_dict())
         # Constructor sends all collected information to align and give a meaning to the results.
-
+        # print("--- %s seconds --- For Parser" % (time.time() - start_time)) # TODO: Remove after tests
     def get_list_of_dict(self):
         """Return the collection of MasterFile objects as a list of dict"""
         return [x.sequences for x in self.mfilemap]
