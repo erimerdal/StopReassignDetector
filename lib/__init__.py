@@ -7,6 +7,12 @@ from skbio import TabularMSA, DNA, Protein
 from .Parser import MasterFile, MasterCollection
 from .utils import split_len
 import os
+from io import StringIO
+from Bio.Blast import NCBIXML
+from Bio.SeqRecord import SeqRecord
+from Bio import SeqIO
+import subprocess
+
 # import time # TODO: Remove after tests
 
 __all__ = ['MasterFile', 'StopChecker', 'MasterCollection']
@@ -407,14 +413,42 @@ class StopChecker:
                 meansim_org /= len(scores_list[i]['original_species'])
                 mean_similarity_extension.append(meansim_org)
 
-        print(mean_length_of_extensions)
-        print("")
-        print(mean_similarity_extension)
-        print("")
-        print(frequency_evolutionary)
-        print("")
-        print(length_of_genes)
-        
+        ############## Test for BLAST
+        seq1 = SeqRecord(Seq("FQTWEEFSRAAEKLYLADPMKVRVVLKYRHVDGNLCIKVTDDLVCLVYRTDQAQDVKKIEKF"),
+                   id="seq1")
+        seq2 = SeqRecord(Seq("FQTWEEFSRAEKLYLADPMKVRVVLRYRHVDGNLCIKVTDDLICLVYRTDQAQDVKKIEKF"),
+                   id="seq2")
+        SeqIO.write(seq1, "seq1.fasta", "fasta")
+        SeqIO.write(seq2, "seq2.fasta", "fasta")
+
+        # Run BLAST and parse the output as XML
+        command = './blastp -outfmt 6 -query seq1.fasta -subject seq2.fasta'
+        p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE)
+        print(p.stdout.readlines()[0].decode('utf-8'))
+
+        # blast_result_record = NCBIXML.read(StringIO(output))
+        #
+        # # Print some information on the result
+        # for alignment in blast_result_record.alignments:
+        #     for hsp in alignment.hsps:
+        #         print('****Alignment****')
+        #         print('sequence: %s' % alignment.title)
+        #         print('length: %s' % alignment.length)
+        #         print('e value: %s' % hsp.expect)
+        #         print(hsp.query)
+        #         print(hsp.match)
+        #         print(hsp.sbjct)
+
+        ############## Test for Dataset
+        # print(mean_length_of_extensions)
+        # print("")
+        # print(mean_similarity_extension)
+        # print("")
+        # print(frequency_evolutionary)
+        # print("")
+        # print(length_of_genes)
+        ##############
+
         # 1- length_of_extensions -> Stores length of extensions
         # 2- length_of_genes -> Stores length of genes
         # 3- frequency_of_stop_codon -> Stores frequency of stop codon in all coding region
