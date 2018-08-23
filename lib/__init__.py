@@ -421,23 +421,10 @@ class StopChecker:
         SeqIO.write(seq1, "seq1.fasta", "fasta")
         SeqIO.write(seq2, "seq2.fasta", "fasta")
 
-        # Run BLAST and parse the output as XML
+        # Run BLAST and parse the output
         command = './blastp -outfmt 6 -query seq1.fasta -subject seq2.fasta'
         p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE)
         print(p.stdout.readlines()[0].decode('utf-8'))
-
-        # blast_result_record = NCBIXML.read(StringIO(output))
-        #
-        # # Print some information on the result
-        # for alignment in blast_result_record.alignments:
-        #     for hsp in alignment.hsps:
-        #         print('****Alignment****')
-        #         print('sequence: %s' % alignment.title)
-        #         print('length: %s' % alignment.length)
-        #         print('e value: %s' % hsp.expect)
-        #         print(hsp.query)
-        #         print(hsp.match)
-        #         print(hsp.sbjct)
 
         ############## Test for Dataset
         # print(mean_length_of_extensions)
