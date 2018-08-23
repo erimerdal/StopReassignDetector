@@ -181,109 +181,11 @@ class StopChecker:
              'extensions_protein': allowed_extensions_protein, 'start_end': start_end}
             scores_list.append(score_dictionary)
 
-        # TODO:TODO: Storing variable informations for modelling DT/RF.
-        length_of_extensions = []
-        length_of_genes = []
-        frequency_of_stop_codon = []
-        stop_codons_evolutionary = []
-        for i in range(len(scores_list)): # For each gene // Genes should be taken apart seperately while collecting data?
-            # The length of the extension
-            # For the reference specie:
-            length_of_extensions.append(0)
-            # The length of the gene compared to other homologs:
-            length_of_genes.append(len(scores_list[i]['reference_sequences']))
-            for j in range(len(scores_list[i]['original_species'])): # For each non-reference-specie
-                length_of_extensions.append(len(scores_list[i]['extensions'][j]))
-                length_of_genes.append(len(scores_list[i]['original_sequences'][j]))
-            # Frequency of the putative stop codon in all coding region
-                # Divide into 3-mers, count how many stop codons occur in the all coding region (ignoring frameshift)
-            substrings = split_len(scores_list[i]['reference_sequences'][::-1],3,0) # Reverse, divide 3-mers
-            for j in range(len(substrings)):
-                substrings[j] = substrings[j][::-1] # Reverse again each element. First element is the stop codon.
-            countStopCodons = 0
-            # Stop codon is first element, add to this specie's stop codon:
-            stop_codons_evolutionary.append(substrings[0])
-            for j in range(len(substrings)):
-                if substrings[j] == substrings[0]:
-                    countStopCodons += 1
-            frequency_of_stop_codon.append(countStopCodons/len(substrings))
-            # Obviously all of them have 1 because its a fucking stop codon? Emmanuel pls help.
-            for j in range(len(scores_list[i]['original_species'])):
-                substrings = split_len(scores_list[i]['original_sequences'][j][::-1],3,0) # Reverse, divide 3-mers
-                for k in range(len(substrings)):
-                    substrings[k] = substrings[k][::-1] # Reverse again each element. First element is the stop codon.
-                countStopCodons = 0
-                # Add into list of stop codons:
-                stop_codons_evolutionary.append(substrings[0])
-                for k in range(len(substrings)):
-                    if substrings[k] == substrings[0]:
-                        countStopCodons += 1
-                frequency_of_stop_codon.append(countStopCodons/len(substrings))
-        # Frequency of the stop codon in all evolutionary close stop codons
-        frequency_evolutionary = []
-        mean_similarity_extension = []
-        for i in range(len(scores_list)):
-            rev = scores_list[i]['reference_sequences'][::-1]
-            stop_rev = rev[:3]
-            stop = stop_rev[::-1]
-            stopCodonCount = 0
-            for j in range(len(stop_codons_evolutionary)):
-                if stop_codons_evolutionary[j] == stop:
-                    stopCodonCount += 1
-            frequency_evolutionary.append(stopCodonCount/len(stop_codons_evolutionary))
-            for j in range(len(scores_list[i]['original_species'])):
-                stopCodonCount = 0
-                rev = scores_list[i]['original_sequences'][j][::-1]
-                stop_rev = rev[:3]
-                stop = stop_rev[::-1]
-                for k in range(len(stop_codons_evolutionary)):
-                    if stop_codons_evolutionary[k] == stop:
-                        stopCodonCount += 1
-                frequency_evolutionary.append(stopCodonCount/len(stop_codons_evolutionary))
-        # Mean similarity of the extension to other genomes
-        # How to determine mean similarity of extensions with other genomes?
-            # TODO: Store all scores of a non-original specie with others in local alignment. After that sum all of those scores and
-            # divide by total number of species to get mean similarity.
-            mean_similarity_extension.append(0) # Reference species do not have any extensions.
-
-            for j in range(len(scores_list[i]['original_species'])):
-                total_score_for_specie = 0
-                for k in range(len(scores_list[i]['original_species'])):
-                    if not j == k:
-                        j_sequence = Protein(str(scores_list[i]['extensions_protein'][j]))
-                        k_sequence = Protein(str(scores_list[i]['extensions_protein'][k]))
-                        try:
-                            try:
-                                alignment, score, start_end_positions = local_pairwise_align_ssw(
-                                j_sequence,
-                                k_sequence,
-                                substitution_matrix = submat,
-                                )
-                                total_score_for_specie += score
-                            except IndexError:
-                                total_score_for_specie += 0
-                        except TypeError:
-                            total_score_for_specie += 0
-                mean_similarity_extension.append(total_score_for_specie / len(scores_list[i]['original_species']))
-
-        # 1- length_of_extensions -> Stores length of extensions
-        # 2- length_of_genes -> Stores length of genes
-        # 3- frequency_of_stop_codon -> Stores frequency of stop codon in all coding region
-        # 4- mean_similarity_extension -> Stores mean similarity of extension among all other genes.
-        # TODO: 5- frequency_stop_codon_cdr -> Stores frequency of stop codon for each specie among all genes.
-        # TODO: 6- mean_evolutionary_closeness -> Stores how close to other species depending on an evolutionary tree. TODO: Help me Emmanuel
-        # Mean evolutionary closeness to other species depending on evolutionary tree fed?
-        # For mean evolutionary closeness we need an evolutionary tree as an input.
-        # Try to take a evolutionary tree as an input? Smh.
-        # https://en.wikipedia.org/wiki/Newick_format -> Maybe we can use Newick tree formats?
-        # TODO: Try to find more variables? TODO: Help me Emmanuel
-        # mean_similarity_extension === extensions in information dictionary.
-        # 7- mean_similarity_initials = initials in information dictionary.
-
         # Here we will start a new, final chapter everyone!
         # First compare all sequences with reference sequence.
         for i in range(len(scores_list)):
             pairs_results_extensions = []
+            pairs_results_extensions_scores = []
             # Pairwise reference with each non-reference specie.
             for j in range(len(scores_list[i]['original_species'])):
                 # Find the place left in reference sequence.
@@ -316,12 +218,23 @@ class StopChecker:
                     # end_location = end of the extension + other extensions before * their length + end of local alignment
                     end_location = start_end_positions[0][1] + scores_list[i]['start_end'][j][0][1]
                     end_location_r = start_end_positions[1][1] + scores_list[i]['start_end'][j][1][1]
-                    start_end_position = "(%s,%s),(%s,%s)" % (start_location,end_location,start_location_r,end_location_r)
+                    start_end_position_reference = []
+                    start_end_position_reference.append(start_location_r)
+                    start_end_position_reference.append(end_location_r)
+                    start_end_position_original = []
+                    start_end_position_original.append(start_location)
+                    start_end_position_original.append(end_location)
+                    # "(%s,%s),(%s,%s)" % (start_location_r,end_location_r,start_location,end_location)
+                    start_end_position = []
+                    start_end_position.append(start_end_position_reference)
+                    start_end_position.append(start_end_position_original)
                 except IndexError:
                     score = 0
                     start_end_position = "None"
                 pairs_results_extensions.append(start_end_position)
+                pairs_results_extensions_scores.append(score)
             data3_temporary.append(pairs_results_extensions)
+            data5_temporary.append(pairs_results_extensions_scores)
 
         # pairwise.
         for i in range(len(scores_list)):
@@ -344,8 +257,6 @@ class StopChecker:
                     # Now we have to extend them both in the double for loop and collect scores.
                     j_sequence = Protein(str(j_sequence_total))
                     k_sequence = Protein(str(k_sequence_total))
-                    # print("Length of j seq: %s" % len(j_sequence))
-                    # print("Length of k seq: %s" % len(k_sequence))
                     try:
                         alignment, score, start_end_positions = local_pairwise_align_ssw(
                         j_sequence,
@@ -360,19 +271,164 @@ class StopChecker:
                         # end_location = end of the extension + other extensions before * their length + end of local alignment
                         end_location = start_end_positions[0][1]+ scores_list[i]['start_end'][j][0][1]
                         end_location_r = start_end_positions[1][1] + scores_list[i]['start_end'][j][1][1]
-                        start_end_position = "(%s,%s),(%s,%s)" % (start_location_r,end_location_r,start_location,end_location)
+                        start_end_position_reference = []
+                        start_end_position_reference.append(start_location_r)
+                        start_end_position_reference.append(end_location_r)
+                        start_end_position_original = []
+                        start_end_position_original.append(start_location)
+                        start_end_position_original.append(end_location)
+                        # "(%s,%s),(%s,%s)" % (start_location_r,end_location_r,start_location,end_location)
+                        start_end_position = []
+                        start_end_position.append(start_end_position_reference)
+                        start_end_position.append(start_end_position_original)
                     except IndexError:
                         score = 0
                         start_end_position = "None"
 
                     pairs_results_extensions_j_score.append(score)
                     pairs_results_extensions_j.append(start_end_position)
+                    # print("j: %s k: %s" % (j,k)) seems okay
             data4_temporary.append(pairs_results_extensions_j)
+
             data6_temporary.append(pairs_results_extensions_j_score)
 
         for i in range(len(data6_temporary)):
             for k in range(len(data4_temporary[i])):
                 data3_temporary[i].append(data4_temporary[i][k])
+
+        # TODO:TODO: Storing variable informations for modelling DT/RF.
+        mean_length_of_extensions = []
+        length_of_genes = []
+        frequency_of_stop_codon = []
+        stop_codons_evolutionary = []
+        for i in range(len(scores_list)): # For each gene // Genes should be taken apart seperately while collecting data
+            # The length of the extension
+            # For the reference specie:
+            # We should do the same order when we were calculating scores/start.end positions.
+            reference_extension_total = 0
+            for j in range(len(scores_list[i]['original_species'])):
+                reference_extension_total += data3_temporary[i][j][0][1] - data2_temporary[i][j][0][1]
+            mean_length_of_extensions.append(reference_extension_total/(len(scores_list[i]['original_species'])))
+            # We need a better version of data structure, too much calculation involved while trying to find all non-references.
+            # The data structure should be storing all information for all genes for each specie seperately.
+
+            for j in range(len(scores_list[i]['original_species'])):
+                mloe_dataset = []
+                mloe_dataset_in = []
+                # in the order of the original species
+                for k in range(len(data1_temporary[i])):
+                    data1_split = data1_temporary[i][k].split('/')
+                    if scores_list[i]['original_species'][j] in data1_split[0]: # Left side
+                        mloe_dataset.append(data3_temporary[i][k][0][1]) # Left end
+                        mloe_dataset_in.append(data2_temporary[i][k][0][1])
+                    if scores_list[i]['original_species'][j] in data1_split[1]: # Right side
+                        mloe_dataset.append(data3_temporary[i][k][1][1]) # Right end
+                        mloe_dataset_in.append(data2_temporary[i][k][1][1])
+                mloe = 0
+                # Now that we have the dataset for each gene, we can keep calculating.
+                for k in range(len(mloe_dataset)):
+                    mloe += mloe_dataset[k] - mloe_dataset_in[k]
+                mean_length_of_extensions.append(mloe/(len(scores_list[i]['original_species'])))
+
+            # The length of the gene compared to other homologs:
+            length_of_genes.append(len(scores_list[i]['reference_sequences']))
+            for j in range(len(scores_list[i]['original_species'])): # For each non-reference-specie
+                length_of_genes.append(len(scores_list[i]['original_sequences'][j]))
+            # Frequency of the putative stop codon in all coding region
+                # Divide into 3-mers, count how many stop codons occur in the all coding region (ignoring frameshift)
+            substrings = split_len(scores_list[i]['reference_sequences'][::-1],3,0) # Reverse, divide 3-mers
+            for j in range(len(substrings)):
+                substrings[j] = substrings[j][::-1] # Reverse again each element. First element is the stop codon.
+            countStopCodons = 0
+            # Stop codon is first element, add to this specie's stop codon:
+            stop_codons_evolutionary.append(substrings[0])
+            for j in range(len(substrings)):
+                if substrings[j] == substrings[0]:
+                    countStopCodons += 1
+            frequency_of_stop_codon.append(countStopCodons/len(substrings))
+            # Obviously all of them have 1 because its a fucking stop codon? Emmanuel pls help.
+            for j in range(len(scores_list[i]['original_species'])):
+                substrings = split_len(scores_list[i]['original_sequences'][j][::-1],3,0) # Reverse, divide 3-mers
+                for k in range(len(substrings)):
+                    substrings[k] = substrings[k][::-1] # Reverse again each element. First element is the stop codon.
+                countStopCodons = 0
+                # Add into list of stop codons:
+                stop_codons_evolutionary.append(substrings[0])
+                for k in range(len(substrings)):
+                    if substrings[k] == substrings[0]:
+                        countStopCodons += 1
+                frequency_of_stop_codon.append(countStopCodons/len(substrings))
+        # print(len(mean_length_of_extensions)) = 65, 13 genes for 5 species correct.
+        # Frequency of the stop codon in all evolutionary close stop codons
+        frequency_evolutionary = []
+        mean_similarity_extension = []
+        counter = []
+        onlyOnce = True # Store counter only once not genes times.
+        for i in range(len(scores_list)):
+            if onlyOnce:
+                for j in range(len(scores_list[i]['original_species'])-1):
+                    for k in range(j+1,len(scores_list[i]['original_species'])):
+                        counter.append("(%s,%s)" % (j,k))
+                onlyOnce = False
+
+            rev = scores_list[i]['reference_sequences'][::-1]
+            stop_rev = rev[:3]
+            stop = stop_rev[::-1]
+            stopCodonCount = 0
+            for j in range(len(stop_codons_evolutionary)):
+                if stop_codons_evolutionary[j] == stop:
+                    stopCodonCount += 1
+            frequency_evolutionary.append(stopCodonCount/len(stop_codons_evolutionary))
+            for j in range(len(scores_list[i]['original_species'])):
+                stopCodonCount = 0
+                rev = scores_list[i]['original_sequences'][j][::-1]
+                stop_rev = rev[:3]
+                stop = stop_rev[::-1]
+                for k in range(len(stop_codons_evolutionary)):
+                    if stop_codons_evolutionary[k] == stop:
+                        stopCodonCount += 1
+                frequency_evolutionary.append(stopCodonCount/len(stop_codons_evolutionary))
+        # Mean similarity of the extension to other genomes
+        # How to determine mean similarity of extensions with other genomes?
+            # TODO: Store all scores of a non-original specie with others in local alignment. After that sum all of those scores and
+            # divide by total number of species to get mean similarity.
+            meansim_ref = 0
+            for j in range(len(data5_temporary[i])):
+                meansim_ref += data5_temporary[i][j]
+            meansim_ref /= len(scores_list[i]['original_species'])
+            mean_similarity_extension.append(meansim_ref) # Reference species similarities are stored.
+
+            # Implement mean similarity extension for non-reference sequences.
+            for j in range(len(scores_list[i]['original_species'])):
+                meansim_org = 0
+                for k in range(len(counter)):
+                    if str(j) in counter[k]:
+                        meansim_org += data6_temporary[i][j]
+                meansim_org /= len(scores_list[i]['original_species'])
+                mean_similarity_extension.append(meansim_org)
+
+        print(mean_length_of_extensions)
+        print("")
+        print(mean_similarity_extension)
+        print("")
+        print(frequency_evolutionary)
+        print("")
+        print(length_of_genes)
+        
+        # 1- length_of_extensions -> Stores length of extensions
+        # 2- length_of_genes -> Stores length of genes
+        # 3- frequency_of_stop_codon -> Stores frequency of stop codon in all coding region
+        # 4- mean_similarity_extension -> Stores mean similarity of extension among all other genes.
+        # TODO: 5- frequency_stop_codon_cdr -> Stores frequency of stop codon for each specie among all genes.
+        # TODO: 6- mean_evolutionary_closeness -> Stores how close to other species depending on an evolutionary tree. TODO: Help me Emmanuel
+        # Mean evolutionary closeness to other species depending on evolutionary tree fed?
+        # For mean evolutionary closeness we need an evolutionary tree as an input.
+        # Try to take a evolutionary tree as an input? Smh.
+        # https://en.wikipedia.org/wiki/Newick_format -> Maybe we can use Newick tree formats?
+        # TODO: Try to find more variables? TODO: Help me Emmanuel
+        # mean_similarity_extension === extensions in information dictionary.
+        # 7- mean_similarity_initials = initials in information dictionary.
+
 
         # TODO: Do we have to take into account the distance scoring function? Maybe so, how? Distance is not included,
         # extension is not trimmed until the length of the reference, sometimes gives stupidly far results therefore.
