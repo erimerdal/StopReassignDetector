@@ -125,34 +125,82 @@ class StopChecker:
                 # results = []
                 # ! Put pairs in correct order with start-end order.
                 pairs_name.append("%s/%s" % (non_reference_species[j],reference_specie_name))
-                original_string = Protein(str(original_sequences_protein[j]))
-                reference_string = Protein(str(reference_sequence_protein))
-                alignment, score, start_end_positions = local_pairwise_align_ssw(
-                original_string,
-                reference_string,
-                substitution_matrix = submat,
-                )
-                #results.append(start_end_positions)
+                original_string = SeqRecord(original_sequences_protein[j],
+                           id="seq1")
+                reference_string = SeqRecord(reference_sequence_protein,
+                           id="seq2")
+                SeqIO.write(original_string, "seq1.fasta", "fasta")
+                SeqIO.write(reference_string, "seq2.fasta", "fasta")
 
-                pairs_results.append(start_end_positions)
-                start_end.append(start_end_positions)
+                # Run BLAST and parse the output
+                command = './blastp -outfmt 6 -query seq1.fasta -subject seq2.fasta'
+                p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE)
+                result = p.stdout.readlines()[0].decode('utf-8')
+                la_data = result.split('\t')
+                # 1.	 qseqid	 query (e.g., gene) sequence id
+                # 2.	 sseqid	 subject (e.g., reference genome) sequence id
+                # 3.	 pident	 percentage of identical matches
+                # 4.	 length	 alignment length
+                # 5.	 mismatch	 number of mismatches
+                # 6.	 gapopen	 number of gap openings
+                # 7.	 qstart	 start of alignment in query
+                # 8.	 qend	 end of alignment in query
+                # 9.	 sstart	 start of alignment in subject
+                # 10.	 send	 end of alignment in subject
+                # 11.	 evalue	 expect value
+                # 12.	 bitscore	 bit score
+                start_end_original = []
+                start_end_original.append(la_data[6])
+                start_end_original.append(la_data[7])
+                start_end_reference = []
+                start_end_reference.append(la_data[8])
+                start_end_reference.append(la_data[9])
+                total = []
+                total.append(start_end_original)
+                total.append(start_end_reference)
+                pairs_results.append(total)
+                start_end.append(total)
 
             # Now do pairwise between all original sequences:
             for j in range(len(non_reference_species)-1):
                 for k in range(j+1,len(non_reference_species)):
-                    # results = []
                     pairs_name.append("%s/%s" % (non_reference_species[j],non_reference_species[k]))
-                    j_sequence = Protein(str(original_sequences_protein[j]))
-                    k_sequence = Protein(str(original_sequences_protein[k]))
-                    alignment, score, start_end_positions = local_pairwise_align_ssw(
-                    j_sequence,
-                    k_sequence,
-                    substitution_matrix = submat,
-                    suppress_sequences = True
-                    )
-                    # results.append(start_end_positions)
-                    pairs_results.append(start_end_positions)
-                    start_end.append(start_end_positions)
+                    j_sequence = SeqRecord(original_sequences_protein[j],
+                               id="seq1")
+                    k_sequence = SeqRecord(original_sequences_protein[k],
+                               id="seq2")
+                    SeqIO.write(j_sequence, "seq1.fasta", "fasta")
+                    SeqIO.write(k_sequence, "seq2.fasta", "fasta")
+
+                    # Run BLAST and parse the output
+                    command = './blastp -outfmt 6 -query seq1.fasta -subject seq2.fasta'
+                    p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE)
+                    result = p.stdout.readlines()[0].decode('utf-8')
+                    la_data = result.split('\t')
+                    # 1.	 qseqid	 query (e.g., gene) sequence id
+                    # 2.	 sseqid	 subject (e.g., reference genome) sequence id
+                    # 3.	 pident	 percentage of identical matches
+                    # 4.	 length	 alignment length
+                    # 5.	 mismatch	 number of mismatches
+                    # 6.	 gapopen	 number of gap openings
+                    # 7.	 qstart	 start of alignment in query
+                    # 8.	 qend	 end of alignment in query
+                    # 9.	 sstart	 start of alignment in subject
+                    # 10.	 send	 end of alignment in subject
+                    # 11.	 evalue	 expect value
+                    # 12.	 bitscore	 bit score
+                    start_end_original = []
+                    start_end_original.append(la_data[6])
+                    start_end_original.append(la_data[7])
+                    start_end_reference = []
+                    start_end_reference.append(la_data[8])
+                    start_end_reference.append(la_data[9])
+                    total = []
+                    total.append(start_end_original)
+                    total.append(start_end_reference)
+
+                    pairs_results.append(total)
+                    start_end.append(total)
 
             # Finds extensions
             for j in range(len(non_reference_species)):
@@ -196,49 +244,76 @@ class StopChecker:
             for j in range(len(scores_list[i]['original_species'])):
                 # Find the place left in reference sequence.
                 end_position_reference = scores_list[i]['start_end'][j][1][1]
+                end_position_reference = int(end_position_reference)
                 # Find end position of original sequence.
                 end_position_original = scores_list[i]['start_end'][j][0][1]
+                end_position_original = int(end_position_original)
                 # Take whats left of reference from initial local alignment.
                 reference_sequence_right = scores_list[i]['reference_sequence_protein'][end_position_reference:]
                 # Concatenate the last part of original sequence and the extensions for them.
                 concatenated_original_seq = scores_list[i]['original_sequences_protein'][j][end_position_original:]
                 concatenated = concatenated_original_seq + scores_list[i]['extensions_protein'][j]
-                # Protein format of the original extension.
-                newStringProtein = Protein(str(concatenated))
-                # Protein format of the part left in reference.
-                refseq = Protein(str(reference_sequence_right))
-                # Search reference sequence in original sequence with LOCAL? alignment.
-                # print("Length of ref_seq: %s" % len(refseq))
-                # print("Length of org_seq: %s" % len(newStringProtein))
+
+                newStringProtein = SeqRecord(concatenated,
+                           id="seq1")
+                refseq = SeqRecord(reference_sequence_right,
+                           id="seq2")
+                SeqIO.write(newStringProtein, "seq1.fasta", "fasta")
+                SeqIO.write(refseq, "seq2.fasta", "fasta")
+
+                # Run BLAST and parse the output
+                command = './blastp -outfmt 6 -query seq1.fasta -subject seq2.fasta'
+                p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE)
                 try:
-                    alignment, score, start_end_positions = local_pairwise_align_ssw(
-                    refseq,
-                    newStringProtein,
-                    substitution_matrix = submat,
-                    )
-                    # Calculate start end position with respect to beginning.
-                    # start_location = start of the extension + other extensions before * their length + end of local alignment
-                    start_location = start_end_positions[0][0] + scores_list[i]['start_end'][j][0][1]
-                    # start_location_r = end location of initial alignment + start position
-                    start_location_r = start_end_positions[1][0] + scores_list[i]['start_end'][j][1][1]
-                    # end_location = end of the extension + other extensions before * their length + end of local alignment
-                    end_location = start_end_positions[0][1] + scores_list[i]['start_end'][j][0][1]
-                    end_location_r = start_end_positions[1][1] + scores_list[i]['start_end'][j][1][1]
-                    start_end_position_reference = []
-                    start_end_position_reference.append(start_location_r)
-                    start_end_position_reference.append(end_location_r)
-                    start_end_position_original = []
-                    start_end_position_original.append(start_location)
-                    start_end_position_original.append(end_location)
-                    # "(%s,%s),(%s,%s)" % (start_location_r,end_location_r,start_location,end_location)
-                    start_end_position = []
-                    start_end_position.append(start_end_position_reference)
-                    start_end_position.append(start_end_position_original)
+                    result = p.stdout.readlines()[0].decode('utf-8')
+                    la_data = result.split('\t')
                 except IndexError:
-                    score = 0
-                    start_end_position = "None"
+                    la_data = []
+                    for i in range(12):
+                        la_data.append(0)
+                # 1.	 qseqid	 query (e.g., gene) sequence id
+                # 2.	 sseqid	 subject (e.g., reference genome) sequence id
+                # 3.	 pident	 percentage of identical matches
+                # 4.	 length	 alignment length
+                # 5.	 mismatch	 number of mismatches
+                # 6.	 gapopen	 number of gap openings
+                # 7.	 qstart	 start of alignment in query
+                # 8.	 qend	 end of alignment in query
+                # 9.	 sstart	 start of alignment in subject
+                # 10.	 send	 end of alignment in subject
+                # 11.	 evalue	 expect value
+                # 12.	 bitscore	 bit score
+                start_end_original = []
+                start_end_original.append(la_data[6])
+                start_end_original.append(la_data[7])
+                start_end_reference = []
+                start_end_reference.append(la_data[8])
+                start_end_reference.append(la_data[9])
+                total = []
+                total.append(start_end_original)
+                total.append(start_end_reference)
+
+                # Calculate start end position with respect to beginning.
+                # start_location = start of the extension + other extensions before * their length + end of local alignment
+                start_location = int(total[0][0]) + int(scores_list[i]['start_end'][j][0][1])
+                # start_location_r = end location of initial alignment + start position
+                start_location_r = int(total[1][0]) + int(scores_list[i]['start_end'][j][1][1])
+                # end_location = end of the extension + other extensions before * their length + end of local alignment
+                end_location = int(total[0][1]) + int(scores_list[i]['start_end'][j][0][1])
+                end_location_r = int(total[1][1]) + int(scores_list[i]['start_end'][j][1][1])
+                start_end_position_reference = []
+                start_end_position_reference.append(start_location_r)
+                start_end_position_reference.append(end_location_r)
+                start_end_position_original = []
+                start_end_position_original.append(start_location)
+                start_end_position_original.append(end_location)
+
+                start_end_position = []
+                start_end_position.append(start_end_position_reference)
+                start_end_position.append(start_end_position_original)
+
                 pairs_results_extensions.append(start_end_position)
-                pairs_results_extensions_scores.append(score)
+                pairs_results_extensions_scores.append(la_data[11])
             data3_temporary.append(pairs_results_extensions)
             data5_temporary.append(pairs_results_extensions_scores)
 
@@ -251,49 +326,77 @@ class StopChecker:
                     # Find the place left in reference sequence
                     orig_spec = len(scores_list[i]['original_species'])
                     j_loc = j + orig_spec
-                    # TODO: Check this calculation, possibly wrong.
-                    end_position_j = scores_list[i]['start_end'][j_loc][0][1]
-                    end_position_k = scores_list[i]['start_end'][j_loc][1][1]
+
+                    end_position_j = int(scores_list[i]['start_end'][j_loc][0][1])
+                    end_position_j = int(end_position_j)
+                    end_position_k = int(scores_list[i]['start_end'][j_loc][1][1])
+                    end_position_k = int(end_position_k)
                     # Take whats left of reference from initial local alignment.
                     j_sequence_right = scores_list[i]['original_sequences_protein'][j][end_position_j:]
                     k_sequence_right = scores_list[i]['original_sequences_protein'][k][end_position_k:]
                     j_sequence_total = j_sequence_right + scores_list[i]['extensions_protein'][j]
                     k_sequence_total = k_sequence_right + scores_list[i]['extensions_protein'][k]
 
-                    # Now we have to extend them both in the double for loop and collect scores.
-                    j_sequence = Protein(str(j_sequence_total))
-                    k_sequence = Protein(str(k_sequence_total))
-                    try:
-                        alignment, score, start_end_positions = local_pairwise_align_ssw(
-                        j_sequence,
-                        k_sequence,
-                        substitution_matrix = submat,
-                        )
-                        # Calculate start end position with respect to beginning.
-                        # start_location = start of the extension + other extensions before * their length + end of local alignment
-                        start_location = start_end_positions[0][0] + scores_list[i]['start_end'][j][0][1]
-                        # start_location_r = end location of initial alignment + start position
-                        start_location_r = start_end_positions[1][0] + scores_list[i]['start_end'][j][1][1]
-                        # end_location = end of the extension + other extensions before * their length + end of local alignment
-                        end_location = start_end_positions[0][1]+ scores_list[i]['start_end'][j][0][1]
-                        end_location_r = start_end_positions[1][1] + scores_list[i]['start_end'][j][1][1]
-                        start_end_position_reference = []
-                        start_end_position_reference.append(start_location_r)
-                        start_end_position_reference.append(end_location_r)
-                        start_end_position_original = []
-                        start_end_position_original.append(start_location)
-                        start_end_position_original.append(end_location)
-                        # "(%s,%s),(%s,%s)" % (start_location_r,end_location_r,start_location,end_location)
-                        start_end_position = []
-                        start_end_position.append(start_end_position_reference)
-                        start_end_position.append(start_end_position_original)
-                    except IndexError:
-                        score = 0
-                        start_end_position = "None"
+                    j_sequence = SeqRecord(j_sequence_total,
+                               id="seq1")
+                    k_sequence = SeqRecord(k_sequence_total,
+                               id="seq2")
+                    SeqIO.write(j_sequence, "seq1.fasta", "fasta")
+                    SeqIO.write(k_sequence, "seq2.fasta", "fasta")
 
-                    pairs_results_extensions_j_score.append(score)
+                    # Run BLAST and parse the output
+                    command = './blastp -outfmt 6 -query seq1.fasta -subject seq2.fasta'
+                    p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE)
+                    try:
+                        result = p.stdout.readlines()[0].decode('utf-8')
+                        la_data = result.split('\t')
+                    except IndexError:
+                        la_data = []
+                        for i in range(12):
+                            la_data.append(0)
+                    # 1.	 qseqid	 query (e.g., gene) sequence id
+                    # 2.	 sseqid	 subject (e.g., reference genome) sequence id
+                    # 3.	 pident	 percentage of identical matches
+                    # 4.	 length	 alignment length
+                    # 5.	 mismatch	 number of mismatches
+                    # 6.	 gapopen	 number of gap openings
+                    # 7.	 qstart	 start of alignment in query
+                    # 8.	 qend	 end of alignment in query
+                    # 9.	 sstart	 start of alignment in subject
+                    # 10.	 send	 end of alignment in subject
+                    # 11.	 evalue	 expect value
+                    # 12.	 bitscore	 bit score
+                    start_end_original = []
+                    start_end_original.append(la_data[6])
+                    start_end_original.append(la_data[7])
+                    start_end_reference = []
+                    start_end_reference.append(la_data[8])
+                    start_end_reference.append(la_data[9])
+                    total = []
+                    total.append(start_end_original)
+                    total.append(start_end_reference)
+
+                    # start_location = start of the extension + other extensions before * their length + end of local alignment
+                    start_location = int(total[0][0]) + int(scores_list[i]['start_end'][j][0][1])
+                    # start_location_r = end location of initial alignment + start position
+                    start_location_r = int(total[1][0]) + int(scores_list[i]['start_end'][j][1][1])
+                    # end_location = end of the extension + other extensions before * their length + end of local alignment
+                    end_location = int(total[0][1]) + int(scores_list[i]['start_end'][j][0][1])
+                    end_location_r = int(total[1][1]) + int(scores_list[i]['start_end'][j][1][1])
+                    start_end_position_reference = []
+                    start_end_position_reference.append(start_location_r)
+                    start_end_position_reference.append(end_location_r)
+                    start_end_position_original = []
+                    start_end_position_original.append(start_location)
+                    start_end_position_original.append(end_location)
+
+                    start_end_position = []
+                    start_end_position.append(start_end_position_reference)
+                    start_end_position.append(start_end_position_original)
+
+                    pairs_results_extensions_j_score.append(la_data[11])
                     pairs_results_extensions_j.append(start_end_position)
-                    # print("j: %s k: %s" % (j,k)) seems okay
+
             data4_temporary.append(pairs_results_extensions_j)
 
             data6_temporary.append(pairs_results_extensions_j_score)
@@ -313,7 +416,7 @@ class StopChecker:
             # We should do the same order when we were calculating scores/start.end positions.
             reference_extension_total = 0
             for j in range(len(scores_list[i]['original_species'])):
-                reference_extension_total += data3_temporary[i][j][0][1] - data2_temporary[i][j][0][1]
+                reference_extension_total += int(data3_temporary[i][j][0][1]) - int(data2_temporary[i][j][0][1])
             mean_length_of_extensions.append(reference_extension_total/(len(scores_list[i]['original_species'])))
             # We need a better version of data structure, too much calculation involved while trying to find all non-references.
             # The data structure should be storing all information for all genes for each specie seperately.
@@ -333,7 +436,7 @@ class StopChecker:
                 mloe = 0
                 # Now that we have the dataset for each gene, we can keep calculating.
                 for k in range(len(mloe_dataset)):
-                    mloe += mloe_dataset[k] - mloe_dataset_in[k]
+                    mloe += float(mloe_dataset[k]) - float(mloe_dataset_in[k])
                 mean_length_of_extensions.append(mloe/(len(scores_list[i]['original_species'])))
 
             # The length of the gene compared to other homologs:
@@ -409,24 +512,11 @@ class StopChecker:
                 meansim_org = 0
                 for k in range(len(counter)):
                     if str(j) in counter[k]:
-                        meansim_org += data6_temporary[i][j]
+                        meansim_org += float(data6_temporary[i][j])
                 meansim_org /= len(scores_list[i]['original_species'])
                 mean_similarity_extension.append(meansim_org)
 
-        ############## Test for BLAST
-        seq1 = SeqRecord(Seq("FQTWEEFSRAAEKLYLADPMKVRVVLKYRHVDGNLCIKVTDDLVCLVYRTDQAQDVKKIEKF"),
-                   id="seq1")
-        seq2 = SeqRecord(Seq("FQTWEEFSRAEKLYLADPMKVRVVLRYRHVDGNLCIKVTDDLICLVYRTDQAQDVKKIEKF"),
-                   id="seq2")
-        SeqIO.write(seq1, "seq1.fasta", "fasta")
-        SeqIO.write(seq2, "seq2.fasta", "fasta")
-
-        # Run BLAST and parse the output
-        command = './blastp -outfmt 6 -query seq1.fasta -subject seq2.fasta'
-        p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE)
-        print(p.stdout.readlines()[0].decode('utf-8'))
-
-        ############## Test for Dataset
+        # ############# Test for Dataset
         # print(mean_length_of_extensions)
         # print("")
         # print(mean_similarity_extension)
@@ -434,7 +524,7 @@ class StopChecker:
         # print(frequency_evolutionary)
         # print("")
         # print(length_of_genes)
-        ##############
+        # #############
 
         # 1- length_of_extensions -> Stores length of extensions
         # 2- length_of_genes -> Stores length of genes
