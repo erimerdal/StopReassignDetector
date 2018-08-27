@@ -61,6 +61,8 @@ class StopChecker:
         data6_temporary = [] # Start end for pairwise extension k-slide 39 elements
         data7_temporary = [] # Scores for pairwise extension k-slide 39 elements
         data8_temporary = [] # Best alignments of j-k slides.
+        e_values_total_reference = []
+        e_values_total_original = []
         scores_list = []
         # TODO: Why doesn't this work ? submat = _load_matrix("blosum62.txt")
         submat = make_identity_substitution_matrix(5, -2, alphabet='ARNDCQEGHILKMFPSTWYVBZX*')
@@ -122,6 +124,8 @@ class StopChecker:
             pairs_results = []
             # start_end: stores start_end results
             start_end = []
+            # e-value: stores the e-values of sequences.
+            e_values_initial = []
             # Traverses non-reference_sequences and do local alignment with reference, stores their scores.
             for j in range(len(non_reference_species)):
                 # results: a list that stores scores, start_end and alignments.
@@ -166,6 +170,7 @@ class StopChecker:
                 total.append(start_end_reference)
                 pairs_results.append(total)
                 start_end.append(total)
+                e_values_initial.append(float(la_data[10]))
 
             # Now do pairwise between all original sequences:
             for j in range(len(non_reference_species)-1):
@@ -191,6 +196,7 @@ class StopChecker:
                     start_end_reference = []
                     start_end_reference.append(int(la_data[8]))
                     start_end_reference.append(int(la_data[9]))
+                    e_values_initial.append(float(la_data[10]))
                     total = []
                     total.append(start_end_original)
                     total.append(start_end_reference)
@@ -228,12 +234,13 @@ class StopChecker:
             # Scores_list will be used for doing necessary calculations with extensions.
             score_dictionary = {'gene_name': common_genes[i], 'original_species': non_reference_species, 'original_sequences': original_sequences, 'original_sequences_protein': original_sequences_protein, 'reference_specie': reference_species[i],
             'reference_sequences': reference_sequence, 'reference_sequence_protein': reference_sequence_protein, 'extensions': trimmed_extensions,
-             'extensions_protein': allowed_extensions_protein, 'start_end': start_end}
+             'extensions_protein': allowed_extensions_protein, 'start_end': start_end, 'e_values_extensions':e_values_initial}
             scores_list.append(score_dictionary)
 
         # Here we will start a new, final chapter everyone!
         # First compare all sequences with reference sequence.
         for i in range(len(scores_list)):
+            e_values_extensions = []
             pairs_results_extensions = []
             pairs_results_extensions_scores = []
             # Pairwise reference with each non-reference specie.
@@ -280,6 +287,7 @@ class StopChecker:
                 start_end_reference = []
                 start_end_reference.append(int(la_data[8]))
                 start_end_reference.append(int(la_data[9]))
+                e_values_extensions.append(float(la_data[10]))
                 total = []
                 total.append(start_end_original)
                 total.append(start_end_reference)
@@ -310,9 +318,11 @@ class StopChecker:
                 pairs_results_extensions_scores.append(int(la_data[11]))
             data3_temporary.append(pairs_results_extensions)
             data5_temporary.append(pairs_results_extensions_scores)
+            e_values_total_reference.append(e_values_extensions)
 
         # pairwise.
         for i in range(len(scores_list)):
+            e_values_extensions = []
             pairs_results_extensions_j = []
             pairs_results_extensions_j_score = []
             for j in range(len(scores_list[i]['original_species'])-1):
@@ -377,13 +387,14 @@ class StopChecker:
 
                     pairs_results_extensions_j_score.append(la_data[11])
                     pairs_results_extensions_j.append(start_end_position)
+                    e_values_extensions.append(float(la_data[10]))
                     # # Debug: -7- Passed.
                     # print("Start/end position reference: %s" % start_end_position_reference)
                     # print("Start/end position original: %s" % start_end_position_original)
                     # print("Bitscore: %s" % la_data[11])
 
             data4_temporary.append(pairs_results_extensions_j)
-
+            e_values_total_original.append(e_values_extensions)
             data6_temporary.append(pairs_results_extensions_j_score)
 
         for i in range(len(data6_temporary)):
@@ -457,6 +468,7 @@ class StopChecker:
         frequency_evolutionary = []
         mean_similarity_extension = []
         counter = []
+        e_values = []
         onlyOnce = True # Store counter only once not genes times.
         for i in range(len(scores_list)):
             if onlyOnce:
@@ -498,17 +510,37 @@ class StopChecker:
                 for k in range(len(counter)):
                     if str(j) in counter[k]:
                         meansim_org += float(data6_temporary[i][j])
+                meansim_org += data5_temporary[i][j]
                 meansim_org /= len(scores_list[i]['original_species'])
                 mean_similarity_extension.append(meansim_org)
 
+            # e-values for reference:
+            e_value_total = 0
+            for j in range(len(scores_list[i]['original_species'])):
+                e_value_total += e_values_total_reference[i][j]
+            e_values_average = e_value_total / len(scores_list[i]['original_species'])
+            e_values.append(e_values_average)
+
+            # e_values for non-reference species:
+            for j in range(len(scores_list[i]['original_species'])):
+                e_value_total = 0
+                for k in range(len(counter)):
+                    if str(j) in counter[k]:
+                        e_value_total += e_values_total_original[i][j]
+                e_value_total += e_values_total_reference[i][j]
+                e_values_average = e_value_total / len(scores_list[i]['original_species'])
+                e_values.append(e_values_average)
+
         # ############# Test for Dataset Debug -8- Passed
-        # print(mean_length_of_extensions)
-        # print("")
-        # print(mean_similarity_extension)
-        # print("")
-        # print(frequency_evolutionary)
-        # print("")
-        # print(length_of_genes)
+        print(mean_length_of_extensions)
+        print("")
+        print(mean_similarity_extension)
+        print("")
+        print(frequency_evolutionary)
+        print("")
+        print(length_of_genes)
+        print("")
+        print(e_values)
         # #############
 
         # 1- length_of_extensions -> Stores length of extensions
