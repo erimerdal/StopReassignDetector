@@ -13,22 +13,14 @@ from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
 import subprocess
 
-# import time # TODO: Remove after tests
-
 __all__ = ['MasterFile', 'StopChecker', 'MasterCollection']
-
-# TODO: skbio.alignment.make_identity_substitution_matrix version 0.5.2 has open issue on substitution_matrix, it will be fixed in
-# 0.5.3 which has not came up yet. It can be fixed after they fix the issue. (Maybe feed BLOSUM62)
-# http://scikit-bio.org/docs/0.5.1/generated/skbio.alignment.make_identity_substitution_matrix.html#skbio.alignment.make_identity_substitution_matrix
 
 class StopChecker:
     def __init__(self, mcol, outdir, kmer_length=15, threshold=10, match_score=10, mismatch_penalty=-4, submat=None, **kwargs):
         """Take a list of  collection of MasterFile as input and check stop codon"""
-        # start_time = time.time() # TODO: Remove after tests
         self.mcol = mcol
         self.alignments(mcol, kmer_length, threshold, match_score, mismatch_penalty)
         self._give_meaning()
-        # print("--- %s seconds --- For StopChecker" % (time.time() - start_time)) # TODO: Remove after tests
 
     def alignments(self, mcol, kmer_length, threshold, match_score, mismatch_penalty):
         list_of_dictionaries, list_of_extended_dictionaries, reference_species, common_genes = mcol.digest()
@@ -64,8 +56,6 @@ class StopChecker:
         e_values_total_reference = []
         e_values_total_original = []
         scores_list = []
-        # TODO: Why doesn't this work ? submat = _load_matrix("blosum62.txt")
-        submat = make_identity_substitution_matrix(5, -2, alphabet='ARNDCQEGHILKMFPSTWYVBZX*')
         # List includes a dictionary for each gene
         for i in range(len(common_genes)):
             reference_specie_name = ""
@@ -124,8 +114,6 @@ class StopChecker:
             pairs_results = []
             # start_end: stores start_end results
             start_end = []
-            # e-value: stores the e-values of sequences.
-            e_values_initial = []
             # Traverses non-reference_sequences and do local alignment with reference, stores their scores.
             for j in range(len(non_reference_species)):
                 # results: a list that stores scores, start_end and alignments.
@@ -170,7 +158,6 @@ class StopChecker:
                 total.append(start_end_reference)
                 pairs_results.append(total)
                 start_end.append(total)
-                e_values_initial.append(float(la_data[10]))
 
             # Now do pairwise between all original sequences:
             for j in range(len(non_reference_species)-1):
@@ -196,7 +183,6 @@ class StopChecker:
                     start_end_reference = []
                     start_end_reference.append(int(la_data[8]))
                     start_end_reference.append(int(la_data[9]))
-                    e_values_initial.append(float(la_data[10]))
                     total = []
                     total.append(start_end_original)
                     total.append(start_end_reference)
@@ -234,7 +220,7 @@ class StopChecker:
             # Scores_list will be used for doing necessary calculations with extensions.
             score_dictionary = {'gene_name': common_genes[i], 'original_species': non_reference_species, 'original_sequences': original_sequences, 'original_sequences_protein': original_sequences_protein, 'reference_specie': reference_species[i],
             'reference_sequences': reference_sequence, 'reference_sequence_protein': reference_sequence_protein, 'extensions': trimmed_extensions,
-             'extensions_protein': allowed_extensions_protein, 'start_end': start_end, 'e_values_extensions':e_values_initial}
+             'extensions_protein': allowed_extensions_protein, 'start_end': start_end}
             scores_list.append(score_dictionary)
 
         # Here we will start a new, final chapter everyone!
@@ -255,10 +241,10 @@ class StopChecker:
                 concatenated_original_seq = scores_list[i]['original_sequences_protein'][j][end_position_original:]
                 concatenated = concatenated_original_seq + scores_list[i]['extensions_protein'][j]
                 # # Debug: -4- Passed.
-                # print("End p. R: %d, End p. O: %d" % (end_position_reference,end_position_original))
-                # print("Length of Reference Sequence: %d, L.o.Original.s: %d" % (len(scores_list[i]['reference_sequence_protein']),len(scores_list[i]['original_sequences_protein'][j])))
-                # print("Concatenated: %s" % concatenated)
-                # print("Ref.: %s" % reference_sequence_right)
+                print("End p. R: %d, End p. O: %d" % (end_position_reference,end_position_original))
+                print("Length of Reference Sequence: %d, L.o.Original.s: %d" % (len(scores_list[i]['reference_sequence_protein']),len(scores_list[i]['original_sequences_protein'][j])))
+                print("Concatenated: %s" % concatenated)
+                print("Ref.: %s" % reference_sequence_right)
                 newStringProtein = SeqRecord(concatenated,
                            id="seq1")
                 refseq = SeqRecord(reference_sequence_right,
@@ -277,8 +263,6 @@ class StopChecker:
                     la_data = []
                     for i in range(12):
                         la_data.append(0)
-                        # TODO: Maybe change the approach. 0 here means reference sequence left from initial local alignment
-                        # is empty, which results in IndexError. Should we give 0 score if initial alignment is perfect?
                 # # Debug: -5- : Always 0,0,0,0,0..
                 # print("Local Alignment Data: %s" % la_data)
                 start_end_original = []
@@ -310,7 +294,7 @@ class StopChecker:
                 start_end_position = []
                 start_end_position.append(start_end_position_reference)
                 start_end_position.append(start_end_position_original)
-                # # Debug: -6- Failed. TODO: Bitscore always returns 0? In every single printed case here. Which should not be.
+                # # Debug: -6- Passed.
                 # print("Start Ref: %d, End Ref: %d" % (start_location_r,end_location_r))
                 # print("Start Org: %d, End Org: %d" % (start_location,end_location))
                 # print("Bitscore = Score: %d" % la_data[11])
@@ -401,11 +385,25 @@ class StopChecker:
             for k in range(len(data4_temporary[i])):
                 data3_temporary[i].append(data4_temporary[i][k])
 
-        # TODO:TODO: Storing variable informations for modelling DT/RF.
-        mean_length_of_extensions = []
-        length_of_genes = []
-        frequency_of_stop_codon = []
-        stop_codons_evolutionary = []
+        # Storing variable informations for modelling DT/RF.
+        mean_length_of_extensions = [] # Stores mean length of extensions
+        length_of_genes = [] # Stores mean length of genes.
+        frequency_of_stop_codon = [] # Check evolutionary close species' frequencies of that stop codon
+        stop_codons_evolutionary = [] # Useless
+        frequency_evolutionary = []  # Frequency of the stop codon in all evolutionary close stop codons
+        mean_similarity_extension = [] # bitscores obtained from blast for extensions.
+        mean_e_values_extensions = [] # e-values obtained from blast for extensions.
+        mean_similarity_of_initials = [] # Similar to mean similarity of extensions but for initials. TODO: Implement
+        mean_e_values_initials = [] # Similar to mean_e_values_extensions but for initials. TODO: Implement
+            # 3.	 pident	 percentage of identical matches
+            # 5.	 mismatch	 number of mismatches
+            # 6.	 gapopen	 number of gap openings
+        mean_identical_match_percentage_initials = [] # TODO: Implement # This might work
+        mean_identical_match_percentage_extensions = [] # TODO: Implement
+        mean_mismatch_number_initials = [] # TODO: Implement # These variables will be in correlation with bitscores, also identical match percentages etc.
+        mean_mismatch_number_extensions = [] # TODO: Implement # Hence they might affect the model badly. Variables should not be in direct correlation I guess.
+
+
         for i in range(len(scores_list)): # For each gene // Genes should be taken apart seperately while collecting data
             # The length of the extension
             # For the reference specie:
@@ -463,12 +461,8 @@ class StopChecker:
                     if substrings[k] == substrings[0]:
                         countStopCodons += 1
                 frequency_of_stop_codon.append(countStopCodons/len(substrings))
-        # print(len(mean_length_of_extensions)) = 65, 13 genes for 5 species correct.
-        # Frequency of the stop codon in all evolutionary close stop codons
-        frequency_evolutionary = []
-        mean_similarity_extension = []
+
         counter = []
-        e_values = []
         onlyOnce = True # Store counter only once not genes times.
         for i in range(len(scores_list)):
             if onlyOnce:
@@ -496,8 +490,6 @@ class StopChecker:
                 frequency_evolutionary.append(stopCodonCount/len(stop_codons_evolutionary))
         # Mean similarity of the extension to other genomes
         # How to determine mean similarity of extensions with other genomes?
-            # TODO: Store all scores of a non-original specie with others in local alignment. After that sum all of those scores and
-            # divide by total number of species to get mean similarity.
             meansim_ref = 0
             for j in range(len(data5_temporary[i])):
                 meansim_ref += data5_temporary[i][j]
@@ -514,12 +506,12 @@ class StopChecker:
                 meansim_org /= len(scores_list[i]['original_species'])
                 mean_similarity_extension.append(meansim_org)
 
-            # e-values for reference sequences:
+            # e-values for reference:
             e_value_total = 0
             for j in range(len(scores_list[i]['original_species'])):
                 e_value_total += e_values_total_reference[i][j]
             e_values_average = e_value_total / len(scores_list[i]['original_species'])
-            e_values.append(e_values_average)
+            mean_e_values_extensions.append(e_values_average)
 
             # e_values for non-reference species:
             for j in range(len(scores_list[i]['original_species'])):
@@ -529,37 +521,20 @@ class StopChecker:
                         e_value_total += e_values_total_original[i][j]
                 e_value_total += e_values_total_reference[i][j]
                 e_values_average = e_value_total / len(scores_list[i]['original_species'])
-                e_values.append(e_values_average)
+                mean_e_values_extensions.append(e_values_average)
 
         # ############# Test for Dataset Debug -8- Passed
-        print(mean_length_of_extensions)
-        print("")
-        print(mean_similarity_extension)
-        print("")
-        print(frequency_evolutionary)
-        print("")
-        print(length_of_genes)
-        print("")
-        print(e_values)
+        # print(mean_length_of_extensions) # Mean extension lengths
+        # print("")
+        # print(mean_similarity_extension) # Mean bitscores
+        # print("")
+        # print(frequency_evolutionary) # Frequencies of stop codons
+        # print("")
+        # print(length_of_genes) # Lengths of genes
+        # print("")
+        # print(e_values) # e-values determined from blast
         # #############
 
-        # 1- length_of_extensions -> Stores length of extensions
-        # 2- length_of_genes -> Stores length of genes
-        # 3- frequency_of_stop_codon -> Stores frequency of stop codon in all coding region
-        # 4- mean_similarity_extension -> Stores mean similarity of extension among all other genes.
-        # TODO: 5- frequency_stop_codon_cdr -> Stores frequency of stop codon for each specie among all genes.
-        # TODO: 6- mean_evolutionary_closeness -> Stores how close to other species depending on an evolutionary tree. TODO: Help me Emmanuel
-        # Mean evolutionary closeness to other species depending on evolutionary tree fed?
-        # For mean evolutionary closeness we need an evolutionary tree as an input.
-        # Try to take a evolutionary tree as an input? Smh.
-        # https://en.wikipedia.org/wiki/Newick_format -> Maybe we can use Newick tree formats?
-        # TODO: Try to find more variables? TODO: Help me Emmanuel
-        # mean_similarity_extension === extensions in information dictionary.
-        # 7- mean_similarity_initials = initials in information dictionary.
-
-
-        # TODO: Do we have to take into account the distance scoring function? Maybe so, how? Distance is not included,
-        # extension is not trimmed until the length of the reference, sometimes gives stupidly far results therefore.
         self.information_dictionary = {'pairs': data1_temporary, 'initials': data2_temporary, 'extensions': data3_temporary}
         return self.information_dictionary
 
@@ -579,9 +554,9 @@ class StopChecker:
                 # CoreTracker uses -> Fisher's p value? Telford score of C coding for X?
 
 
-        # Calculate their Gini impurities. (?) TODO: Help me Emmanuel
+        # Calculate their Gini impurities. (?)
         # Manipulate data in a format such that training/test will be split easily.
-        # Gather information with research to find some True Positive dataset. TODO: Help me Emmanuel
+        # Gather information with research to find some True Positive dataset.
         # Create a Decision Tree Model for visualization.
         # Create a RF Model for meaning.
         pass
