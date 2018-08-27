@@ -514,7 +514,7 @@ class StopChecker:
                 meansim_org /= len(scores_list[i]['original_species'])
                 mean_similarity_extension.append(meansim_org)
 
-            # e-values for reference:
+            # e-values for reference sequences:
             e_value_total = 0
             for j in range(len(scores_list[i]['original_species'])):
                 e_value_total += e_values_total_reference[i][j]
