@@ -110,6 +110,9 @@ class StopChecker:
                             non_reference_species_gc.append(table_id)
                             genes.append(list_of_formatted_dictionaries[j]['genes_list'][k])
                             original_sequences.append(formatted)
+                            # # Debug: -1- Passed.
+                            # print("Formatted: %s" % formatted)
+                            # print("Protein: %s" % protein)
                             original_sequences_protein.append(protein)
                             break
 
@@ -137,6 +140,9 @@ class StopChecker:
                 p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE)
                 result = p.stdout.readlines()[0].decode('utf-8')
                 la_data = result.split('\t')
+                # # Debug: -2- Passed.
+                # print("Local Alignment Data: %s" % la_data)
+
                 # 1.	 qseqid	 query (e.g., gene) sequence id
                 # 2.	 sseqid	 subject (e.g., reference genome) sequence id
                 # 3.	 pident	 percentage of identical matches
@@ -150,11 +156,11 @@ class StopChecker:
                 # 11.	 evalue	 expect value
                 # 12.	 bitscore	 bit score
                 start_end_original = []
-                start_end_original.append(la_data[6])
-                start_end_original.append(la_data[7])
+                start_end_original.append(int(la_data[6]))
+                start_end_original.append(int(la_data[7]))
                 start_end_reference = []
-                start_end_reference.append(la_data[8])
-                start_end_reference.append(la_data[9])
+                start_end_reference.append(int(la_data[8]))
+                start_end_reference.append(int(la_data[9]))
                 total = []
                 total.append(start_end_original)
                 total.append(start_end_reference)
@@ -177,24 +183,14 @@ class StopChecker:
                     p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE)
                     result = p.stdout.readlines()[0].decode('utf-8')
                     la_data = result.split('\t')
-                    # 1.	 qseqid	 query (e.g., gene) sequence id
-                    # 2.	 sseqid	 subject (e.g., reference genome) sequence id
-                    # 3.	 pident	 percentage of identical matches
-                    # 4.	 length	 alignment length
-                    # 5.	 mismatch	 number of mismatches
-                    # 6.	 gapopen	 number of gap openings
-                    # 7.	 qstart	 start of alignment in query
-                    # 8.	 qend	 end of alignment in query
-                    # 9.	 sstart	 start of alignment in subject
-                    # 10.	 send	 end of alignment in subject
-                    # 11.	 evalue	 expect value
-                    # 12.	 bitscore	 bit score
+                    # # Debug: -3- Passed.
+                    # print("Local Alignment Data: %s" % la_data)
                     start_end_original = []
-                    start_end_original.append(la_data[6])
-                    start_end_original.append(la_data[7])
+                    start_end_original.append(int(la_data[6]))
+                    start_end_original.append(int(la_data[7]))
                     start_end_reference = []
-                    start_end_reference.append(la_data[8])
-                    start_end_reference.append(la_data[9])
+                    start_end_reference.append(int(la_data[8]))
+                    start_end_reference.append(int(la_data[9]))
                     total = []
                     total.append(start_end_original)
                     total.append(start_end_reference)
@@ -244,23 +240,26 @@ class StopChecker:
             for j in range(len(scores_list[i]['original_species'])):
                 # Find the place left in reference sequence.
                 end_position_reference = scores_list[i]['start_end'][j][1][1]
-                end_position_reference = int(end_position_reference)
                 # Find end position of original sequence.
                 end_position_original = scores_list[i]['start_end'][j][0][1]
-                end_position_original = int(end_position_original)
                 # Take whats left of reference from initial local alignment.
                 reference_sequence_right = scores_list[i]['reference_sequence_protein'][end_position_reference:]
                 # Concatenate the last part of original sequence and the extensions for them.
                 concatenated_original_seq = scores_list[i]['original_sequences_protein'][j][end_position_original:]
                 concatenated = concatenated_original_seq + scores_list[i]['extensions_protein'][j]
-
+                # # Debug: -4- Passed.
+                # print("End p. R: %d, End p. O: %d" % (end_position_reference,end_position_original))
+                # print("Length of Reference Sequence: %d, L.o.Original.s: %d" % (len(scores_list[i]['reference_sequence_protein']),len(scores_list[i]['original_sequences_protein'][j])))
+                # print("Concatenated: %s" % concatenated)
+                # print("Ref.: %s" % reference_sequence_right)
                 newStringProtein = SeqRecord(concatenated,
                            id="seq1")
                 refseq = SeqRecord(reference_sequence_right,
                            id="seq2")
                 SeqIO.write(newStringProtein, "seq1.fasta", "fasta")
                 SeqIO.write(refseq, "seq2.fasta", "fasta")
-
+                # print("Org: %s" % str(newStringProtein))
+                # print("Ref: %s" % str(refseq))
                 # Run BLAST and parse the output
                 command = './blastp -outfmt 6 -query seq1.fasta -subject seq2.fasta'
                 p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE)
@@ -271,36 +270,28 @@ class StopChecker:
                     la_data = []
                     for i in range(12):
                         la_data.append(0)
-                # 1.	 qseqid	 query (e.g., gene) sequence id
-                # 2.	 sseqid	 subject (e.g., reference genome) sequence id
-                # 3.	 pident	 percentage of identical matches
-                # 4.	 length	 alignment length
-                # 5.	 mismatch	 number of mismatches
-                # 6.	 gapopen	 number of gap openings
-                # 7.	 qstart	 start of alignment in query
-                # 8.	 qend	 end of alignment in query
-                # 9.	 sstart	 start of alignment in subject
-                # 10.	 send	 end of alignment in subject
-                # 11.	 evalue	 expect value
-                # 12.	 bitscore	 bit score
+                        # TODO: Maybe change the approach. 0 here means reference sequence left from initial local alignment
+                        # is empty, which results in IndexError. Should we give 0 score if initial alignment is perfect?
+                # # Debug: -5- : Always 0,0,0,0,0..
+                # print("Local Alignment Data: %s" % la_data)
                 start_end_original = []
-                start_end_original.append(la_data[6])
-                start_end_original.append(la_data[7])
+                start_end_original.append(int(la_data[6]))
+                start_end_original.append(int(la_data[7]))
                 start_end_reference = []
-                start_end_reference.append(la_data[8])
-                start_end_reference.append(la_data[9])
+                start_end_reference.append(int(la_data[8]))
+                start_end_reference.append(int(la_data[9]))
                 total = []
                 total.append(start_end_original)
                 total.append(start_end_reference)
 
                 # Calculate start end position with respect to beginning.
                 # start_location = start of the extension + other extensions before * their length + end of local alignment
-                start_location = int(total[0][0]) + int(scores_list[i]['start_end'][j][0][1])
+                start_location = total[0][0] + scores_list[i]['start_end'][j][0][0]
                 # start_location_r = end location of initial alignment + start position
-                start_location_r = int(total[1][0]) + int(scores_list[i]['start_end'][j][1][1])
+                start_location_r = total[1][0] + scores_list[i]['start_end'][j][1][0]
                 # end_location = end of the extension + other extensions before * their length + end of local alignment
-                end_location = int(total[0][1]) + int(scores_list[i]['start_end'][j][0][1])
-                end_location_r = int(total[1][1]) + int(scores_list[i]['start_end'][j][1][1])
+                end_location = total[0][1] + scores_list[i]['start_end'][j][0][1]
+                end_location_r = total[1][1] + scores_list[i]['start_end'][j][1][1]
                 start_end_position_reference = []
                 start_end_position_reference.append(start_location_r)
                 start_end_position_reference.append(end_location_r)
@@ -311,9 +302,12 @@ class StopChecker:
                 start_end_position = []
                 start_end_position.append(start_end_position_reference)
                 start_end_position.append(start_end_position_original)
-
+                # # Debug: -6- Failed. TODO: Bitscore always returns 0? In every single printed case here. Which should not be.
+                # print("Start Ref: %d, End Ref: %d" % (start_location_r,end_location_r))
+                # print("Start Org: %d, End Org: %d" % (start_location,end_location))
+                # print("Bitscore = Score: %d" % la_data[11])
                 pairs_results_extensions.append(start_end_position)
-                pairs_results_extensions_scores.append(la_data[11])
+                pairs_results_extensions_scores.append(int(la_data[11]))
             data3_temporary.append(pairs_results_extensions)
             data5_temporary.append(pairs_results_extensions_scores)
 
@@ -327,10 +321,8 @@ class StopChecker:
                     orig_spec = len(scores_list[i]['original_species'])
                     j_loc = j + orig_spec
 
-                    end_position_j = int(scores_list[i]['start_end'][j_loc][0][1])
-                    end_position_j = int(end_position_j)
-                    end_position_k = int(scores_list[i]['start_end'][j_loc][1][1])
-                    end_position_k = int(end_position_k)
+                    end_position_j = scores_list[i]['start_end'][j_loc][0][1]
+                    end_position_k = scores_list[i]['start_end'][j_loc][1][1]
                     # Take whats left of reference from initial local alignment.
                     j_sequence_right = scores_list[i]['original_sequences_protein'][j][end_position_j:]
                     k_sequence_right = scores_list[i]['original_sequences_protein'][k][end_position_k:]
@@ -354,35 +346,24 @@ class StopChecker:
                         la_data = []
                         for i in range(12):
                             la_data.append(0)
-                    # 1.	 qseqid	 query (e.g., gene) sequence id
-                    # 2.	 sseqid	 subject (e.g., reference genome) sequence id
-                    # 3.	 pident	 percentage of identical matches
-                    # 4.	 length	 alignment length
-                    # 5.	 mismatch	 number of mismatches
-                    # 6.	 gapopen	 number of gap openings
-                    # 7.	 qstart	 start of alignment in query
-                    # 8.	 qend	 end of alignment in query
-                    # 9.	 sstart	 start of alignment in subject
-                    # 10.	 send	 end of alignment in subject
-                    # 11.	 evalue	 expect value
-                    # 12.	 bitscore	 bit score
+
                     start_end_original = []
-                    start_end_original.append(la_data[6])
-                    start_end_original.append(la_data[7])
+                    start_end_original.append(int(la_data[6]))
+                    start_end_original.append(int(la_data[7]))
                     start_end_reference = []
-                    start_end_reference.append(la_data[8])
-                    start_end_reference.append(la_data[9])
+                    start_end_reference.append(int(la_data[8]))
+                    start_end_reference.append(int(la_data[9]))
                     total = []
                     total.append(start_end_original)
                     total.append(start_end_reference)
 
                     # start_location = start of the extension + other extensions before * their length + end of local alignment
-                    start_location = int(total[0][0]) + int(scores_list[i]['start_end'][j][0][1])
+                    start_location = total[0][0] + scores_list[i]['start_end'][j][0][1]
                     # start_location_r = end location of initial alignment + start position
-                    start_location_r = int(total[1][0]) + int(scores_list[i]['start_end'][j][1][1])
+                    start_location_r = total[1][0] + scores_list[i]['start_end'][j][1][1]
                     # end_location = end of the extension + other extensions before * their length + end of local alignment
-                    end_location = int(total[0][1]) + int(scores_list[i]['start_end'][j][0][1])
-                    end_location_r = int(total[1][1]) + int(scores_list[i]['start_end'][j][1][1])
+                    end_location = total[0][1] + scores_list[i]['start_end'][j][0][1]
+                    end_location_r = total[1][1] + scores_list[i]['start_end'][j][1][1]
                     start_end_position_reference = []
                     start_end_position_reference.append(start_location_r)
                     start_end_position_reference.append(end_location_r)
@@ -396,6 +377,10 @@ class StopChecker:
 
                     pairs_results_extensions_j_score.append(la_data[11])
                     pairs_results_extensions_j.append(start_end_position)
+                    # # Debug: -7- Passed.
+                    # print("Start/end position reference: %s" % start_end_position_reference)
+                    # print("Start/end position original: %s" % start_end_position_original)
+                    # print("Bitscore: %s" % la_data[11])
 
             data4_temporary.append(pairs_results_extensions_j)
 
@@ -516,7 +501,7 @@ class StopChecker:
                 meansim_org /= len(scores_list[i]['original_species'])
                 mean_similarity_extension.append(meansim_org)
 
-        # ############# Test for Dataset
+        # ############# Test for Dataset Debug -8- Passed
         # print(mean_length_of_extensions)
         # print("")
         # print(mean_similarity_extension)
