@@ -5,7 +5,7 @@ from pandas import *
 from skbio.alignment import local_pairwise_align_ssw, make_identity_substitution_matrix, global_pairwise_align_protein
 from skbio import TabularMSA, DNA, Protein
 from .Parser import MasterFile, MasterCollection
-from .utils import split_len
+from .utils import split_len,_one_hot_encode,_create_one_hot_array
 import os
 from io import StringIO
 from Bio.Blast import NCBIXML
@@ -644,7 +644,7 @@ class StopChecker:
         # print("")
         # print(length_of_genes) # Lengths of genes
         # print("")
-        # print(e_values) # e-values determined from blast
+        # print(mean_e_values_extensions) # e-values determined from blast
         # print("")
         # print(mean_similarity_initials)
         # print("")
@@ -654,11 +654,15 @@ class StopChecker:
         # print("")
         # print(mean_identical_match_percentage_extensions)
         # #############
-
-        self.information_dictionary = {'pairs': data1_temporary, 'initials': data2_temporary, 'extensions': data3_temporary}
+        self.information_dictionary = {'mloe': mean_length_of_extensions, 'fe': frequency_evolutionary, 'log': length_of_genes,
+        'mse': mean_similarity_extension, 'msi': mean_similarity_initials, 'mevi': mean_e_values_initials, 'meve': mean_e_values_extensions,
+        'mimpi': mean_identical_match_percentage_initials, 'mimpe': mean_identical_match_percentage_extensions}
         return self.information_dictionary
 
     def _give_meaning(self):
+        one_hot_array = _create_one_hot_array()
+        one_hot_encoded = _one_hot_encode(one_hot_array, "CCU")
+        print(self.information_dictionary)
         # Need to gather all the important data for all variables that are determined.
             # Variables required:
                 # The length of the extension +
@@ -679,4 +683,3 @@ class StopChecker:
         # Gather information with research to find some True Positive dataset.
         # Create a Decision Tree Model for visualization.
         # Create a RF Model for meaning.
-        pass
