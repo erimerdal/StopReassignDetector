@@ -55,6 +55,8 @@ class StopChecker:
         data8_temporary = [] # Best alignments of j-k slides.
         e_values_total_reference = []
         e_values_total_original = []
+        pident_total_reference = []
+        pident_total_original = []
         scores_list = []
         # List includes a dictionary for each gene
         for i in range(len(common_genes)):
@@ -114,6 +116,12 @@ class StopChecker:
             pairs_results = []
             # start_end: stores start_end results
             start_end = []
+            # scores: stores bitscores
+            scores = []
+            # pident: stores how much identical are two sequences.
+            pident = []
+            # e-values: stores initial e-values.
+            e_values_initials = []
             # Traverses non-reference_sequences and do local alignment with reference, stores their scores.
             for j in range(len(non_reference_species)):
                 # results: a list that stores scores, start_end and alignments.
@@ -158,6 +166,12 @@ class StopChecker:
                 total.append(start_end_reference)
                 pairs_results.append(total)
                 start_end.append(total)
+                # Stored bitscore, percentage identicality and e-values for initials.
+                # Between reference and non-reference pairs.
+                scores.append(int(la_data[11]))
+                pident.append(float(la_data[2]))
+                e_values_initials.append(float(la_data[10]))
+
 
             # Now do pairwise between all original sequences:
             for j in range(len(non_reference_species)-1):
@@ -189,6 +203,11 @@ class StopChecker:
 
                     pairs_results.append(total)
                     start_end.append(total)
+                    # Stored bitscore, percentage identicality and also e-values for initials.
+                    # Between non-reference and non-reference pairs.
+                    scores.append(int(la_data[11]))
+                    pident.append(float(la_data[2]))
+                    e_values_initials.append(float(la_data[10]))
 
             # Finds extensions
             for j in range(len(non_reference_species)):
@@ -220,7 +239,7 @@ class StopChecker:
             # Scores_list will be used for doing necessary calculations with extensions.
             score_dictionary = {'gene_name': common_genes[i], 'original_species': non_reference_species, 'original_sequences': original_sequences, 'original_sequences_protein': original_sequences_protein, 'reference_specie': reference_species[i],
             'reference_sequences': reference_sequence, 'reference_sequence_protein': reference_sequence_protein, 'extensions': trimmed_extensions,
-             'extensions_protein': allowed_extensions_protein, 'start_end': start_end}
+             'extensions_protein': allowed_extensions_protein, 'start_end': start_end, 'scores': scores, 'pident': pident, 'evalues':e_values_initials}
             scores_list.append(score_dictionary)
 
         # Here we will start a new, final chapter everyone!
@@ -229,6 +248,7 @@ class StopChecker:
             e_values_extensions = []
             pairs_results_extensions = []
             pairs_results_extensions_scores = []
+            pident_extensions = []
             # Pairwise reference with each non-reference specie.
             for j in range(len(scores_list[i]['original_species'])):
                 # Find the place left in reference sequence.
@@ -241,10 +261,10 @@ class StopChecker:
                 concatenated_original_seq = scores_list[i]['original_sequences_protein'][j][end_position_original:]
                 concatenated = concatenated_original_seq + scores_list[i]['extensions_protein'][j]
                 # # Debug: -4- Passed.
-                print("End p. R: %d, End p. O: %d" % (end_position_reference,end_position_original))
-                print("Length of Reference Sequence: %d, L.o.Original.s: %d" % (len(scores_list[i]['reference_sequence_protein']),len(scores_list[i]['original_sequences_protein'][j])))
-                print("Concatenated: %s" % concatenated)
-                print("Ref.: %s" % reference_sequence_right)
+                # print("End p. R: %d, End p. O: %d" % (end_position_reference,end_position_original))
+                # print("Length of Reference Sequence: %d, L.o.Original.s: %d" % (len(scores_list[i]['reference_sequence_protein']),len(scores_list[i]['original_sequences_protein'][j])))
+                # print("Concatenated: %s" % concatenated)
+                # print("Ref.: %s" % reference_sequence_right)
                 newStringProtein = SeqRecord(concatenated,
                            id="seq1")
                 refseq = SeqRecord(reference_sequence_right,
@@ -272,6 +292,7 @@ class StopChecker:
                 start_end_reference.append(int(la_data[8]))
                 start_end_reference.append(int(la_data[9]))
                 e_values_extensions.append(float(la_data[10]))
+                pident_extensions.append(float(la_data[2]))
                 total = []
                 total.append(start_end_original)
                 total.append(start_end_reference)
@@ -303,10 +324,12 @@ class StopChecker:
             data3_temporary.append(pairs_results_extensions)
             data5_temporary.append(pairs_results_extensions_scores)
             e_values_total_reference.append(e_values_extensions)
+            pident_total_reference.append(pident_extensions)
 
         # pairwise.
         for i in range(len(scores_list)):
             e_values_extensions = []
+            pident_extensions = []
             pairs_results_extensions_j = []
             pairs_results_extensions_j_score = []
             for j in range(len(scores_list[i]['original_species'])-1):
@@ -372,6 +395,7 @@ class StopChecker:
                     pairs_results_extensions_j_score.append(la_data[11])
                     pairs_results_extensions_j.append(start_end_position)
                     e_values_extensions.append(float(la_data[10]))
+                    pident_extensions.append(float(la_data[2]))
                     # # Debug: -7- Passed.
                     # print("Start/end position reference: %s" % start_end_position_reference)
                     # print("Start/end position original: %s" % start_end_position_original)
@@ -379,6 +403,7 @@ class StopChecker:
 
             data4_temporary.append(pairs_results_extensions_j)
             e_values_total_original.append(e_values_extensions)
+            pident_total_original.append(pident_extensions)
             data6_temporary.append(pairs_results_extensions_j_score)
 
         for i in range(len(data6_temporary)):
@@ -393,15 +418,15 @@ class StopChecker:
         frequency_evolutionary = []  # Frequency of the stop codon in all evolutionary close stop codons
         mean_similarity_extension = [] # bitscores obtained from blast for extensions.
         mean_e_values_extensions = [] # e-values obtained from blast for extensions.
-        mean_similarity_of_initials = [] # Similar to mean similarity of extensions but for initials. TODO: Implement
-        mean_e_values_initials = [] # Similar to mean_e_values_extensions but for initials. TODO: Implement
+        mean_similarity_initials = [] # Similar to mean similarity of extensions but for initials.
+        mean_e_values_initials = [] # Similar to mean_e_values_extensions but for initials.
             # 3.	 pident	 percentage of identical matches
             # 5.	 mismatch	 number of mismatches
             # 6.	 gapopen	 number of gap openings
-        mean_identical_match_percentage_initials = [] # TODO: Implement # This might work
-        mean_identical_match_percentage_extensions = [] # TODO: Implement
-        mean_mismatch_number_initials = [] # TODO: Implement # These variables will be in correlation with bitscores, also identical match percentages etc.
-        mean_mismatch_number_extensions = [] # TODO: Implement # Hence they might affect the model badly. Variables should not be in direct correlation I guess.
+        mean_identical_match_percentage_initials = [] # Stores percentage identical values.
+        mean_identical_match_percentage_extensions = [] # Similar to mean_identical_match_percentage_initials but for extensions.
+        # mean_mismatch_number_initials = [] # TODO: Implement # These variables will be in correlation with bitscores, also identical match percentages etc.
+        # mean_mismatch_number_extensions = [] # TODO: Implement # Hence they might affect the model badly. Variables should not be in direct correlation I guess.
 
 
         for i in range(len(scores_list)): # For each gene // Genes should be taken apart seperately while collecting data
@@ -506,6 +531,30 @@ class StopChecker:
                 meansim_org /= len(scores_list[i]['original_species'])
                 mean_similarity_extension.append(meansim_org)
 
+            meansim_org = 0
+            # For reference specie:
+            # 'scores': scores
+            for j in range(len(scores_list[i]['original_species'])): # 4
+                meansim_org += scores_list[i]['scores'][j]
+            meansim_avg = meansim_org / len(scores_list[i]['original_species'])
+            mean_similarity_initials.append(meansim_avg)
+
+            # For non-reference species:
+            # Should start from 4th element, up to last element. Again counter can help us.
+            # First organise scores:
+            scores_organised = []
+            for j in range(len(scores_list[i]['original_species']),len(scores_list[i]['scores'])):
+                scores_organised.append(scores_list[i]['scores'][j])
+            # Now counter method:
+            for j in range(len(scores_list[i]['original_species'])):
+                meansim_org = 0
+                for k in range(len(counter)):
+                    if str(j) in counter[k]:
+                        meansim_org += scores_organised[j]
+                meansim_org += scores_list[i]['scores'][j]
+                meansim_org /= len(scores_list[i]['original_species'])
+                mean_similarity_initials.append(meansim_org)
+
             # e-values for reference:
             e_value_total = 0
             for j in range(len(scores_list[i]['original_species'])):
@@ -523,6 +572,69 @@ class StopChecker:
                 e_values_average = e_value_total / len(scores_list[i]['original_species'])
                 mean_e_values_extensions.append(e_values_average)
 
+            # e-values initials for reference:
+            # 'evalues':e_values_initials
+            e_value_total = 0
+            for j in range(len(scores_list[i]['original_species'])):
+                e_value_total += scores_list[i]['evalues'][j]
+            e_values_average = e_value_total / len(scores_list[i]['original_species'])
+            mean_e_values_initials.append(e_values_average)
+
+            # e_values initials for non-reference species:
+            # First again organise:
+            evalues_organised = []
+            for j in range(len(scores_list[i]['original_species']),len(scores_list[i]['evalues'])):
+                evalues_organised.append(scores_list[i]['evalues'][j])
+            # Now counter method:
+            for j in range(len(scores_list[i]['original_species'])):
+                e_values_total = 0
+                for k in range(len(counter)):
+                    if str(j) in counter[k]:
+                        e_values_total += evalues_organised[j]
+                e_values_total += scores_list[i]['evalues'][j]
+                e_values_total /= len(scores_list[i]['original_species'])
+                mean_e_values_initials.append(e_values_total)
+
+            # Percentage identicals for initials, reference specie:
+            # 'pident': pident
+            pident_total = 0
+            for j in range(len(scores_list[i]['original_species'])):
+                pident_total += scores_list[i]['pident'][j]
+            pident_average = pident_total / len(scores_list[i]['original_species'])
+            mean_identical_match_percentage_initials.append(pident_average)
+            # Organise pident values:
+            pident_organised = []
+            for j in range(len(scores_list[i]['original_species']),len(scores_list[i]['pident'])):
+                pident_organised.append(scores_list[i]['pident'][j])
+            # Counter method:
+            for j in range(len(scores_list[i]['original_species'])):
+                pident_total = 0
+                for k in range(len(counter)):
+                    if str(j) in counter[k]:
+                        pident_total += pident_organised[j]
+                pident_total += scores_list[i]['pident'][j]
+                pident_total /= len(scores_list[i]['original_species'])
+                mean_identical_match_percentage_initials.append(pident_total)
+
+            # Percentage identicals for extensions:
+            # for reference:
+            pident_total = 0
+            for j in range(len(pident_total_reference[i])):
+                pident_total += pident_total_reference[i][j]
+            pident_average = pident_total / len(scores_list[i]['original_species'])
+            mean_identical_match_percentage_extensions.append(pident_average)
+            # for originals:
+            # Counter method:
+            for j in range(len(scores_list[i]['original_species'])):
+                pident_total = 0
+                for k in range(len(counter)):
+                    if str(j) in counter[k]:
+                        pident_total += pident_total_original[i][j]
+                pident_total += pident_total_reference[i][j]
+                pident_total /= len(scores_list[i]['original_species'])
+                mean_identical_match_percentage_extensions.append(pident_total)
+
+
         # ############# Test for Dataset Debug -8- Passed
         # print(mean_length_of_extensions) # Mean extension lengths
         # print("")
@@ -533,6 +645,14 @@ class StopChecker:
         # print(length_of_genes) # Lengths of genes
         # print("")
         # print(e_values) # e-values determined from blast
+        # print("")
+        # print(mean_similarity_initials)
+        # print("")
+        # print(mean_e_values_initials)
+        # print("")
+        # print(mean_identical_match_percentage_initials)
+        # print("")
+        # print(mean_identical_match_percentage_extensions)
         # #############
 
         self.information_dictionary = {'pairs': data1_temporary, 'initials': data2_temporary, 'extensions': data3_temporary}
