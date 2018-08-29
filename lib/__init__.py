@@ -730,19 +730,61 @@ class StopChecker:
         'mimpi': mean_identical_match_percentage_initials, 'mimpe': mean_identical_match_percentage_extensions, 'flist': frequency_list,
         'dlist': distance_list}
         stop_mapper = _stop_mapper()
-    
+
         return self.information_dictionary
 
     def _give_meaning(self):
         one_hot_array = _create_one_hot_array()
+        # Stores 64 possible codons by their encoded vector format.
+        one_hot_encoded_array = []
+        for i in range(64):
+            one_hot_encoded_array.append(_one_hot_encode(one_hot_array,one_hot_array[i]))
+        # Also encode the data for each genome and for each specie in a numpy vector:
+            # NOTE: 65 elements in each array, 13 (number of genes) * 5(reference + 4 non-reference species which are
+            # in order with scores_list[x]['original_species'])
+        total_species = len(self.scores_list[0]['original_species']) + 1 # Non-reference species count + 1 reference specie count
+        traverse = int(len(self.information_dictionary['mloe']) / total_species) # 13 genes for this case = 13 traverse
+
+        dataset_list = []
+        for i in range(len(self.scores_list)):
+            # Reference for the gene
+            reference_data_vector = np.array([])
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['mloe'][total_species*i])
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['fe'][total_species*i])
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['log'][total_species*i])
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['mse'][total_species*i])
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['msi'][total_species*i])
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['mevi'][total_species*i])
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['meve'][total_species*i])
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['mimpi'][total_species*i])
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['mimpe'][total_species*i])
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['flist']) # This is a list
+            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['dlist']) # Also a list
+            dataset_list.append(reference_data_vector)
+            for j in range(len(self.scores_list[i]['original_species'])):
+                non_reference_data_vector = np.array([])
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['mloe'][total_species*i+j+1])
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['fe'][total_species*i+j+1])
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['log'][total_species*i+j+1])
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['mse'][total_species*i+j+1])
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['msi'][total_species*i+j+1])
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['mevi'][total_species*i+j+1])
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['meve'][total_species*i+j+1])
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['mimpi'][total_species*i+j+1])
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['mimpe'][total_species*i+j+1])
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['flist']) # This is a list
+                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['dlist']) # Also a list
+                dataset_list.append(non_reference_data_vector)
+        # print(len(dataset_list)) = 65 (for 13 genes * reference + 4 non-reference datas are stored here)
+        # Genes are the same order with self.scores_list genes.
+
         # We will use the code snippet below to one-hot-encode the stop codons:
             # one_hot_encoded = _one_hot_encode(one_hot_array, "CCU")
         # Now modify self.information_dictionary elements as vectors too:
         # For each specie
             # For each gene
                 # There should be 1 vector, containing numerical informations of mloe, fe, log, mse, msi, mevi, meve, mimpi and mimpe.
-        # NOTE: 65 elements in each array, 13 (number of genes) * 5(reference + 4 non-reference species which are
-        # in order with scores_list[x]['original_species'])
+
 
         # Calculate their Gini impurities. (?)
         # Manipulate data in a format such that training/test will be split easily.
