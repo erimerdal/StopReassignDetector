@@ -7,8 +7,6 @@ from skbio import TabularMSA, DNA, Protein
 from .Parser import MasterFile, MasterCollection
 from .utils import split_len,_one_hot_encode,_create_one_hot_array
 import os
-from io import StringIO
-from Bio.Blast import NCBIXML
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
 import subprocess
@@ -241,6 +239,7 @@ class StopChecker:
             'reference_sequences': reference_sequence, 'reference_sequence_protein': reference_sequence_protein, 'extensions': trimmed_extensions,
              'extensions_protein': allowed_extensions_protein, 'start_end': start_end, 'scores': scores, 'pident': pident, 'evalues':e_values_initials}
             scores_list.append(score_dictionary)
+            self.scores_list = scores_list
 
         # Here we will start a new, final chapter everyone!
         # First compare all sequences with reference sequence.
@@ -634,26 +633,98 @@ class StopChecker:
                 pident_total /= len(scores_list[i]['original_species'])
                 mean_identical_match_percentage_extensions.append(pident_total)
 
+        # Codon specific variables:
+        # codon_frequency = {'G-nad5':,'G-nad4':,'G-cob':,'G-nad6':,'G-nad1':,'G-nad2':,'G-cox2':,'G-atp6':,'G-cox1':,'G-nad3':,'G-cox3':,'G-nad4L':,'G-atp9':}
+        # codon_length = {'G-nad5':,'G-nad4':,'G-cob':,'G-nad6':,'G-nad1':,'G-nad2':,'G-cox2':,'G-atp6':,'G-cox1':,'G-nad3':,'G-cox3':,'G-nad4L':,'G-atp9':}
+        # We need a list of all possible 64 codons:
+        codons_64 = _create_one_hot_array()
+        # Now we can calculate their frequencies:
+        frequency_list = []
+        distance_list = []
+        for i in range(len(scores_list)): # For each gene:
+            frequency_of_gene = 0
+            frequency_species = []
+            distance_species = []
+            codons = split_len(scores_list[i]['reference_sequences'],3,0) # For reference specie
+            codon_counts = [] # Will store each count
+            codon_distances = [] # Will store distances
+            for j in range(64): # should also have 64 elements
+                codon_counts.append(0)
+                codon_distances.append(0)
+            # For all elements in codon_64, we have to traverse codons array and count.
+            for j in range(len(codons_64)):
+                for k in range(len(codons)):
+                    if codons_64[j] == codons[k]:
+                        codon_counts[j] += 1
+            # Now we get all the codon_counts for a gene in a specie.
+            total_codons = len(codons)
+            frequency_codons = []
+            for j in range(len(codon_counts)):
+                frequency_codons.append(codon_counts[j]/total_codons)
+            frequency_species.append(frequency_codons)
+            # distances for reference:
+            codons_reverse = codons[::-1]
+            for j in range(len(codons_64)): # For each codon in codons_64
+                for k in range(len(codons_reverse)):
+                    if codons_64[j] == codons_reverse[k]:
+                        index = k
+                        position = len(codons_reverse) - index
+                        codon_distances[j] = position
+                        break
+            distance_species.append(codon_distances)
+            for j in range(len(scores_list[i]['original_species'])): # For each non-reference specie:
+                # Divide the DNA sequence of the specie into 3-mers:
+                codons = split_len(scores_list[i]['original_sequences'][j],3,0)
+                codon_counts = [] # Will store each count
+                codon_distances = []
+                for k in range(64): # should also have 64 elements
+                    codon_counts.append(0)
+                    codon_distances.append(0)
+                # For all elements in codon_64, we have to traverse codons array and count.
+                for k in range(len(codons_64)):
+                    for l in range(len(codons)):
+                        if codons_64[k] == codons[l]:
+                            codon_counts[k] += 1
+                # Now we get all the codon_counts for a gene in a specie.
+                total_codons = len(codons)
+                frequency_codons = []
+                for k in range(len(codon_counts)):
+                    frequency_codons.append(codon_counts[k]/total_codons)
+                frequency_species.append(frequency_codons)
+                # distances for non-reference:
+                codons_reverse = codons[::-1]
+                for j in range(len(codons_64)): # For each codon in codons_64
+                    for k in range(len(codons_reverse)):
+                        if codons_64[j] == codons_reverse[k]:
+                            index = k
+                            position = len(codons_reverse) - index
+                            codon_distances[j] = position
+                            break
+                distance_species.append(codon_distances)
+            frequency_list.append(frequency_species)
+            distance_list.append(distance_species)
+
 
         # ############# Test for Dataset Debug -8- Passed
-        # print(mean_length_of_extensions) # Mean extension lengths
+        # print(len(mean_length_of_extensions)) # Mean extension lengths
         # print("")
-        # print(mean_similarity_extension) # Mean bitscores
+        # print(len(mean_similarity_extension)) # Mean bitscores
         # print("")
-        # print(frequency_evolutionary) # Frequencies of stop codons
+        # print(len(frequency_evolutionary)) # Frequencies of stop codons
         # print("")
-        # print(length_of_genes) # Lengths of genes
+        # print(len(length_of_genes)) # Lengths of genes
         # print("")
-        # print(mean_e_values_extensions) # e-values determined from blast
+        # print(len(mean_e_values_extensions)) # e-values determined from blast
         # print("")
-        # print(mean_similarity_initials)
+        # print(len(mean_similarity_initials))
         # print("")
-        # print(mean_e_values_initials)
+        # print(len(mean_e_values_initials))
         # print("")
-        # print(mean_identical_match_percentage_initials)
+        # print(len(mean_identical_match_percentage_initials))
         # print("")
-        # print(mean_identical_match_percentage_extensions)
+        # print(len(mean_identical_match_percentage_extensions))
         # #############
+
         self.information_dictionary = {'mloe': mean_length_of_extensions, 'fe': frequency_evolutionary, 'log': length_of_genes,
         'mse': mean_similarity_extension, 'msi': mean_similarity_initials, 'mevi': mean_e_values_initials, 'meve': mean_e_values_extensions,
         'mimpi': mean_identical_match_percentage_initials, 'mimpe': mean_identical_match_percentage_extensions}
@@ -661,22 +732,14 @@ class StopChecker:
 
     def _give_meaning(self):
         one_hot_array = _create_one_hot_array()
-        one_hot_encoded = _one_hot_encode(one_hot_array, "CCU")
-        print(self.information_dictionary)
-        # Need to gather all the important data for all variables that are determined.
-            # Variables required:
-                # The length of the extension +
-                # The length of the gene compared to other homologs +
-                # The length of each gene's reference +
-
-                # Frequency of the putative stop codon in all coding region
-                # Frequency of the stop codon in all evolutionary close stop codons
-
-                # Mean similarity of the extension to other genomes
-                # Mean evolutionary closeness to other species depending on evolutionary tree fed?
-
-                # CoreTracker uses -> Fisher's p value? Telford score of C coding for X?
-
+        # We will use the code snippet below to one-hot-encode the stop codons:
+            # one_hot_encoded = _one_hot_encode(one_hot_array, "CCU")
+        # Now modify self.information_dictionary elements as vectors too:
+        # For each specie
+            # For each gene
+                # There should be 1 vector, containing numerical informations of mloe, fe, log, mse, msi, mevi, meve, mimpi and mimpe.
+        # NOTE: 65 elements in each array, 13 (number of genes) * 5(reference + 4 non-reference species which are
+        # in order with scores_list[x]['original_species'])
 
         # Calculate their Gini impurities. (?)
         # Manipulate data in a format such that training/test will be split easily.

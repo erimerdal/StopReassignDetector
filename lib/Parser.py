@@ -2,7 +2,6 @@ from .utils import reverse_sequence, list_filter
 from collections import defaultdict as ddict
 import re
 import itertools
-# import time # For testing if we have made program speedier. # TODO: Remove after tests
 
 
 def find_reference_species(common_genes, mfilelist):
