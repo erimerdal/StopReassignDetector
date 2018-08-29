@@ -5,7 +5,7 @@ from pandas import *
 from skbio.alignment import local_pairwise_align_ssw, make_identity_substitution_matrix, global_pairwise_align_protein
 from skbio import TabularMSA, DNA, Protein
 from .Parser import MasterFile, MasterCollection
-from .utils import split_len,_one_hot_encode,_create_one_hot_array
+from .utils import split_len,_one_hot_encode,_create_one_hot_array,_stop_mapper
 import os
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
@@ -727,7 +727,10 @@ class StopChecker:
 
         self.information_dictionary = {'mloe': mean_length_of_extensions, 'fe': frequency_evolutionary, 'log': length_of_genes,
         'mse': mean_similarity_extension, 'msi': mean_similarity_initials, 'mevi': mean_e_values_initials, 'meve': mean_e_values_extensions,
-        'mimpi': mean_identical_match_percentage_initials, 'mimpe': mean_identical_match_percentage_extensions}
+        'mimpi': mean_identical_match_percentage_initials, 'mimpe': mean_identical_match_percentage_extensions, 'flist': frequency_list,
+        'dlist': distance_list}
+        stop_mapper = _stop_mapper()
+    
         return self.information_dictionary
 
     def _give_meaning(self):
