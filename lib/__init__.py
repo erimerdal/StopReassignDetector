@@ -166,7 +166,7 @@ class StopChecker:
                 start_end.append(total)
                 # Stored bitscore, percentage identicality and e-values for initials.
                 # Between reference and non-reference pairs.
-                scores.append(int(la_data[11]))
+                scores.append(float(la_data[11]))
                 pident.append(float(la_data[2]))
                 e_values_initials.append(float(la_data[10]))
 
@@ -203,7 +203,7 @@ class StopChecker:
                     start_end.append(total)
                     # Stored bitscore, percentage identicality and also e-values for initials.
                     # Between non-reference and non-reference pairs.
-                    scores.append(int(la_data[11]))
+                    scores.append(float(la_data[11]))
                     pident.append(float(la_data[2]))
                     e_values_initials.append(float(la_data[10]))
 
@@ -319,7 +319,7 @@ class StopChecker:
                 # print("Start Org: %d, End Org: %d" % (start_location,end_location))
                 # print("Bitscore = Score: %d" % la_data[11])
                 pairs_results_extensions.append(start_end_position)
-                pairs_results_extensions_scores.append(int(la_data[11]))
+                pairs_results_extensions_scores.append(float(la_data[11]))
             data3_temporary.append(pairs_results_extensions)
             data5_temporary.append(pairs_results_extensions_scores)
             e_values_total_reference.append(e_values_extensions)
@@ -391,7 +391,7 @@ class StopChecker:
                     start_end_position.append(start_end_position_reference)
                     start_end_position.append(start_end_position_original)
 
-                    pairs_results_extensions_j_score.append(la_data[11])
+                    pairs_results_extensions_j_score.append(float(la_data[11]))
                     pairs_results_extensions_j.append(start_end_position)
                     e_values_extensions.append(float(la_data[10]))
                     pident_extensions.append(float(la_data[2]))
@@ -745,49 +745,80 @@ class StopChecker:
         total_species = len(self.scores_list[0]['original_species']) + 1 # Non-reference species count + 1 reference specie count
         traverse = int(len(self.information_dictionary['mloe']) / total_species) # 13 genes for this case = 13 traverse
 
-        dataset_list = []
-        for i in range(len(self.scores_list)):
-            # Reference for the gene
-            reference_data_vector = np.array([])
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['mloe'][total_species*i])
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['fe'][total_species*i])
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['log'][total_species*i])
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['mse'][total_species*i])
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['msi'][total_species*i])
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['mevi'][total_species*i])
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['meve'][total_species*i])
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['mimpi'][total_species*i])
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['mimpe'][total_species*i])
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['flist']) # This is a list
-            reference_data_vector = np.append(reference_data_vector, self.information_dictionary['dlist']) # Also a list
-            dataset_list.append(reference_data_vector)
-            for j in range(len(self.scores_list[i]['original_species'])):
-                non_reference_data_vector = np.array([])
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['mloe'][total_species*i+j+1])
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['fe'][total_species*i+j+1])
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['log'][total_species*i+j+1])
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['mse'][total_species*i+j+1])
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['msi'][total_species*i+j+1])
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['mevi'][total_species*i+j+1])
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['meve'][total_species*i+j+1])
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['mimpi'][total_species*i+j+1])
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['mimpe'][total_species*i+j+1])
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['flist']) # This is a list
-                non_reference_data_vector = np.append(non_reference_data_vector, self.information_dictionary['dlist']) # Also a list
-                dataset_list.append(non_reference_data_vector)
-        # print(len(dataset_list)) = 65 (for 13 genes * reference + 4 non-reference datas are stored here)
+        # TODO: Create pandas dataframe and fit the data to be used in the pandas dataframe:
+            # We have to treat each gene seperately so we will only be doing 1 gene in beginning:
+        # df = pandas.DataFrame()
+        # numpy_array = np.array([])
+        # # mloe
+        # vector_mloe = []
+        # for i in range(total_species):
+        #     #print(self.information_dictionary['mloe'][i])
+        #     vector_mloe.append(self.information_dictionary['mloe'][i])
+        # #print("")
+        # df['mloe'] = vector_mloe
+        # # fe
+        # vector_fe = []
+        # for i in range(total_species):
+        #     #print(self.information_dictionary['fe'][i])
+        #     vector_fe.append(self.information_dictionary['fe'][i])
+        # #print("")
+        # df['fe'] = vector_fe
+        # # log
+        # vector_log = []
+        # for i in range(total_species):
+        #     #print(self.information_dictionary['log'][i])
+        #     vector_log.append(self.information_dictionary['log'][i])
+        # #print("")
+        # df['log'] = vector_log
+        # # mse
+        # vector_mse = []
+        # for i in range(total_species):
+        #     #print(self.information_dictionary['mse'][i])
+        #     vector_mse.append(self.information_dictionary['mse'][i])
+        # #print("")
+        # df['mse'] = vector_mse
+        # # msi
+        # vector_msi = []
+        # for i in range(total_species):
+        #     #print(self.information_dictionary['msi'][i])
+        #     vector_msi.append(self.information_dictionary['msi'][i])
+        # #print("")
+        # df['msi'] = vector_msi
+        # # mevi
+        # vector_mevi = []
+        # for i in range(total_species):
+        #     #print(self.information_dictionary['mevi'][i])
+        #     vector_mevi.append(self.information_dictionary['mevi'][i])
+        # #print("")
+        # df['mevi'] = vector_mevi
+        # # meve
+        # vector_meve = []
+        # for i in range(total_species):
+        #     #print(self.information_dictionary['meve'][i])
+        #     vector_meve.append(self.information_dictionary['meve'][i])
+        # #print("")
+        # df['meve'] = vector_meve
+        # # mimpi
+        # vector_mimpi = []
+        # for i in range(total_species):
+        #     #print(self.information_dictionary['mimpi'][i])
+        #     vector_mimpi.append(self.information_dictionary['mimpi'][i])
+        # #print("")
+        # df['mimpi'] = vector_mimpi
+        # # mimpe
+        # vector_mimpe = []
+        # for i in range(total_species):
+        #     #print(self.information_dictionary['mimpe'][i])
+        #     vector_mimpe.append(self.information_dictionary['mimpe'][i])
+        # #print("")
+        # df['mimpe'] = vector_mimpe
+        # # flist
+        # # dlist
+
         # Genes are the same order with self.scores_list genes.
 
-        # We will use the code snippet below to one-hot-encode the stop codons:
-            # one_hot_encoded = _one_hot_encode(one_hot_array, "CCU")
-        # Now modify self.information_dictionary elements as vectors too:
-        # For each specie
-            # For each gene
-                # There should be 1 vector, containing numerical informations of mloe, fe, log, mse, msi, mevi, meve, mimpi and mimpe.
-
-
-        # Calculate their Gini impurities. (?)
-        # Manipulate data in a format such that training/test will be split easily.
-        # Gather information with research to find some True Positive dataset.
-        # Create a Decision Tree Model for visualization.
-        # Create a RF Model for meaning.
+    def _store_output(self):
+        # This function will be used once to calculate data and output in txt format.
+        # for i in range(len(self.scores_dictionary)): # 13 loops = genes:
+        #     print(len(self.scores_dictionary))
+        pass
