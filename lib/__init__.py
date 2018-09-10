@@ -55,15 +55,15 @@ class StopChecker:
         e_values_total_original = []
         pident_total_reference = []
         pident_total_original = []
-        scores_list = []
+        self.scores_list = []
         # List includes a dictionary for each gene
         for i in range(len(common_genes)):
             reference_specie_name = ""
             reference_sequence = ""
             reference_sequence_protein = ""
             non_reference_species = []
-            genes = []
             original_species_names = []
+            genes = []
             original_sequences = []
             original_sequences_protein = []
             non_reference_species_gc = []
@@ -107,6 +107,8 @@ class StopChecker:
                             # print("Protein: %s" % protein)
                             original_sequences_protein.append(protein)
                             break
+            # print("Common genes[i] = %s" % common_genes[i])
+            # print("Non-reference-species: %s" % non_reference_species)
 
             # pairs_name: Stores the pairs in a string format-> Bracteacoccus_minor / Bracteacoccus_aerius i.e
             pairs_name = []
@@ -238,30 +240,29 @@ class StopChecker:
             score_dictionary = {'gene_name': common_genes[i], 'original_species': non_reference_species, 'original_sequences': original_sequences, 'original_sequences_protein': original_sequences_protein, 'reference_specie': reference_species[i],
             'reference_sequences': reference_sequence, 'reference_sequence_protein': reference_sequence_protein, 'extensions': trimmed_extensions,
              'extensions_protein': allowed_extensions_protein, 'start_end': start_end, 'scores': scores, 'pident': pident, 'evalues':e_values_initials}
-            scores_list.append(score_dictionary)
-            self.scores_list = scores_list
+            self.scores_list.append(score_dictionary)
 
         # Here we will start a new, final chapter everyone!
         # First compare all sequences with reference sequence.
-        for i in range(len(scores_list)):
+        for i in range(len(self.scores_list)):
             e_values_extensions = []
             pairs_results_extensions = []
             pairs_results_extensions_scores = []
             pident_extensions = []
             # Pairwise reference with each non-reference specie.
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 # Find the place left in reference sequence.
-                end_position_reference = scores_list[i]['start_end'][j][1][1]
+                end_position_reference = self.scores_list[i]['start_end'][j][1][1]
                 # Find end position of original sequence.
-                end_position_original = scores_list[i]['start_end'][j][0][1]
+                end_position_original = self.scores_list[i]['start_end'][j][0][1]
                 # Take whats left of reference from initial local alignment.
-                reference_sequence_right = scores_list[i]['reference_sequence_protein'][end_position_reference:]
+                reference_sequence_right = self.scores_list[i]['reference_sequence_protein'][end_position_reference:]
                 # Concatenate the last part of original sequence and the extensions for them.
-                concatenated_original_seq = scores_list[i]['original_sequences_protein'][j][end_position_original:]
-                concatenated = concatenated_original_seq + scores_list[i]['extensions_protein'][j]
+                concatenated_original_seq = self.scores_list[i]['original_sequences_protein'][j][end_position_original:]
+                concatenated = concatenated_original_seq + self.scores_list[i]['extensions_protein'][j]
                 # # Debug: -4- Passed.
                 # print("End p. R: %d, End p. O: %d" % (end_position_reference,end_position_original))
-                # print("Length of Reference Sequence: %d, L.o.Original.s: %d" % (len(scores_list[i]['reference_sequence_protein']),len(scores_list[i]['original_sequences_protein'][j])))
+                # print("Length of Reference Sequence: %d, L.o.Original.s: %d" % (len(self.scores_list[i]['reference_sequence_protein']),len(self.scores_list[i]['original_sequences_protein'][j])))
                 # print("Concatenated: %s" % concatenated)
                 # print("Ref.: %s" % reference_sequence_right)
                 newStringProtein = SeqRecord(concatenated,
@@ -298,12 +299,12 @@ class StopChecker:
 
                 # Calculate start end position with respect to beginning.
                 # start_location = start of the extension + other extensions before * their length + end of local alignment
-                start_location = total[0][0] + scores_list[i]['start_end'][j][0][0]
+                start_location = total[0][0] + self.scores_list[i]['start_end'][j][0][0]
                 # start_location_r = end location of initial alignment + start position
-                start_location_r = total[1][0] + scores_list[i]['start_end'][j][1][0]
+                start_location_r = total[1][0] + self.scores_list[i]['start_end'][j][1][0]
                 # end_location = end of the extension + other extensions before * their length + end of local alignment
-                end_location = total[0][1] + scores_list[i]['start_end'][j][0][1]
-                end_location_r = total[1][1] + scores_list[i]['start_end'][j][1][1]
+                end_location = total[0][1] + self.scores_list[i]['start_end'][j][0][1]
+                end_location_r = total[1][1] + self.scores_list[i]['start_end'][j][1][1]
                 start_end_position_reference = []
                 start_end_position_reference.append(start_location_r)
                 start_end_position_reference.append(end_location_r)
@@ -326,24 +327,24 @@ class StopChecker:
             pident_total_reference.append(pident_extensions)
 
         # pairwise.
-        for i in range(len(scores_list)):
+        for i in range(len(self.scores_list)):
             e_values_extensions = []
             pident_extensions = []
             pairs_results_extensions_j = []
             pairs_results_extensions_j_score = []
-            for j in range(len(scores_list[i]['original_species'])-1):
-                for k in range(j+1,len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])-1):
+                for k in range(j+1,len(self.scores_list[i]['original_species'])):
                     # Find the place left in reference sequence
-                    orig_spec = len(scores_list[i]['original_species'])
+                    orig_spec = len(self.scores_list[i]['original_species'])
                     j_loc = j + orig_spec
 
-                    end_position_j = scores_list[i]['start_end'][j_loc][0][1]
-                    end_position_k = scores_list[i]['start_end'][j_loc][1][1]
+                    end_position_j = self.scores_list[i]['start_end'][j_loc][0][1]
+                    end_position_k = self.scores_list[i]['start_end'][j_loc][1][1]
                     # Take whats left of reference from initial local alignment.
-                    j_sequence_right = scores_list[i]['original_sequences_protein'][j][end_position_j:]
-                    k_sequence_right = scores_list[i]['original_sequences_protein'][k][end_position_k:]
-                    j_sequence_total = j_sequence_right + scores_list[i]['extensions_protein'][j]
-                    k_sequence_total = k_sequence_right + scores_list[i]['extensions_protein'][k]
+                    j_sequence_right = self.scores_list[i]['original_sequences_protein'][j][end_position_j:]
+                    k_sequence_right = self.scores_list[i]['original_sequences_protein'][k][end_position_k:]
+                    j_sequence_total = j_sequence_right + self.scores_list[i]['extensions_protein'][j]
+                    k_sequence_total = k_sequence_right + self.scores_list[i]['extensions_protein'][k]
 
                     j_sequence = SeqRecord(j_sequence_total,
                                id="seq1")
@@ -374,12 +375,12 @@ class StopChecker:
                     total.append(start_end_reference)
 
                     # start_location = start of the extension + other extensions before * their length + end of local alignment
-                    start_location = total[0][0] + scores_list[i]['start_end'][j][0][1]
+                    start_location = total[0][0] + self.scores_list[i]['start_end'][j][0][1]
                     # start_location_r = end location of initial alignment + start position
-                    start_location_r = total[1][0] + scores_list[i]['start_end'][j][1][1]
+                    start_location_r = total[1][0] + self.scores_list[i]['start_end'][j][1][1]
                     # end_location = end of the extension + other extensions before * their length + end of local alignment
-                    end_location = total[0][1] + scores_list[i]['start_end'][j][0][1]
-                    end_location_r = total[1][1] + scores_list[i]['start_end'][j][1][1]
+                    end_location = total[0][1] + self.scores_list[i]['start_end'][j][0][1]
+                    end_location_r = total[1][1] + self.scores_list[i]['start_end'][j][1][1]
                     start_end_position_reference = []
                     start_end_position_reference.append(start_location_r)
                     start_end_position_reference.append(end_location_r)
@@ -427,43 +428,44 @@ class StopChecker:
         # mean_mismatch_number_initials = [] # TODO: Implement # These variables will be in correlation with bitscores, also identical match percentages etc.
         # mean_mismatch_number_extensions = [] # TODO: Implement # Hence they might affect the model badly. Variables should not be in direct correlation I guess.
 
-
-        for i in range(len(scores_list)): # For each gene // Genes should be taken apart seperately while collecting data
+        for i in range(len(self.scores_list)): # For each gene // Genes should be taken apart seperately while collecting data
             # The length of the extension
             # For the reference specie:
             # We should do the same order when we were calculating scores/start.end positions.
             reference_extension_total = 0
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 reference_extension_total += int(data3_temporary[i][j][0][1]) - int(data2_temporary[i][j][0][1])
-            mean_length_of_extensions.append(reference_extension_total/(len(scores_list[i]['original_species'])))
+            # print(self.scores_list[i]['original_species'])
+            # print("")
+            mean_length_of_extensions.append(reference_extension_total/(len(self.scores_list[i]['original_species'])))
             # We need a better version of data structure, too much calculation involved while trying to find all non-references.
             # The data structure should be storing all information for all genes for each specie seperately.
 
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 mloe_dataset = []
                 mloe_dataset_in = []
                 # in the order of the original species
                 for k in range(len(data1_temporary[i])):
                     data1_split = data1_temporary[i][k].split('/')
-                    if scores_list[i]['original_species'][j] in data1_split[0]: # Left side
+                    if self.scores_list[i]['original_species'][j] in data1_split[0]: # Left side
                         mloe_dataset.append(data3_temporary[i][k][0][1]) # Left end
                         mloe_dataset_in.append(data2_temporary[i][k][0][1])
-                    if scores_list[i]['original_species'][j] in data1_split[1]: # Right side
+                    if self.scores_list[i]['original_species'][j] in data1_split[1]: # Right side
                         mloe_dataset.append(data3_temporary[i][k][1][1]) # Right end
                         mloe_dataset_in.append(data2_temporary[i][k][1][1])
                 mloe = 0
                 # Now that we have the dataset for each gene, we can keep calculating.
                 for k in range(len(mloe_dataset)):
                     mloe += float(mloe_dataset[k]) - float(mloe_dataset_in[k])
-                mean_length_of_extensions.append(mloe/(len(scores_list[i]['original_species'])))
+                mean_length_of_extensions.append(mloe/(len(self.scores_list[i]['original_species'])))
 
             # The length of the gene compared to other homologs:
-            length_of_genes.append(len(scores_list[i]['reference_sequences']))
-            for j in range(len(scores_list[i]['original_species'])): # For each non-reference-specie
-                length_of_genes.append(len(scores_list[i]['original_sequences'][j]))
+            length_of_genes.append(len(self.scores_list[i]['reference_sequences']))
+            for j in range(len(self.scores_list[i]['original_species'])): # For each non-reference-specie
+                length_of_genes.append(len(self.scores_list[i]['original_sequences'][j]))
             # Frequency of the putative stop codon in all coding region
                 # Divide into 3-mers, count how many stop codons occur in the all coding region (ignoring frameshift)
-            substrings = split_len(scores_list[i]['reference_sequences'][::-1],3,0) # Reverse, divide 3-mers
+            substrings = split_len(self.scores_list[i]['reference_sequences'][::-1],3,0) # Reverse, divide 3-mers
             for j in range(len(substrings)):
                 substrings[j] = substrings[j][::-1] # Reverse again each element. First element is the stop codon.
             countStopCodons = 0
@@ -474,8 +476,8 @@ class StopChecker:
                     countStopCodons += 1
             frequency_of_stop_codon.append(countStopCodons/len(substrings))
             # Obviously all of them have 1 because its a fucking stop codon? Emmanuel pls help.
-            for j in range(len(scores_list[i]['original_species'])):
-                substrings = split_len(scores_list[i]['original_sequences'][j][::-1],3,0) # Reverse, divide 3-mers
+            for j in range(len(self.scores_list[i]['original_species'])):
+                substrings = split_len(self.scores_list[i]['original_sequences'][j][::-1],3,0) # Reverse, divide 3-mers
                 for k in range(len(substrings)):
                     substrings[k] = substrings[k][::-1] # Reverse again each element. First element is the stop codon.
                 countStopCodons = 0
@@ -488,14 +490,14 @@ class StopChecker:
 
         counter = []
         onlyOnce = True # Store counter only once not genes times.
-        for i in range(len(scores_list)):
+        for i in range(len(self.scores_list)):
             if onlyOnce:
-                for j in range(len(scores_list[i]['original_species'])-1):
-                    for k in range(j+1,len(scores_list[i]['original_species'])):
+                for j in range(len(self.scores_list[i]['original_species'])-1):
+                    for k in range(j+1,len(self.scores_list[i]['original_species'])):
                         counter.append("(%s,%s)" % (j,k))
                 onlyOnce = False
 
-            rev = scores_list[i]['reference_sequences'][::-1]
+            rev = self.scores_list[i]['reference_sequences'][::-1]
             stop_rev = rev[:3]
             stop = stop_rev[::-1]
             stopCodonCount = 0
@@ -503,9 +505,9 @@ class StopChecker:
                 if stop_codons_evolutionary[j] == stop:
                     stopCodonCount += 1
             frequency_evolutionary.append(stopCodonCount/len(stop_codons_evolutionary))
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 stopCodonCount = 0
-                rev = scores_list[i]['original_sequences'][j][::-1]
+                rev = self.scores_list[i]['original_sequences'][j][::-1]
                 stop_rev = rev[:3]
                 stop = stop_rev[::-1]
                 for k in range(len(stop_codons_evolutionary)):
@@ -517,102 +519,109 @@ class StopChecker:
             meansim_ref = 0
             for j in range(len(data5_temporary[i])):
                 meansim_ref += data5_temporary[i][j]
-            meansim_ref /= len(scores_list[i]['original_species'])
+            meansim_ref /= len(self.scores_list[i]['original_species'])
             mean_similarity_extension.append(meansim_ref) # Reference species similarities are stored.
 
+            # Test
+            # print("Length of data6_temporary: %s" % len(data6_temporary))
+            # print("Length of data6_temporary[0]/[1]/[2]: %s/%s/%s" % (len(data6_temporary[0]),len(data6_temporary[1]),len(data6_temporary[2])))
+            # print("")
+            # print("Length of data5_temporary: %s" % len(data5_temporary))
+            # print("Length of data5_temporary[0]/[1]/[2]: %s/%s/%s" % (len(data5_temporary[0]),len(data5_temporary[1]),len(data5_temporary[2])))
+
             # Implement mean similarity extension for non-reference sequences.
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 meansim_org = 0
                 for k in range(len(counter)):
                     if str(j) in counter[k]:
                         meansim_org += float(data6_temporary[i][j])
                 meansim_org += data5_temporary[i][j]
-                meansim_org /= len(scores_list[i]['original_species'])
+                meansim_org /= len(self.scores_list[i]['original_species'])
                 mean_similarity_extension.append(meansim_org)
 
             meansim_org = 0
             # For reference specie:
             # 'scores': scores
-            for j in range(len(scores_list[i]['original_species'])): # 4
-                meansim_org += scores_list[i]['scores'][j]
-            meansim_avg = meansim_org / len(scores_list[i]['original_species'])
+            for j in range(len(self.scores_list[i]['original_species'])): # 4
+                meansim_org += self.scores_list[i]['scores'][j]
+            meansim_avg = meansim_org / len(self.scores_list[i]['original_species'])
             mean_similarity_initials.append(meansim_avg)
 
             # For non-reference species:
             # Should start from 4th element, up to last element. Again counter can help us.
             # First organise scores:
             scores_organised = []
-            for j in range(len(scores_list[i]['original_species']),len(scores_list[i]['scores'])):
-                scores_organised.append(scores_list[i]['scores'][j])
+            for j in range(len(self.scores_list[i]['original_species']),len(self.scores_list[i]['scores'])):
+                scores_organised.append(self.scores_list[i]['scores'][j])
             # Now counter method:
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 meansim_org = 0
                 for k in range(len(counter)):
                     if str(j) in counter[k]:
                         meansim_org += scores_organised[j]
-                meansim_org += scores_list[i]['scores'][j]
-                meansim_org /= len(scores_list[i]['original_species'])
+                meansim_org += self.scores_list[i]['scores'][j]
+                meansim_org /= len(self.scores_list[i]['original_species'])
                 mean_similarity_initials.append(meansim_org)
 
             # e-values for reference:
             e_value_total = 0
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 e_value_total += e_values_total_reference[i][j]
-            e_values_average = e_value_total / len(scores_list[i]['original_species'])
+            e_values_average = e_value_total / len(self.scores_list[i]['original_species'])
             mean_e_values_extensions.append(e_values_average)
 
             # e_values for non-reference species:
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 e_value_total = 0
                 for k in range(len(counter)):
                     if str(j) in counter[k]:
                         e_value_total += e_values_total_original[i][j]
                 e_value_total += e_values_total_reference[i][j]
-                e_values_average = e_value_total / len(scores_list[i]['original_species'])
+                e_values_average = e_value_total / len(self.scores_list[i]['original_species'])
                 mean_e_values_extensions.append(e_values_average)
 
             # e-values initials for reference:
             # 'evalues':e_values_initials
             e_value_total = 0
-            for j in range(len(scores_list[i]['original_species'])):
-                e_value_total += scores_list[i]['evalues'][j]
-            e_values_average = e_value_total / len(scores_list[i]['original_species'])
+            for j in range(len(self.scores_list[i]['original_species'])):
+                e_value_total += self.scores_list[i]['evalues'][j]
+            e_values_average = e_value_total / len(self.scores_list[i]['original_species'])
             mean_e_values_initials.append(e_values_average)
 
             # e_values initials for non-reference species:
             # First again organise:
             evalues_organised = []
-            for j in range(len(scores_list[i]['original_species']),len(scores_list[i]['evalues'])):
-                evalues_organised.append(scores_list[i]['evalues'][j])
+            for j in range(len(self.scores_list[i]['original_species']),len(self.scores_list[i]['evalues'])):
+                evalues_organised.append(self.scores_list[i]['evalues'][j])
             # Now counter method:
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 e_values_total = 0
                 for k in range(len(counter)):
                     if str(j) in counter[k]:
                         e_values_total += evalues_organised[j]
-                e_values_total += scores_list[i]['evalues'][j]
-                e_values_total /= len(scores_list[i]['original_species'])
+                e_values_total += self.scores_list[i]['evalues'][j]
+                e_values_total /= len(self.scores_list[i]['original_species'])
                 mean_e_values_initials.append(e_values_total)
 
             # Percentage identicals for initials, reference specie:
             # 'pident': pident
             pident_total = 0
-            for j in range(len(scores_list[i]['original_species'])):
-                pident_total += scores_list[i]['pident'][j]
-            pident_average = pident_total / len(scores_list[i]['original_species'])
+            for j in range(len(self.scores_list[i]['original_species'])):
+                pident_total += self.scores_list[i]['pident'][j]
+            pident_average = pident_total / len(self.scores_list[i]['original_species'])
             mean_identical_match_percentage_initials.append(pident_average)
             # Organise pident values:
             pident_organised = []
-            for j in range(len(scores_list[i]['original_species']),len(scores_list[i]['pident'])):
-                pident_organised.append(scores_list[i]['pident'][j])
+            for j in range(len(self.scores_list[i]['original_species']),len(self.scores_list[i]['pident'])):
+                pident_organised.append(self.scores_list[i]['pident'][j])
             # Counter method:
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 pident_total = 0
                 for k in range(len(counter)):
                     if str(j) in counter[k]:
                         pident_total += pident_organised[j]
-                pident_total += scores_list[i]['pident'][j]
-                pident_total /= len(scores_list[i]['original_species'])
+                pident_total += self.scores_list[i]['pident'][j]
+                pident_total /= len(self.scores_list[i]['original_species'])
                 mean_identical_match_percentage_initials.append(pident_total)
 
             # Percentage identicals for extensions:
@@ -620,17 +629,17 @@ class StopChecker:
             pident_total = 0
             for j in range(len(pident_total_reference[i])):
                 pident_total += pident_total_reference[i][j]
-            pident_average = pident_total / len(scores_list[i]['original_species'])
+            pident_average = pident_total / len(self.scores_list[i]['original_species'])
             mean_identical_match_percentage_extensions.append(pident_average)
             # for originals:
             # Counter method:
-            for j in range(len(scores_list[i]['original_species'])):
+            for j in range(len(self.scores_list[i]['original_species'])):
                 pident_total = 0
                 for k in range(len(counter)):
                     if str(j) in counter[k]:
                         pident_total += pident_total_original[i][j]
                 pident_total += pident_total_reference[i][j]
-                pident_total /= len(scores_list[i]['original_species'])
+                pident_total /= len(self.scores_list[i]['original_species'])
                 mean_identical_match_percentage_extensions.append(pident_total)
 
         # Codon specific variables:
@@ -641,11 +650,11 @@ class StopChecker:
         # Now we can calculate their frequencies:
         frequency_list = []
         distance_list = []
-        for i in range(len(scores_list)): # For each gene:
+        for i in range(len(self.scores_list)): # For each gene:
             frequency_of_gene = 0
             frequency_species = []
             distance_species = []
-            codons = split_len(scores_list[i]['reference_sequences'],3,0) # For reference specie
+            codons = split_len(self.scores_list[i]['reference_sequences'],3,0) # For reference specie
             codon_counts = [] # Will store each count
             codon_distances = [] # Will store distances
             for j in range(64): # should also have 64 elements
@@ -672,9 +681,9 @@ class StopChecker:
                         codon_distances[j] = position
                         break
             distance_species.append(codon_distances)
-            for j in range(len(scores_list[i]['original_species'])): # For each non-reference specie:
+            for j in range(len(self.scores_list[i]['original_species'])): # For each non-reference specie:
                 # Divide the DNA sequence of the specie into 3-mers:
-                codons = split_len(scores_list[i]['original_sequences'][j],3,0)
+                codons = split_len(self.scores_list[i]['original_sequences'][j],3,0)
                 codon_counts = [] # Will store each count
                 codon_distances = []
                 for k in range(64): # should also have 64 elements
@@ -741,79 +750,80 @@ class StopChecker:
             one_hot_encoded_array.append(_one_hot_encode(one_hot_array,one_hot_array[i]))
         # Also encode the data for each genome and for each specie in a numpy vector:
             # NOTE: 65 elements in each array, 13 (number of genes) * 5(reference + 4 non-reference species which are
-            # in order with scores_list[x]['original_species'])
+            # in order with self.scores_list[x]['original_species'])
         total_species = len(self.scores_list[0]['original_species']) + 1 # Non-reference species count + 1 reference specie count
         traverse = int(len(self.information_dictionary['mloe']) / total_species) # 13 genes for this case = 13 traverse
 
         # TODO: Create pandas dataframe and fit the data to be used in the pandas dataframe:
             # We have to treat each gene seperately so we will only be doing 1 gene in beginning:
-        # df = pandas.DataFrame()
-        # numpy_array = np.array([])
-        # # mloe
-        # vector_mloe = []
-        # for i in range(total_species):
-        #     #print(self.information_dictionary['mloe'][i])
-        #     vector_mloe.append(self.information_dictionary['mloe'][i])
-        # #print("")
-        # df['mloe'] = vector_mloe
-        # # fe
-        # vector_fe = []
-        # for i in range(total_species):
-        #     #print(self.information_dictionary['fe'][i])
-        #     vector_fe.append(self.information_dictionary['fe'][i])
-        # #print("")
-        # df['fe'] = vector_fe
-        # # log
-        # vector_log = []
-        # for i in range(total_species):
-        #     #print(self.information_dictionary['log'][i])
-        #     vector_log.append(self.information_dictionary['log'][i])
-        # #print("")
-        # df['log'] = vector_log
-        # # mse
-        # vector_mse = []
-        # for i in range(total_species):
-        #     #print(self.information_dictionary['mse'][i])
-        #     vector_mse.append(self.information_dictionary['mse'][i])
-        # #print("")
-        # df['mse'] = vector_mse
-        # # msi
-        # vector_msi = []
-        # for i in range(total_species):
-        #     #print(self.information_dictionary['msi'][i])
-        #     vector_msi.append(self.information_dictionary['msi'][i])
-        # #print("")
-        # df['msi'] = vector_msi
-        # # mevi
-        # vector_mevi = []
-        # for i in range(total_species):
-        #     #print(self.information_dictionary['mevi'][i])
-        #     vector_mevi.append(self.information_dictionary['mevi'][i])
-        # #print("")
-        # df['mevi'] = vector_mevi
-        # # meve
-        # vector_meve = []
-        # for i in range(total_species):
-        #     #print(self.information_dictionary['meve'][i])
-        #     vector_meve.append(self.information_dictionary['meve'][i])
-        # #print("")
-        # df['meve'] = vector_meve
-        # # mimpi
-        # vector_mimpi = []
-        # for i in range(total_species):
-        #     #print(self.information_dictionary['mimpi'][i])
-        #     vector_mimpi.append(self.information_dictionary['mimpi'][i])
-        # #print("")
-        # df['mimpi'] = vector_mimpi
-        # # mimpe
-        # vector_mimpe = []
-        # for i in range(total_species):
-        #     #print(self.information_dictionary['mimpe'][i])
-        #     vector_mimpe.append(self.information_dictionary['mimpe'][i])
-        # #print("")
-        # df['mimpe'] = vector_mimpe
-        # # flist
-        # # dlist
+        df = pandas.DataFrame()
+        numpy_array = np.array([])
+        # mloe
+        vector_mloe = []
+        for i in range(total_species):
+            #print(self.information_dictionary['mloe'][i])
+            vector_mloe.append(self.information_dictionary['mloe'][i])
+        #print("")
+        df['mloe'] = vector_mloe
+        # fe
+        vector_fe = []
+        for i in range(total_species):
+            #print(self.information_dictionary['fe'][i])
+            vector_fe.append(self.information_dictionary['fe'][i])
+        #print("")
+        df['fe'] = vector_fe
+        # log
+        vector_log = []
+        for i in range(total_species):
+            #print(self.information_dictionary['log'][i])
+            vector_log.append(self.information_dictionary['log'][i])
+        #print("")
+        df['log'] = vector_log
+        # mse
+        vector_mse = []
+        for i in range(total_species):
+            #print(self.information_dictionary['mse'][i])
+            vector_mse.append(self.information_dictionary['mse'][i])
+        #print("")
+        df['mse'] = vector_mse
+        # msi
+        vector_msi = []
+        for i in range(total_species):
+            #print(self.information_dictionary['msi'][i])
+            vector_msi.append(self.information_dictionary['msi'][i])
+        #print("")
+        df['msi'] = vector_msi
+        # mevi
+        vector_mevi = []
+        for i in range(total_species):
+            #print(self.information_dictionary['mevi'][i])
+            vector_mevi.append(self.information_dictionary['mevi'][i])
+        #print("")
+        df['mevi'] = vector_mevi
+        # meve
+        vector_meve = []
+        for i in range(total_species):
+            #print(self.information_dictionary['meve'][i])
+            vector_meve.append(self.information_dictionary['meve'][i])
+        #print("")
+        df['meve'] = vector_meve
+        # mimpi
+        vector_mimpi = []
+        for i in range(total_species):
+            #print(self.information_dictionary['mimpi'][i])
+            vector_mimpi.append(self.information_dictionary['mimpi'][i])
+        #print("")
+        df['mimpi'] = vector_mimpi
+        # mimpe
+        vector_mimpe = []
+        for i in range(total_species):
+            #print(self.information_dictionary['mimpe'][i])
+            vector_mimpe.append(self.information_dictionary['mimpe'][i])
+        #print("")
+        df['mimpe'] = vector_mimpe
+        # flist
+        # dlist
+        print(df)
 
         # Genes are the same order with self.scores_list genes.
 

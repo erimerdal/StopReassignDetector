@@ -3,6 +3,7 @@ from collections import defaultdict as ddict
 import re
 import itertools
 
+# TODO: There is something wrong with the parser.py, we need to fix it before going into the dataset part.
 
 def find_reference_species(common_genes, mfilelist):
     """Return the species with the longuest sequence for each gene"""
@@ -200,6 +201,14 @@ class MasterFile:
                         for l_of_d in list_of_dictionaries]
         # flatten list and select unique values
         common_genes = list(set(itertools.chain.from_iterable(common_genes)))
+        ###############
+        common_genes = list(set(list_of_dictionaries[0]['genes_list']).intersection(list_of_dictionaries[1]['genes_list']))
+        for i in range(len(list_of_dictionaries)-1):
+            #print("LOD: %s" % list_of_dictionaries[i]['genes_list'])
+            common_genes = list(set(list_of_dictionaries[i+1]['genes_list']).intersection(common_genes))
+        common_genes = list_filter(common_genes, selected_genes)
+        # print(common_genes)
+        ###############
         # 3- Now that we have genes that are common and interesting, among all files we need to find
         #      the longest sequenced ones for that specific gene, to use it as a reference gene to compare
         #      with others later on.
