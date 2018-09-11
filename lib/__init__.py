@@ -426,8 +426,43 @@ class StopChecker:
             # 6.	 gapopen	 number of gap openings
         mean_identical_match_percentage_initials = [] # Stores percentage identical values.
         mean_identical_match_percentage_extensions = [] # Similar to mean_identical_match_percentage_initials but for extensions.
-        # mean_mismatch_number_initials = [] # TODO: Implement # These variables will be in correlation with bitscores, also identical match percentages etc.
-        # mean_mismatch_number_extensions = [] # TODO: Implement # Hence they might affect the model badly. Variables should not be in direct correlation I guess.
+
+        # First create 3 arrays, all specie names, all genes, and their respective positions in each genes:
+            # If Mychonastes_homosphaera / nad6 is reference => 0, otherwise 1,2,3,4,.. depending on the place on the original species.
+        all_species = [] # N = specie size
+        all_genes = [] # M = size of common genes
+        respective_positions = [] # N*M = specie size * size of common genes
+        all_species.append(self.scores_list[0]['reference_specie'])
+        for i in range(len(self.scores_list[0]['original_species'])):
+            all_species.append(self.scores_list[0]['original_species'][i])
+        for i in range(len(self.scores_list)):
+            all_genes.append(self.scores_list[i]['gene_name'])
+        for i in range(len(all_genes)):
+            for j in range(len(all_species)):
+                if all_species[j] == self.scores_list[i]['reference_specie']:
+                    respective_positions.append(-1)
+                else:
+                    for k in range(len(self.scores_list[i]['original_species'])):
+                        if all_species[j] == self.scores_list[i]['original_species'][k]:
+                            respective_positions.append(k)
+                            break
+        print("All genes: ")
+        print(all_genes)
+        print("All species: ")
+        print(all_species)
+        print("Respective positions: ")
+        print(respective_positions)
+        # Len: AG/AS/RP = 6/19/114
+        # Respective Positions:
+        # [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+        #  17, 0, 1, 2, 3, 4, -1, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+        #   17, 0, 1, 2, -1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+        #    17, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, -1,
+        #     17, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, -1, 13, 14, 15, 16,
+        #      17, 0, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+
+        # TODO: Fix all these collection of datas depending on their respective positions.
+        # TODO: Also along the way structure as the final data structure.
 
         for i in range(len(self.scores_list)): # For each gene // Genes should be taken apart seperately while collecting data
             # The length of the extension
@@ -755,8 +790,6 @@ class StopChecker:
         total_species = len(self.scores_list[0]['original_species']) + 1 # Non-reference species count + 1 reference specie count
         traverse = int(len(self.information_dictionary['mloe']) / total_species) # 13 genes for this case = 13 traverse
 
-        # TODO: Create pandas dataframe and fit the data to be used in the pandas dataframe:
-            # We have to treat each gene seperately so we will only be doing 1 gene in beginning:
         df = pandas.DataFrame()
         numpy_array = np.array([])
         # mloe
@@ -824,12 +857,6 @@ class StopChecker:
         df['mimpe'] = vector_mimpe
         # flist
         # dlist
-        print(df)
+        # print(df)
 
         # Genes are the same order with self.scores_list genes.
-
-    def _store_output(self):
-        # This function will be used once to calculate data and output in txt format.
-        # for i in range(len(self.scores_dictionary)): # 13 loops = genes:
-        #     print(len(self.scores_dictionary))
-        pass
