@@ -281,7 +281,7 @@ class StopChecker:
                     la_data = result.split('\t')
                 except IndexError:
                     la_data = []
-                    for i in range(12):
+                    for any in range(12):
                         la_data.append(0)
                 # # Debug: -5- : Always 0,0,0,0,0..
                 # print("Local Alignment Data: %s" % la_data)
@@ -299,6 +299,7 @@ class StopChecker:
 
                 # Calculate start end position with respect to beginning.
                 # start_location = start of the extension + other extensions before * their length + end of local alignment
+
                 start_location = total[0][0] + self.scores_list[i]['start_end'][j][0][0]
                 # start_location_r = end location of initial alignment + start position
                 start_location_r = total[1][0] + self.scores_list[i]['start_end'][j][1][0]
@@ -361,7 +362,7 @@ class StopChecker:
                         la_data = result.split('\t')
                     except IndexError:
                         la_data = []
-                        for i in range(12):
+                        for any in range(12):
                             la_data.append(0)
 
                     start_end_original = []
