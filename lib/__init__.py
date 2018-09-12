@@ -427,43 +427,6 @@ class StopChecker:
         mean_identical_match_percentage_initials = [] # Stores percentage identical values.
         mean_identical_match_percentage_extensions = [] # Similar to mean_identical_match_percentage_initials but for extensions.
 
-        # First create 3 arrays, all specie names, all genes, and their respective positions in each genes:
-            # If Mychonastes_homosphaera / nad6 is reference => 0, otherwise 1,2,3,4,.. depending on the place on the original species.
-        all_species = [] # N = specie size
-        all_genes = [] # M = size of common genes
-        respective_positions = [] # N*M = specie size * size of common genes
-        all_species.append(self.scores_list[0]['reference_specie'])
-        for i in range(len(self.scores_list[0]['original_species'])):
-            all_species.append(self.scores_list[0]['original_species'][i])
-        for i in range(len(self.scores_list)):
-            all_genes.append(self.scores_list[i]['gene_name'])
-        for i in range(len(all_genes)):
-            for j in range(len(all_species)):
-                if all_species[j] == self.scores_list[i]['reference_specie']:
-                    respective_positions.append(-1)
-                else:
-                    for k in range(len(self.scores_list[i]['original_species'])):
-                        if all_species[j] == self.scores_list[i]['original_species'][k]:
-                            respective_positions.append(k)
-                            break
-        print("All genes: ")
-        print(all_genes)
-        print("All species: ")
-        print(all_species)
-        print("Respective positions: ")
-        print(respective_positions)
-        # Len: AG/AS/RP = 6/19/114
-        # Respective Positions:
-        # [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
-        #  17, 0, 1, 2, 3, 4, -1, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-        #   17, 0, 1, 2, -1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-        #    17, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, -1,
-        #     17, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, -1, 13, 14, 15, 16,
-        #      17, 0, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-
-        # TODO: Fix all these collection of datas depending on their respective positions.
-        # TODO: Also along the way structure as the final data structure.
-
         for i in range(len(self.scores_list)): # For each gene // Genes should be taken apart seperately while collecting data
             # The length of the extension
             # For the reference specie:
@@ -511,7 +474,6 @@ class StopChecker:
                 if substrings[j] == substrings[0]:
                     countStopCodons += 1
             frequency_of_stop_codon.append(countStopCodons/len(substrings))
-            # Obviously all of them have 1 because its a fucking stop codon? Emmanuel pls help.
             for j in range(len(self.scores_list[i]['original_species'])):
                 substrings = split_len(self.scores_list[i]['original_sequences'][j][::-1],3,0) # Reverse, divide 3-mers
                 for k in range(len(substrings)):
@@ -779,84 +741,117 @@ class StopChecker:
         return self.information_dictionary
 
     def _give_meaning(self):
+        # First create 3 arrays, all specie names, all genes, and their respective positions in each genes:
+            # If Mychonastes_homosphaera / nad6 is reference => 0, otherwise 1,2,3,4,.. depending on the place on the original species.
+        all_species = [] # N = specie size
+        all_genes = [] # M = size of common genes
+        respective_positions = [] # N*M = specie size * size of common genes
+        all_species.append(self.scores_list[0]['reference_specie'])
+        for i in range(len(self.scores_list[0]['original_species'])):
+            all_species.append(self.scores_list[0]['original_species'][i])
+        for i in range(len(self.scores_list)):
+            all_genes.append(self.scores_list[i]['gene_name'])
+        for i in range(len(all_genes)):
+            for j in range(len(all_species)):
+                if all_species[j] == self.scores_list[i]['reference_specie']:
+                    respective_positions.append(-1)
+                else:
+                    for k in range(len(self.scores_list[i]['original_species'])):
+                        if all_species[j] == self.scores_list[i]['original_species'][k]:
+                            respective_positions.append(k)
+                            break
+
+        # print("All genes: ")
+        # print(all_genes)
+        # print("All species: ")
+        # print(all_species)
+        # print("Respective positions: ")
+        # print(respective_positions)
+        # Len: AG/AS/RP = 6/19/114
+        # Respective Positions:
+        # [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+        #  17, 0, 1, 2, 3, 4, -1, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+        #   17, 0, 1, 2, -1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+        #    17, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, -1,
+        #     17, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, -1, 13, 14, 15, 16,
+        #      17, 0, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+
+        # TODO: Fix all these collection of datas depending on their respective positions.
+        # TODO: Also along the way structure as the final data structure.
+
         one_hot_array = _create_one_hot_array()
         # Stores 64 possible codons by their encoded vector format.
         one_hot_encoded_array = []
         for i in range(64):
             one_hot_encoded_array.append(_one_hot_encode(one_hot_array,one_hot_array[i]))
         # Also encode the data for each genome and for each specie in a numpy vector:
-            # NOTE: 65 elements in each array, 13 (number of genes) * 5(reference + 4 non-reference species which are
-            # in order with self.scores_list[x]['original_species'])
         total_species = len(self.scores_list[0]['original_species']) + 1 # Non-reference species count + 1 reference specie count
-        traverse = int(len(self.information_dictionary['mloe']) / total_species) # 13 genes for this case = 13 traverse
+        traverse = int(len(self.information_dictionary['mloe']) / total_species) # gene count
 
-        df = pandas.DataFrame()
-        numpy_array = np.array([])
-        # mloe
-        vector_mloe = []
-        for i in range(total_species):
-            #print(self.information_dictionary['mloe'][i])
-            vector_mloe.append(self.information_dictionary['mloe'][i])
-        #print("")
-        df['mloe'] = vector_mloe
-        # fe
-        vector_fe = []
-        for i in range(total_species):
-            #print(self.information_dictionary['fe'][i])
-            vector_fe.append(self.information_dictionary['fe'][i])
-        #print("")
-        df['fe'] = vector_fe
-        # log
-        vector_log = []
-        for i in range(total_species):
-            #print(self.information_dictionary['log'][i])
-            vector_log.append(self.information_dictionary['log'][i])
-        #print("")
-        df['log'] = vector_log
-        # mse
-        vector_mse = []
-        for i in range(total_species):
-            #print(self.information_dictionary['mse'][i])
-            vector_mse.append(self.information_dictionary['mse'][i])
-        #print("")
-        df['mse'] = vector_mse
-        # msi
-        vector_msi = []
-        for i in range(total_species):
-            #print(self.information_dictionary['msi'][i])
-            vector_msi.append(self.information_dictionary['msi'][i])
-        #print("")
-        df['msi'] = vector_msi
-        # mevi
-        vector_mevi = []
-        for i in range(total_species):
-            #print(self.information_dictionary['mevi'][i])
-            vector_mevi.append(self.information_dictionary['mevi'][i])
-        #print("")
-        df['mevi'] = vector_mevi
-        # meve
-        vector_meve = []
-        for i in range(total_species):
-            #print(self.information_dictionary['meve'][i])
-            vector_meve.append(self.information_dictionary['meve'][i])
-        #print("")
-        df['meve'] = vector_meve
-        # mimpi
-        vector_mimpi = []
-        for i in range(total_species):
-            #print(self.information_dictionary['mimpi'][i])
-            vector_mimpi.append(self.information_dictionary['mimpi'][i])
-        #print("")
-        df['mimpi'] = vector_mimpi
-        # mimpe
-        vector_mimpe = []
-        for i in range(total_species):
-            #print(self.information_dictionary['mimpe'][i])
-            vector_mimpe.append(self.information_dictionary['mimpe'][i])
-        #print("")
-        df['mimpe'] = vector_mimpe
-        # flist
-        # dlist
-        # print(df)
+        df_total = pandas.DataFrame() # This will be the last dataframe when all others will concatenate in the loop.
+        for i in range(traverse): # For each gene
+            name_gene = self.scores_list[i]['gene_name'] # Gene's name
+            df_species = pandas.DataFrame()
+            for j in range(total_species): # For all genomes for that gene
+            # There should be 64 codons that have information.
+                name_specie = all_species[j]
+                names_list = []
 
-        # Genes are the same order with self.scores_list genes.
+                respective_place_for_gene = respective_positions[j] + 1 # Determines the place in self.information_dictionary.
+                #'mloe': mean_length_of_extensions, 'fe': frequency_evolutionary, 'log': length_of_genes,
+                #'mse': mean_similarity_extension, 'msi': mean_similarity_initials, 'mevi': mean_e_values_initials,
+                #'meve': mean_e_values_extensions, 'mimpi': mean_identical_match_percentage_initials,
+                #'mimpe': mean_identical_match_percentage_extensions,
+                mloe_list = []
+                fe_list = []
+                log_list = []
+                mse_list = []
+                msi_list = []
+                mevi_list = []
+                meve_list = []
+                mimpi_list = []
+                mimpe_list = []
+                mloe_value = self.information_dictionary['mloe'][respective_place_for_gene + i*total_species]
+                fe_value = self.information_dictionary['fe'][respective_place_for_gene + i*total_species]
+                log_value = self.information_dictionary['log'][respective_place_for_gene + i*total_species]
+                mse_value = self.information_dictionary['mse'][respective_place_for_gene + i*total_species]
+                msi_value = self.information_dictionary['msi'][respective_place_for_gene + i*total_species]
+                mevi_value = self.information_dictionary['mevi'][respective_place_for_gene + i*total_species]
+                meve_value = self.information_dictionary['meve'][respective_place_for_gene + i*total_species]
+                mimpi_value = self.information_dictionary['mimpi'][respective_place_for_gene + i*total_species]
+                mimpe_value = self.information_dictionary['mimpe'][respective_place_for_gene + i*total_species]
+                for any in range(64):
+                    names_list.append(name_specie)
+                    mloe_list.append(mloe_value)
+                    fe_list.append(fe_value)
+                    log_list.append(log_value)
+                    mse_list.append(mse_value)
+                    msi_list.append(msi_value)
+                    mevi_list.append(mevi_value)
+                    meve_list.append(meve_value)
+                    mimpi_list.append(mimpi_value)
+                    mimpe_list.append(mimpe_value)
+
+                df = pandas.DataFrame()
+                codons_list = one_hot_array
+                df['Specie Name'] = names_list
+                df['Codons'] = one_hot_array
+                df['Frequencies'] = self.information_dictionary['flist'][i][respective_place_for_gene]
+                df['Distances'] = self.information_dictionary['dlist'][i][respective_place_for_gene]
+                df['Mean Extension Length'] = mloe_list
+                df['Evolutionary Frequency'] = fe_list
+                df['Gene length'] = log_list
+                df['Mean Extension Similarity'] = mse_list
+                df['Mean Initial Similarity'] = msi_list
+                df['Mean Extension E-values '] = meve_list
+                df['Mean Initial E-values '] = mevi_list
+                df['Mean Extension Match Percent'] = mimpe_list
+                df['Mean Initial Match Percent'] = mimpi_list
+                df_species = pandas.concat([df, df_species])
+            gene_list = []
+            for what in range(64*total_species):
+                gene_list.append(name_gene)
+            df_species['Gene Name'] = gene_list
+            df_total = pandas.concat([df_total, df_species])
+
+        print(df_total)
