@@ -227,7 +227,7 @@ def _stop_mapper():
     "Bracteacoccus_aerius": {"cox2a": "TAA", "atp9": "TAA", "cox2": "TAA", "cox3": "TCA", "cox1": "TAA", "atp6": "TAA", "nad3": "TCA", "cob": "TAA", "nad4L": "TCA",
     "nad2": "TCA", "nad1": "TCA", "nad6": "TCA", "nad5": "TCA", "nad4": "TCA"},
 
-    "Pedinomonas_minor gc=4": {"atp8": "TAA", "cox1": "TAA", "atp6": "TAA", "nad4L": "TAA", "cob": "TAA", "nad3": "TAA", "nad2": "TAA", "nad1": "TAA", "nad6": "TAA",
+    "Pedinomonas_minor": {"atp8": "TAA", "cox1": "TAA", "atp6": "TAA", "nad4L": "TAA", "cob": "TAA", "nad3": "TAA", "nad2": "TAA", "nad1": "TAA", "nad6": "TAA",
     "nad5": "TAA", "nad4": "TAA"},
 
     "Kirchneriella_aperta": {"cox2a": "TCA", "atp9": "TCA", "cox2": "TCA", "cox3": "TCA", "cox1": "TCA", "atp6": "TCA", "nad3": "TCA", "cob": "TCA", "nad4L": "TCA",

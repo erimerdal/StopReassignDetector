@@ -39,7 +39,7 @@
 ;;
 
 
->NC_016125.1 gc=1
+>Brassica_rapa_subsp_oleifera gc=1
      1  CTAGGAACAGCTTCTACGACGATAGATAGGGGTCAGCTTTCTTTGGCATCTATGCCCCCT
     61  G
 ;; mfannot:

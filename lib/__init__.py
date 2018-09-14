@@ -736,7 +736,6 @@ class StopChecker:
         'mse': mean_similarity_extension, 'msi': mean_similarity_initials, 'mevi': mean_e_values_initials, 'meve': mean_e_values_extensions,
         'mimpi': mean_identical_match_percentage_initials, 'mimpe': mean_identical_match_percentage_extensions, 'flist': frequency_list,
         'dlist': distance_list}
-        stop_mapper = _stop_mapper()
 
         return self.information_dictionary
 
@@ -788,13 +787,20 @@ class StopChecker:
         total_species = len(self.scores_list[0]['original_species']) + 1 # Non-reference species count + 1 reference specie count
         traverse = int(len(self.information_dictionary['mloe']) / total_species) # gene count
 
+        stop_mapper = _stop_mapper()
+
         df_total = pandas.DataFrame() # This will be the last dataframe when all others will concatenate in the loop.
         for i in range(traverse): # For each gene
             name_gene = self.scores_list[i]['gene_name'] # Gene's name
+            name_gene = name_gene[2:]
             df_species = pandas.DataFrame()
             for j in range(total_species): # For all genomes for that gene
             # There should be 64 codons that have information.
                 name_specie = all_species[j]
+                # Filter name specie and remove gc part.
+                names = name_specie.split(' ')
+                name_specie = names[0]
+                #print(name_specie)
                 names_list = []
 
                 respective_place_for_gene = respective_positions[j] + 1 # Determines the place in self.information_dictionary.
@@ -831,6 +837,19 @@ class StopChecker:
                     meve_list.append(meve_value)
                     mimpi_list.append(mimpi_value)
                     mimpe_list.append(mimpe_value)
+                # Create Y:
+                # Find which codon that gene for that specie stands for:
+                codon = stop_mapper[name_specie][name_gene]
+                print(codon)
+                # For the list of codons, find where it corresponds
+                Y = [] # Create Y list
+                for ycount in range(64):
+                    if one_hot_array[ycount] == codon:
+                        Y.append(1)
+                        print("Location: %s" % ycount)
+                    else:
+                        Y.append(0)
+                print(Y)
 
                 df = pandas.DataFrame()
                 codons_list = one_hot_array
@@ -847,11 +866,11 @@ class StopChecker:
                 df['Mean Initial E-values '] = mevi_list
                 df['Mean Extension Match Percent'] = mimpe_list
                 df['Mean Initial Match Percent'] = mimpi_list
+                df['Y'] = Y # Add Y to data.
                 df_species = pandas.concat([df, df_species])
             gene_list = []
             for what in range(64*total_species):
                 gene_list.append(name_gene)
             df_species['Gene Name'] = gene_list
             df_total = pandas.concat([df_total, df_species])
-
         print(df_total)
