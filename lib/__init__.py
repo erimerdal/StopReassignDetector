@@ -10,6 +10,13 @@ import os
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
 import subprocess
+from numpy import array
+from numpy import argmax
+import numpy as np
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
 
 __all__ = ['MasterFile', 'StopChecker', 'MasterCollection']
 
@@ -19,6 +26,7 @@ class StopChecker:
         self.mcol = mcol
         self.alignments(mcol, kmer_length, threshold, match_score, mismatch_penalty)
         self._give_meaning()
+        self._learn()
 
     def alignments(self, mcol, kmer_length, threshold, match_score, mismatch_penalty):
         list_of_dictionaries, list_of_extended_dictionaries, reference_species, common_genes = mcol.digest()
@@ -840,21 +848,21 @@ class StopChecker:
                 # Create Y:
                 # Find which codon that gene for that specie stands for:
                 codon = stop_mapper[name_specie][name_gene]
-                print(codon)
+                #print(codon)
                 # For the list of codons, find where it corresponds
                 Y = [] # Create Y list
                 for ycount in range(64):
                     if one_hot_array[ycount] == codon:
                         Y.append(1)
-                        print("Location: %s" % ycount)
+                        #print("Location: %s" % ycount)
                     else:
                         Y.append(0)
-                print(Y)
+                #rint(Y)
 
                 df = pandas.DataFrame()
                 codons_list = one_hot_array
-                df['Specie Name'] = names_list
-                df['Codons'] = one_hot_array
+                # df['Specie Name'] = names_list TODO: Unnecessary in Random Forest
+                # df['Codons'] = one_hot_array TODO: Open it back with one-hot-encoding
                 df['Frequencies'] = self.information_dictionary['flist'][i][respective_place_for_gene]
                 df['Distances'] = self.information_dictionary['dlist'][i][respective_place_for_gene]
                 df['Mean Extension Length'] = mloe_list
@@ -866,11 +874,68 @@ class StopChecker:
                 df['Mean Initial E-values '] = mevi_list
                 df['Mean Extension Match Percent'] = mimpe_list
                 df['Mean Initial Match Percent'] = mimpi_list
-                df['Y'] = Y # Add Y to data.
+                df['Y'] = Y # Add Y to data. TODO: Output
                 df_species = pandas.concat([df, df_species])
             gene_list = []
             for what in range(64*total_species):
                 gene_list.append(name_gene)
-            df_species['Gene Name'] = gene_list
+            # df_species['Gene Name'] = gene_list TODO: Open this back up with one-hot-encoding
             df_total = pandas.concat([df_total, df_species])
-        print(df_total)
+        #print(df_total)
+        self.df_total = df_total
+
+        # Label is the feature that we want to predict
+        labels = np.array(df_total['Y'])
+        # print("Labels: ")
+        # print(labels)
+        # print("")
+
+        # Remove label from feature
+        features = df_total.drop(['Y'],axis=1)
+
+        # Save feature names for later use
+        feature_list = list(features.columns)
+        # print("Feature List: ")
+        # print(feature_list)
+        # print("")
+
+        # Convert to numpy array
+        features = np.array(features)
+        # print("Features: ")
+        # print(features)
+        # print("")
+
+        # Using Skicit-learn to split data into training and testing sets:
+        train_features, test_features, train_labels, test_labels = train_test_split(features,labels,test_size = 0.25, random_state = 42)
+
+        # Test if shapes are okay: !! Expecting training features number of columns to match the testing feature
+        # number of columns and the number of rows to match for the respective training and testing features. NOTE: Pass.
+
+        # print('Training Features Shape:', train_features.shape)
+        # print('Training Labels Shape:', train_labels.shape)
+        # print('Testing Features Shape:', test_features.shape)
+        # print('Testing Labels Shape:', test_labels.shape)
+
+        # Instantiate model with 1000 decision trees
+        rf = RandomForestRegressor(n_estimators = 1000, random_state = 42)
+        # Train the model on training data
+        rf.fit(train_features,train_labels)
+        # print("Model Trained")
+
+        # Use the forest's predict method on the test data
+        predictions = rf.predict(test_features)
+        # Calculate the absolute errors
+        # errors = abs(predictions - test_labels)
+        # print("Pred: ", predictions)
+        # print("Test_labels: ", test_labels)
+        # print("Len of TL/Pred = %d,%d " % (len(test_labels),len(predictions)))
+        for pred in range(len(predictions)):
+            print("Test Label/ Prediction = %d/%d" % (test_labels[pred],predictions[pred]))
+        # Determine performance metrics
+        # mape = 100 * (errors / test_labels)
+        # # Calculate and display accuracy
+        # accuracy = 100 - np.mean(mape)
+        # print("Accuracy:", round(accuracy,2), '%.')
+
+    def _learn(self):
+        pass
