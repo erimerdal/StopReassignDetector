@@ -857,7 +857,7 @@ class StopChecker:
                         #print("Location: %s" % ycount)
                     else:
                         Y.append(0)
-                #rint(Y)
+                #print(Y)
 
                 df = pandas.DataFrame()
                 codons_list = one_hot_array
@@ -865,23 +865,30 @@ class StopChecker:
                 # df['Codons'] = one_hot_array TODO: Open it back with one-hot-encoding
                 df['Frequencies'] = self.information_dictionary['flist'][i][respective_place_for_gene]
                 df['Distances'] = self.information_dictionary['dlist'][i][respective_place_for_gene]
-                df['Mean Extension Length'] = mloe_list
-                df['Evolutionary Frequency'] = fe_list
-                df['Gene length'] = log_list
-                df['Mean Extension Similarity'] = mse_list
-                df['Mean Initial Similarity'] = msi_list
-                df['Mean Extension E-values '] = meve_list
-                df['Mean Initial E-values '] = mevi_list
-                df['Mean Extension Match Percent'] = mimpe_list
-                df['Mean Initial Match Percent'] = mimpi_list
+                # TODO: NOTE: Problem is that prediction is never 1 with these variables.
+                # Prediction is always 0.
+
+                # df['Mean Extension Length'] = mloe_list
+                # df['Evolutionary Frequency'] = fe_list
+                # df['Gene length'] = log_list
+                # df['Mean Extension Similarity'] = mse_list
+                # df['Mean Initial Similarity'] = msi_list
+                # df['Mean Extension E-values '] = meve_list
+                # df['Mean Initial E-values '] = mevi_list
+                # df['Mean Extension Match Percent'] = mimpe_list
+                # df['Mean Initial Match Percent'] = mimpi_list
                 df['Y'] = Y # Add Y to data. TODO: Output
+
+                # Since we know we have to only get rows 48/49/56/52/61, we can drop all the others,
+                df = df.drop(df.index[[50,51,53,54,55,57,58,59,60,62,63]])
+                df = df[48:]
                 df_species = pandas.concat([df, df_species])
-            gene_list = []
-            for what in range(64*total_species):
-                gene_list.append(name_gene)
+            # gene_list = []
+            # for what in range(16*total_species):
+            #     gene_list.append(name_gene)
             # df_species['Gene Name'] = gene_list TODO: Open this back up with one-hot-encoding
             df_total = pandas.concat([df_total, df_species])
-        #print(df_total)
+        # print(df_total)
         self.df_total = df_total
 
         # Label is the feature that we want to predict
@@ -925,17 +932,18 @@ class StopChecker:
         # Use the forest's predict method on the test data
         predictions = rf.predict(test_features)
         # Calculate the absolute errors
-        # errors = abs(predictions - test_labels)
-        # print("Pred: ", predictions)
-        # print("Test_labels: ", test_labels)
-        # print("Len of TL/Pred = %d,%d " % (len(test_labels),len(predictions)))
+        mistakes = 0
         for pred in range(len(predictions)):
-            print("Test Label/ Prediction = %d/%d" % (test_labels[pred],predictions[pred]))
+            print("TL: %d / Pred: %d " % (test_labels[pred], predictions[pred]))
+            if int(test_labels[pred]) != int(predictions[pred]):
+                mistakes += 1
+                print("Mistake: %d" % mistakes)
         # Determine performance metrics
-        # mape = 100 * (errors / test_labels)
+        print("Total mistakes: %d" % mistakes)
+        print("Total predictions: %d" % len(predictions))
+        percentage_accuracy = ((len(predictions) - mistakes) / len(predictions)) * 100
         # # Calculate and display accuracy
-        # accuracy = 100 - np.mean(mape)
-        # print("Accuracy:", round(accuracy,2), '%.')
+        print("Accuracy:", round(percentage_accuracy,2), '%.')
 
     def _learn(self):
         pass
