@@ -16,7 +16,8 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestClassifier
+import matplotlib.pyplot as plt
 
 __all__ = ['MasterFile', 'StopChecker', 'MasterCollection']
 
@@ -868,15 +869,15 @@ class StopChecker:
                 # TODO: NOTE: Problem is that prediction is never 1 with these variables.
                 # Prediction is always 0.
 
-                # df['Mean Extension Length'] = mloe_list
-                # df['Evolutionary Frequency'] = fe_list
-                # df['Gene length'] = log_list
-                # df['Mean Extension Similarity'] = mse_list
-                # df['Mean Initial Similarity'] = msi_list
-                # df['Mean Extension E-values '] = meve_list
-                # df['Mean Initial E-values '] = mevi_list
-                # df['Mean Extension Match Percent'] = mimpe_list
-                # df['Mean Initial Match Percent'] = mimpi_list
+                df['Mean Extension Length'] = mloe_list
+                df['Evolutionary Frequency'] = fe_list
+                df['Gene length'] = log_list
+                df['Mean Extension Similarity'] = mse_list
+                df['Mean Initial Similarity'] = msi_list
+                df['Mean Extension E-values '] = meve_list
+                df['Mean Initial E-values '] = mevi_list
+                df['Mean Extension Match Percent'] = mimpe_list
+                df['Mean Initial Match Percent'] = mimpi_list
                 df['Y'] = Y # Add Y to data. TODO: Output
 
                 # Since we know we have to only get rows 48/49/56/52/61, we can drop all the others,
@@ -913,7 +914,7 @@ class StopChecker:
         # print("")
 
         # Using Skicit-learn to split data into training and testing sets:
-        train_features, test_features, train_labels, test_labels = train_test_split(features,labels,test_size = 0.25, random_state = 42)
+        train_features, test_features, train_labels, test_labels = train_test_split(features,labels,test_size = 0.20, random_state = 42)
 
         # Test if shapes are okay: !! Expecting training features number of columns to match the testing feature
         # number of columns and the number of rows to match for the respective training and testing features. NOTE: Pass.
@@ -924,11 +925,11 @@ class StopChecker:
         # print('Testing Labels Shape:', test_labels.shape)
 
         # Instantiate model with 1000 decision trees
-        rf = RandomForestRegressor(n_estimators = 1000, random_state = 42)
+        rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)
         # Train the model on training data
         rf.fit(train_features,train_labels)
         # print("Model Trained")
-
+        feature_importance(rf,features_list = feature_list)
         # Use the forest's predict method on the test data
         predictions = rf.predict(test_features)
         # Calculate the absolute errors
@@ -947,3 +948,29 @@ class StopChecker:
 
     def _learn(self):
         pass
+
+def feature_importance(rf, outfile="importance.png", features_list=[]):
+    """Show each feature importance"""
+    importances = rf.feature_importances_
+    if len(features_list) > 0 and len(features_list) != len(importances):
+        raise ValueError("Number of features does not fit!")
+
+    indices = np.argsort(importances)[::-1]
+    n_feats = len(features_list)
+    np.savetxt(outfile + ".txt", np.array([tree.feature_importances_
+                                           for tree in rf.estimators_]), delimiter=',', fmt='%1.3e')
+    std = np.std(
+        [tree.feature_importances_ for tree in rf.estimators_], axis=0)
+    plt.figure()
+    plt.title("Feature importances")
+    print(importances[indices])
+    print(features_list)
+    plt.bar(range(n_feats), importances[indices], color="b", yerr=std[indices], align="center")
+    if len(features_list) > 0:
+        features_list = np.asarray(features_list)[indices]
+        plt.xticks(range(n_feats), features_list, rotation='vertical')
+    plt.xlim([-1, n_feats])
+    plt.margins(0.2)
+
+    plt.subplots_adjust(bottom=0.15)
+    plt.savefig(outfile, bbox_inches='tight')
